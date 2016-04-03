@@ -1,6 +1,6 @@
 # Project Submission
-* Author:  Miles B Huff (330)
-* Author:  Preston Sheppard (970)
+* **Author:**  Miles B Huff (330)
+* **Author:**  Preston Sheppard (970)
 
 ## Completed extra-credit opportunity/ies
 * 
@@ -11,7 +11,7 @@ This is a school-project completed by the above authors as part of UGA's Spring 
 # Usage
 <code>$ </code>
 
-This section's still under construction.  
+This section is still under construction.  
 
 # Instructions
 This link is only useful for us coders:  https://github.com/mepcotterell-cs1302/cs1302-artsy
