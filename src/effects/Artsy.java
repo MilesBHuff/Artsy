@@ -4,16 +4,25 @@ import  javafx.scene.image.Image;
 /** This interface describes artsy effects that can be applied to Images. **/
 public interface Artsy
 { //interface
+
 	////////////////////////////////////////////////////////////////////////
-	/** Given two Images, this method returns a new Image, the contents of
-	 *  which is composed of the source images alternating horizontally and
-	 *  vertically at the specified size, in pixels. This causes the images
-	 *  to appear woven together in a checkered fashion.  For an example,
-	 *  please see the project description.
-	 * @param  src1   The first Image
-	 * @param  src2   The second Image
+	/** Given an <code>Image</code>, this method returns a deep copy of the
+	 *  given <code>Image</code>.
+	 * @param  src The <code>Image</code> to copy
+	 * @return a deep copy of <code>src</code>
+	**/
+	public Image copyImage(Image src);
+	
+	////////////////////////////////////////////////////////////////////////
+	/** Given two <code>Image</code>s, this method returns a new
+	 *  <code>Image</code>, the contents of which is composed of the source
+	 *  images alternating horizontally and vertically at the specified
+	 *  size, in pixels. This causes the <code>Image</code>s to appear
+	 *  woven together in a checkered fashion.  
+	 * @param  src1   The first <code>Image</code>
+	 * @param  src2   The second <code>Image</code>
 	 * @param  height The height, in pixels, of the horizontal stripes.
-	 * @return an <code>Image</code> with the horizontal stripes effect.
+	 * @return a checkered <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
 	public Image doCheckers(Image src1,
 		                Image src2,
