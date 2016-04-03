@@ -12,25 +12,24 @@ public class Driver extends Application
 	/** Description
 	 * @param stage Description
 	**/
-    @Override
-    public void start(Stage stage)
-    { //method
-        FlowPane root  = new FlowPane(    );
-        Scene    scene = new    Scene(root);
-
-        stage.setScene(scene);
-        stage.setTitle("Artsy!");
-        stage.sizeToScene();
-        stage.show();
-    } //method
+	@Override
+	public void start(Stage stage)
+	{ //method
+		FlowPane root  = new FlowPane(    );
+		Scene    scene = new    Scene(root);
+		
+		stage.setScene(scene);
+		stage.setTitle("Artsy!");
+		stage.sizeToScene();
+		stage.show();
+	} //method
 
 	////////////////////////////////////////////////////////////////////////
 	/** The default, 'main', method.  Runs when the programme is executed.
 	 * @param args The arguments provided to the programme
 	**/
-    public static void main(String[] args)
-    { //method
-        launch(args);
-    } //method
-
+	public static void main(String[] args)
+	{ //method
+		launch(args);
+	} //method
 } //class
