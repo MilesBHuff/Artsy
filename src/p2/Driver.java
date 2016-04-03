@@ -1,9 +1,9 @@
 package src.p2;
-import src.effects.Artsy;
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.FlowPane;
+import  src.effects.Artsy;
+import  javafx.application.Application;
+import  javafx.stage.Stage;
+import  javafx.scene.Scene;
+import  javafx.scene.layout.FlowPane;
 
 /** This is the driver for this application. **/
 public class Driver extends Application {
