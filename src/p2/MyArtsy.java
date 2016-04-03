@@ -41,7 +41,24 @@ public class MyArtsy implements Artsy
 		                Image src2,
 		                int   size )
 	{ //+method
-		return null;
+		      Image temp = new Image(copyImage(src1));
+      PixelReader pr=src2.getPixelReader();
+      PixelWriter pw=temp.getPixelWriter();
+      int tempy=0, tempx=0;
+      for(int x=0;x<temp.getWidth();x++){
+        for(int y=0;y<temp.getHeight();y++){
+          for(int countx=0;countx<size;countx++){
+            for (int county=0;county<size;county++){
+              pw.setArgb(x,y, pr.getArgb(x,y));
+              tempy++;
+            }
+            tempx++;
+          }
+        y+=size;
+        }
+      x+=size;
+      }
+return temp;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
