@@ -1,17 +1,9 @@
 package src.effects;
 import  javafx.scene.image.Image;
 
-/** This interface describes Artsy! effects that can be applied to Images. **/
+/** This interface describes Artsy!-effects that can be applied to Images. **/
 public interface Artsy
 { //interface
-	////////////////////////////////////////////////////////////////////////
-	/** Given an <code>Image</code>, this method returns a deep copy of the
-	 *  given <code>Image</code>.
-	 * @param  src The <code>Image</code> to copy
-	 * @return a deep copy of <code>src</code>
-	**/
-	public Image copyImage(Image src);
-	
 	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
 	 *  <code>Image</code>, the contents of which is composed of the source
