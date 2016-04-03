@@ -1,10 +1,9 @@
 package src.effects;
 import  javafx.scene.image.Image;
 
-/** This interface describes artsy effects that can be applied to Images. **/
+/** This interface describes Artsy! effects that can be applied to Images. **/
 public interface Artsy
 { //interface
-
 	////////////////////////////////////////////////////////////////////////
 	/** Given an <code>Image</code>, this method returns a deep copy of the
 	 *  given <code>Image</code>.
@@ -29,14 +28,14 @@ public interface Artsy
 		                int   size );
 
 	////////////////////////////////////////////////////////////////////////
-	/** Given two Images, this method returns a new Image, the contents of
-	 *  which is composed of the source images alternating horizontally at
-	 *  the specified pixel height.  For an example, please see the project
-	 *  description.
-	 * @param  src1   The first Image
-	 * @param  src2   The second Image
+	/** Given two <code>Image</code>s, this method returns a new
+	 *  <code>Image</code>, the contents of which is composed of the source
+	 *  <code>Image</code>s alternating horizontally at the specified pixel-
+	 *  height.
+	 * @param  src1   The first <code>Image</code>
+	 * @param  src2   The second <code>Image</code>
 	 * @param  height The height, in pixels, of the horizontal stripes.
-	 * @return an <code>Image</code> with the horizontal stripes effect.
+	 * @return a horizontally striped <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
 	public Image doHorizontalStripes(Image src1  ,
 		                         Image src2  ,
