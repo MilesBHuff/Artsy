@@ -4,6 +4,10 @@ import  javafx.scene.image.Image;
 
 public class MyArtsy implements Artsy
 { //+class
+	////////////////////////////////////////////////////////////////////////
+	/**
+	 * 
+	**/
 	public Image copyImage(Image src)
 	{ //+method
 		int width  = (int) src.getWidth();
@@ -25,6 +29,21 @@ public class MyArtsy implements Artsy
 		return ret;
 	} //-method
 
+	////////////////////////////////////////////////////////////////////////
+	/**
+	 * 
+	**/
+	@Override
+	public Image doRotate(Image  src    ,
+		              double degrees )
+	{ //+method
+		return null;
+	} //-method
+
+	////////////////////////////////////////////////////////////////////////
+	/**
+	 * 
+	**/
 	@Override
 	public Image doCheckers(Image src1,
 		                Image src2,
@@ -33,6 +52,10 @@ public class MyArtsy implements Artsy
 		return null;
 	} //-method
 
+	////////////////////////////////////////////////////////////////////////
+	/**
+	 * 
+	**/
 	@Override
 	public Image doHorizontalStripes(Image src1  ,
 		                         Image src2  ,
@@ -58,13 +81,10 @@ public class MyArtsy implements Artsy
 		return temp;
 	} //-method
 
-	@Override
-	public Image doRotate(Image  src    ,
-		              double degrees )
-	{ //+method
-		return null;
-	} //-method
-
+	////////////////////////////////////////////////////////////////////////
+	/**
+	 * 
+	**/
 	@Override
 	public Image doVerticalStripes(Image src1, Image src2, int width)
 	{ //method
