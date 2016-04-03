@@ -5,8 +5,12 @@ import  javafx.scene.image.Image;
 public class MyArtsy implements Artsy
 { //+class
 	////////////////////////////////////////////////////////////////////////
-	@Override
-	public Image copyImage(Image src)
+	/** Given an <code>Image</code>, this method returns a deep copy of the
+	 *  given <code>Image</code>.
+	 * @param  src The <code>Image</code> to copy
+	 * @return a deep copy of <code>src</code>
+	**/
+	private Image copyImage(Image src)
 	{ //+method
 		int width  = (int) src.getWidth();
 		int height = (int) src.getHeight();
