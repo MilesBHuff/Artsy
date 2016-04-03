@@ -6,7 +6,7 @@
 * 
 
 # About
-This is a school-project completed by the above authors as part of UGA's Spring 2016 CSCI-1302 course.  It implements a GUI, which allows one to combine any two 300x300px pictures in multiple ways.  
+This is a school-project completed by the above authors as part of UGA's Spring 2016 CSCI-1302 course.  It implements a GUI which allows one to combine any two 300x300px pictures in multiple ways.  
 
 # Usage
 <code>$ </code>
