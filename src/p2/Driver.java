@@ -6,10 +6,15 @@ import  javafx.scene.Scene;
 import  javafx.scene.layout.FlowPane;
 
 /** This is the driver for this application. **/
-public class Driver extends Application {
-
+public class Driver extends Application
+{ //class
+	////////////////////////////////////////////////////////////////////////
+	/** Description
+	 * @param stage Description
+	**/
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage)
+    { //method
         FlowPane root  = new FlowPane(    );
         Scene    scene = new    Scene(root);
 
@@ -17,10 +22,15 @@ public class Driver extends Application {
         stage.setTitle("Artsy!");
         stage.sizeToScene();
         stage.show();
-    } // createAndShowGUI
+    } //method
 
-    public static void main(String[] args) {
+	////////////////////////////////////////////////////////////////////////
+	/** The default, 'main', method.  Runs when the programme is executed.
+	 * @param args The arguments provided to the programme
+	**/
+    public static void main(String[] args)
+    { //method
         launch(args);
-    } // main
+    } //method
 
-} // Driver
+} //class
