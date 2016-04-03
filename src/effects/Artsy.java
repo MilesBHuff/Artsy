@@ -1,10 +1,7 @@
-package cs1302.effects;
+package effects;
+import  javafx.scene.image.Image;
 
-import javafx.scene.image.Image;
-
-/**
- * This interface describes artsy effects that can be applied to Images.
-**/
+/** This interface describes artsy effects that can be applied to Images. **/
 public interface Artsy {
 
 	/** Given two Images, this method returns a new Image, the contents of which
