@@ -5,6 +5,14 @@ import  javafx.scene.image.Image;
 public interface Artsy
 { //interface
 	////////////////////////////////////////////////////////////////////////
+	/** Given an <code>Image</code>, this method returns a deep copy of the
+	 *  given <code>Image</code>.
+	 * @param  src The <code>Image</code> to copy
+	 * @return a deep copy of <code>src</code>.
+	**/
+	public Image doCopy(Image oSrc);
+
+	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
 	 *  <code>Image</code>, the contents of which is composed of the source
 	 *  images alternating horizontally and vertically at the specified
