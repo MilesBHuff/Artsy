@@ -18,11 +18,13 @@ public class Driver extends Application
 	public void start(Stage oStage)
 	{ //method
 		// DATA
-		String sBtnChecker = "Checker"
-		String oLblImage1  = "Image 1:  ";
-		String oLblImage2  = "Image 2:  ";
-		String sLblEffect  = "Effects:"  ;
-		String sLblResult  = "Result:"   ;
+		String sBtnChecker = "Checker"            ;
+		String sBtnStripeH = "Stripe horizontally";
+		String sBtnStripeH = "Stripe vertically"  ;
+		String oLblImage1  = "Image 1:  "         ;
+		String oLblImage2  = "Image 2:  "         ;
+		String sLblEffect  = "Effects:"           ;
+		String sLblResult  = "Result:"            ;
 
 		// IMG BUTTONS
 		GridPane oImageBtns = new GridPane();
@@ -38,8 +40,8 @@ public class Driver extends Application
 		oEffectBtns.setHgap(10);
 		oEffectBtns.setVgap(10);
 		Button oBtnChecker = new Button(sBtnChecker); oEffectBtns.add(oBtnChecker, 0, 0);
-		Button oBtnStripeH = new Button(oBtnStripeH); oEffectBtns.add(oBtnStripeH, 0, 1);
-		Button oBtnStripeV = new Button(oBtnStripeV); oEffectBtns.add(oBtnStripeV, 0, 2);
+		Button oBtnStripeH = new Button(sBtnStripeH); oEffectBtns.add(oBtnStripeH, 0, 1);
+		Button oBtnStripeV = new Button(sBtnStripeV); oEffectBtns.add(oBtnStripeV, 0, 2);
 
 		// MAIN PANE
 		GridPane oRoot = new GridPane();
