@@ -52,21 +52,21 @@ public class MyArtsy implements Artsy
 			iX < oNew.getWidth();
 			iX+= iSize          )
 		{ //+loop
-			int iNewX = iX;
 			for(int iY = 0               ;
 				iY < oNew.getHeight();
 				iY+= iSize           )
 			{ //+loop
-				int iNewY = iY;
+				int iNewX = iX,
+				    iNewY = iY;
 				for(int iCountX = 0    ;
 					iCountX < iSize;
 					iCountX++      ,
-					  iNewY++      )
+					  iNewX++      )
 				{ //+loop
 					for (int iCountY = 0    ;
 						 iCountY < iSize;
 						 iCountY++      ,
-						   iNewX++      )
+						   iNewY++      )
 					{ //+loop
 						oPW.setArgb(iNewX, iNewY, oPR.getArgb(iNewX, iNewY));
 					} //-loop
