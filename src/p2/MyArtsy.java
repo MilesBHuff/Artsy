@@ -68,7 +68,7 @@ public class MyArtsy implements Artsy
 						 iCountY++      ,
 						   iNewX++      )
 					{ //+loop
-						oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
+						oPW.setArgb(iCountX, iCountY, oPR.getArgb(iCountX, iCountY));
 					} //-loop
 				} //-loop
 			} //-loop
