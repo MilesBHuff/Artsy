@@ -8,27 +8,27 @@ public class MyArtsy implements Artsy
 	/** Given an <code>Image</code>, this method returns a deep copy of the
 	 *  given <code>Image</code>.
 	 * @param  src The <code>Image</code> to copy
-	 * @return a deep copy of <code>src</code>
+	 * @return a deep copy of <code>src</code>.
 	**/
-	private Image copyImage(Image src)
+	private Image doCopy(Image oSrc)
 	{ //+method
-		int width  = (int) src.getWidth();
-		int height = (int) src.getHeight();
-		WritableImage ret = new WritableImage(width, height);
-		PixelReader pr = src.getPixelReader();
-		PixelWriter pw = ret.getPixelWriter();
+		int           iWidth  =        oSrc.getWidth(               );
+		int           iHeight =       oSrc.getHeight(               );
+		WritableImage oCopy   =    new WritableImage(iWidth, iHeight);
+		PixelReader   oPR     =  oSrc.getPixelReader(               );
+		PixelWriter   oPW     = oCopy.getPixelWriter(               );
 		for (int x = 0;
-			 x < width;
+			 x < iWidth;
 			 x++)
 		{ //+loop
 			for(int y = 0;
-				y < height;
+				y < iHeight;
 				y++)
 			{ //+loop
-				pw.setArgb(x, y, pr.getArgb(x, y));
+				oPW.setArgb(x, y, oPR.getArgb(x, y));
 			} //-loop
 		} //-loop
-		return ret;
+		return oCopy;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
@@ -45,12 +45,14 @@ public class MyArtsy implements Artsy
 		                Image src2,
 		                int   size )
 	{ //+method
-		Image temp = new Image(copyImage(src1));
+		Image temp = new Image(doCopy(src1));
 		PixelReader pr = src2.getPixelReader();
 		PixelWriter pw = temp.getPixelWriter();
 		int tempy = 0,
 		    tempx = 0;
-		for(int x = 0; x < temp.getWidth(); x++)
+		for(int x = 0;
+			x < temp.getWidth();
+			x++)
 		{ //+loop
 			for(int y = 0;
 				y < temp.getHeight();
@@ -82,7 +84,7 @@ public class MyArtsy implements Artsy
 		                         Image src2  ,
 		                         int   height )
 	{ //+method
-		Image temp = new Image(copyImage(src1));
+		Image temp = new Image(doCopy(src1));
 		PixelReader pr = src2.getPixelReader();
 		PixelWriter pw = temp.getPixelWriter();
 		int y = 0;
@@ -106,7 +108,7 @@ public class MyArtsy implements Artsy
 	@Override
 	public Image doVerticalStripes(Image src1, Image src2, int width)
 	{ //method
-		Image temp = new Image(copyImage(src1));
+		Image temp = new Image(doCopy(src1));
 		PixelReader pr=src2.getPixelReader();
 		PixelWriter pw=temp.getPixelWriter();
 		int x = 0;
