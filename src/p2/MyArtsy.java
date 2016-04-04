@@ -1,6 +1,6 @@
 package src.p2                  ;
-import  src.effects.Artsy       ;
 import  javafx.scene.image.Image;
+import  src.effects.Artsy       ;
 
 /**
  * @author Preston Sheppard (coding)
