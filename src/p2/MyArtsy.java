@@ -48,16 +48,16 @@ public class MyArtsy implements Artsy
 		Image       oNew =            new Image(doCopy(oSrc1));
 		PixelReader oPR  = oSrc2.getPixelReader(             );
 		PixelWriter oPW  =  oNew.getPixelWriter(             );
-		int iNewY = 0,
-		    iNewX = 0;
 		for(int iX = 0              ;
 			iX < oNew.getWidth();
 			iX+= iSize          )
 		{ //+loop
+			int iNewX = iX;
 			for(int iY = 0               ;
 				iY < oNew.getHeight();
 				iY+= iSize           )
 			{ //+loop
+				int iNewY = iY;
 				for(int iCountX = 0    ;
 					iCountX < iSize;
 					iCountX++      ,
