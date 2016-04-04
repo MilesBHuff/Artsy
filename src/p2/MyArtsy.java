@@ -40,41 +40,26 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	@Override
-	public Image doCheckers(Image oSrc1,
-		                Image oSrc2,
-		                int   iSize)
-	{ //+method
-		Image       oNew =            new Image(doCopy(oSrc1));
-		PixelReader oPR  = oSrc2.getPixelReader(             );
-		PixelWriter oPW  =  oNew.getPixelWriter(             );
-		for(int iX = 0              ;
-			iX < oNew.getWidth();
-			iX+= iSize          )
-		{ //+loop
-			for(int iY = 0               ;
-				iY < oNew.getHeight();
-				iY+= iSize           )
-			{ //+loop
-				for(int   iNewX = iX   ,
-					iCountX = 0    ;
-					iCountX < iSize;
-					iCountX++      ,
-					  iNewX++      )
-				{ //+loop
-					for(int   iNewY = iY   ,
-						iCountY = 0    ;
-						iCountY < iSize;
-						iCountY++      ,
-						  iNewY++      )
-					{ //+loop
-						oPW.setArgb(iNewX, iNewY, oPR.getArgb(iNewX, iNewY));
-					} //-loop
-				} //-loop
-			} //-loop
-		} //-loop
-		return oNew;
-	} //-method
+  @Override
+    public Image doCheckers(Image src1, Image src2, int size) {
+      Image temp = new Image(copyImage(src1));
+      PixelReader pr=src2.getPixelReader();
+      PixelWriter pw=temp.getPixelWriter();
+      int y=0, x=0, previousY=0;
+      for(int tempx=x ;x<temp.getWidth();x+=size){
+        for(int tempy=y;;y<temp.getHeight();y+=size){
+          for(int countx=0;countx<size;countx++, tempx++){
+            for (int county=0;county<size;county++, tempy++){
+              pw.setArgb(tempx,tempy, pr.getArgb(tempx,tempy));
+            }//end countx
+          }//end county
+        }//end y loop
+        if (previousY==0) previousY=size, y=size;
+        else previousY=0, y=0;
+      }//emd x loop
+	   return temp;
+    } // doCheckers
+
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
