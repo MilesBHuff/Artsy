@@ -133,10 +133,10 @@ public class MyArtsy implements Artsy
 		Image       oNew = new            Image(doCopy(oSrc1));
 		PixelReader oPR  = oSrc2.getPixelReader(             );
 		PixelWriter oPW  =  oNew.getPixelWriter(             );
-		int iX = 0;
-		for(int iY = 0;
+		for(int iX = 0               ,
+			iY = 0               ;
 			iY < oNew.getHeight();
-			iY++)
+			iY++                 )
 		{ //+loop
 			for(int count = 0;
 				count < iWidth;
