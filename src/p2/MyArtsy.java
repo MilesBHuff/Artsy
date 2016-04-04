@@ -56,17 +56,17 @@ public class MyArtsy implements Artsy
 				iY < oNew.getHeight();
 				iY+= iSize           )
 			{ //+loop
-				int iNewX = iX,
-				    iNewY = iY;
-				for(int iCountX = 0    ;
+				for(int   iNewX = iX   ,
+					iCountX = 0    ;
 					iCountX < iSize;
 					iCountX++      ,
 					  iNewX++      )
 				{ //+loop
-					for (int iCountY = 0    ;
-						 iCountY < iSize;
-						 iCountY++      ,
-						   iNewY++      )
+					for(int   iNewY = iY   ,
+						iCountY = 0    ;
+						iCountY < iSize;
+						iCountY++      ,
+						  iNewY++      )
 					{ //+loop
 						oPW.setArgb(iNewX, iNewY, oPR.getArgb(iNewX, iNewY));
 					} //-loop
