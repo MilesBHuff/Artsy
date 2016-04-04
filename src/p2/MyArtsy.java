@@ -17,15 +17,15 @@ public class MyArtsy implements Artsy
 		WritableImage oCopy   =    new WritableImage(iWidth, iHeight);
 		PixelReader   oPR     =  oSrc.getPixelReader(               );
 		PixelWriter   oPW     = oCopy.getPixelWriter(               );
-		for (int x = 0;
-			 x < iWidth;
-			 x++)
+		for (int iX = 0;
+			 iX < iWidth;
+			 iX++)
 		{ //+loop
-			for(int y = 0;
-				y < iHeight;
-				y++)
+			for(int iY = 0;
+				iY < iHeight;
+				iY++)
 			{ //+loop
-				oPW.setArgb(x, y, oPR.getArgb(x, y));
+				oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
 			} //-loop
 		} //-loop
 		return oCopy;
@@ -33,49 +33,45 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doRotate(Image  src    ,
-		              double degrees )
+	public Image doRotate(Image  oSrc,
+		              double dDeg )
 	{ //+method
 		return null;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doCheckers(Image src1,
-		                Image src2,
-		                int   size )
+	public Image doCheckers(Image oSrc1,
+		                Image oSrc2,
+		                int   iSize )
 	{ //+method
-		Image temp = new Image(doCopy(src1));
-		PixelReader pr = src2.getPixelReader();
-		PixelWriter pw = temp.getPixelWriter();
-		int tempy = 0,
-		    tempx = 0;
-		for(int x = 0;
-			x < temp.getWidth();
-			x++)
+		Image       oNew =            new Image(doCopy(oSrc1));
+		PixelReader oPR  = oSrc2.getPixelReader(             );
+		PixelWriter oPW  = oTemp.getPixelWriter(             );
+		int iNewY = 0,
+		    iNewX = 0;
+		for(int iX = 0;
+			iX < oNew.getWidth();
+			iX+= iSize;)
 		{ //+loop
-			for(int y = 0;
-				y < temp.getHeight();
-				y++)
+			for(int iY = 0;
+				iY < oNew.getHeight();
+				iY+= iSize;)
 			{ //+loop
-				for(int countx = 0;
-					countx < size;
-					countx++)
+				for(int iCountX = 0;
+					iCountX < iSize;
+					iCountX++, iNewY++)
 				{ //+loop
-					for (int county = 0;
-						county < size;
-						county++)
+					for (int iCountY = 0;
+						 iCountY < iSize;
+						 iCountY++, iNewX++)
 					{ //+loop
-						pw.setArgb(x, y, pr.getArgb(x, y));
-						tempy++;
+						oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
 					} //-loop
-					tempx++;
 				} //-loop
-				y+= size;
 			} //-loop
-			x+= size;
 		} //-loop
-		return temp;
+		return oNew;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
