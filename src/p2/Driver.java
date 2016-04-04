@@ -5,7 +5,9 @@ import  javafx.scene.layout.FlowPane  ;
 import  javafx.stage.Stage            ;
 import  src.effects.Artsy             ;
 
-/** This is the driver for this application. **/
+/** This is the runner for this application.
+ * @author Miles B Huff
+**/
 public class Driver extends Application
 { //class
 	////////////////////////////////////////////////////////////////////////
@@ -43,7 +45,7 @@ public class Driver extends Application
 		// Img2 buttons (0, 6)
 
 		// SECOND COLUMN
-		Label oLbl3 = new Label(""); oRoot.add(oLbl4, 1, 1)
+		Label oLbl3 = new Label(""); oRoot.add(oLbl3, 1, 1)
 		// Effects buttons (1, 2, 1, 2)
 		Label oLbl4 = new Label(""); oRoot.add(oLbl4, 1, 4)
 		// Img3 (1, 5)
