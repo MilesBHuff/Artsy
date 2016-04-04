@@ -18,11 +18,15 @@ public class Driver extends Application
 	public void start(Stage oStage)
 	{ //method
 		// DATA
+		String sBtnRotate  = "Rotate"             ;
+		String sBtnClose   = "Close"              ;
+		String sBtnOpen    = "Open"               ;
+		String sBtnSave    = "Save"               ;
 		String sBtnChecker = "Checker"            ;
 		String sBtnStripeH = "Stripe horizontally";
 		String sBtnStripeH = "Stripe vertically"  ;
-		String oLblImage1  = "Image 1:  "         ;
-		String oLblImage2  = "Image 2:  "         ;
+		String sLblImage1  = "Image 1:  "         ;
+		String sLblImage2  = "Image 2:  "         ;
 		String sLblEffect  = "Effects:"           ;
 		String sLblResult  = "Result:"            ;
 
@@ -30,26 +34,28 @@ public class Driver extends Application
 		GridPane oImage1Btns = new GridPane();
 		oImageBtns.setHgap(10);
 		oImageBtns.setVgap(10);
-		Button oBtnRotate = new Button(sBtnRotate); oEffectBtns.add(oBtnRotate, 0, 0);
-		Button oBtnClose  = new Button(sBtnClose) ; oEffectBtns.add(oBtnClose , 1, 0);
-		Button oBtnOpen   = new Button(sBtnOpen)  ; oEffectBtns.add(sBtnOpen  , 2, 0);
+		Button oBtnRotate1 = new Button(sBtnRotate); oEffectBtns.add(oBtnRotate1, 0, 0);
+		Button oBtnClose1  = new Button(sBtnClose) ; oEffectBtns.add(oBtnClose1 , 1, 0);
+		Button oBtnOpen1   = new Button(sBtnOpen)  ; oEffectBtns.add(sBtnOpen1  , 2, 0);
+		Button oBtnSave1   = new Button(sBtnSave)  ; oEffectBtns.add(oBtnSave1  , 3, 0);
 		
 		// IMG2 BUTTONS
 		GridPane oImage2Btns = new GridPane();
 		oImageBtns.setHgap(10);
 		oImageBtns.setVgap(10);
-		Button oBtnRotate = new Button(sBtnRotate); oEffectBtns.add(oBtnRotate, 0, 0);
-		Button oBtnClose  = new Button(sBtnClose) ; oEffectBtns.add(oBtnClose , 1, 0);
-		Button oBtnOpen   = new Button(sBtnOpen)  ; oEffectBtns.add(sBtnOpen  , 2, 0);
+		Button oBtnRotate2 = new Button(sBtnRotate); oEffectBtns.add(oBtnRotate2, 0, 0);
+		Button oBtnClose2  = new Button(sBtnClose) ; oEffectBtns.add(oBtnClose2 , 1, 0);
+		Button oBtnOpen2   = new Button(sBtnOpen)  ; oEffectBtns.add(sBtnOpen2  , 2, 0);
+		Button oBtnSave2   = new Button(sBtnSave)  ; oEffectBtns.add(oBtnSave2  , 3, 0);
 		
 		// IMG3 BUTTONS
 		GridPane oImage3Btns = new GridPane();
 		oImageBtns.setHgap(10);
 		oImageBtns.setVgap(10);
-		Button oBtnRotate = new Button(sBtnRotate); oEffectBtns.add(oBtnRotate, 0, 0);
-		Button oBtnClose  = new Button(sBtnClose) ; oEffectBtns.add(oBtnClose , 1, 0);
-		Button oBtnOpen   = new Button(sBtnOpen)  ; oEffectBtns.add(sBtnOpen  , 2, 0);
-		Button oBtnSave   = new Button(sBtnSave)  ; oEffectBtns.add(oBtnSave  , 3, 0);
+		Button oBtnRotate3 = new Button(sBtnRotate); oEffectBtns.add(oBtnRotate3, 0, 0);
+		Button oBtnClose3  = new Button(sBtnClose) ; oEffectBtns.add(oBtnClose3 , 1, 0);
+		Button oBtnOpen3   = new Button(sBtnOpen)  ; oEffectBtns.add(sBtnOpen3  , 2, 0);
+		Button oBtnSave3   = new Button(sBtnSave)  ; oEffectBtns.add(oBtnSave3  , 3, 0);
 
 		// EFFECTS BUTTONS
 		GridPane oEffectBtns = new GridPane();
@@ -67,15 +73,15 @@ public class Driver extends Application
 		// Menubar (0, 0, 2, 1)
 		Label oLblImage1 = new Label(sLblImage1); oRoot.add(oLblImage1 , 0, 1      );
 		// Img1 (0, 2)
-		// Img1 buttons (0, 3)
+		                                          oRoot.add(oImage1Btns, 0, 3      );
 		Label oLblImage2 = new Label(sLblImage2); oRoot.add(oLblImage2 , 0, 4      );
 		// Img2 (0, 5)
-		// Img2 buttons (0, 6)
+		                                          oRoot.add(oImage2Btns, 0, 6      );
 		Label oLblEffect = new Label(sLblEffect); oRoot.add(oLblEffect , 1, 1      );
 		                                          oRoot.add(oEffectBtns, 1, 2, 1, 2);
 		Label oLblResult = new Label(sLblResult); oRoot.add(oLblResult , 1, 4      );
 		// Img3 (1, 5)
-		// Img3 buttons (1, 6)
+		                                          oRoot.add(oImage3Btns, 1, 6      );
 
 		Scene oScene = new Scene(oRoot);
 		oStage.setScene(oScene);
