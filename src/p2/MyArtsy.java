@@ -1,6 +1,6 @@
-package cs1302.p2                 ;
-import  cs1302.effects.Artsy      ;
-import  javafx.scene  .image.Image;
+package cs1302.p2               ;
+import  cs1302.effects.Artsy    ;
+import  javafx.scene.image.Image;
 
 public class MyArtsy implements Artsy
 { //+class
@@ -78,28 +78,28 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doHorizontalStripes(Image src1  ,
-		                         Image src2  ,
-		                         int   height )
+	public Image doHorizontalStripes(Image oSrc1  ,
+		                         Image oSrc2  ,
+		                         int   iHeight)
 	{ //+method
-		Image temp = new Image(doCopy(src1));
-		PixelReader pr = src2.getPixelReader();
-		PixelWriter pw = temp.getPixelWriter();
-		int y = 0;
-		for(int x = 0;
-			x < temp.getWidth();
-			x++)
+		Image       oNew =            new Image(doCopy(oSrc1));
+		PixelReader oPR  = oSrc2.getPixelReader(             );
+		PixelWriter oPW  =  oNew.getPixelWriter(             );
+		for(int iY = 0              ,
+			iX = 0              ;
+			iX < oNew.getWidth();
+			iX++                )
 		{ //+loop
-			for(int count = 0;
-				count < height;
-				count++)
+			for(int iCount = 0      ;
+				iCount < iHeight;
+				iCount++        ,
+				    iY++        )
 			{ //+loop
-				y++;
-				pw.setArgb(x, y, pr.getArgb(x, y));
+				oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
 			} //-loop
-			y+= height;
+			iY+= iHeight;
 		} //-loop
-		return temp;
+		return oNew;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
