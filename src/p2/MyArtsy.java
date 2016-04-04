@@ -75,12 +75,8 @@ public class MyArtsy implements Artsy
 	                                } //-loop
 	                        } //-loop
 	                } //-loop
-	                if(iOffsetY == 0)
-	                { //+if
-	                        iOffsetY = iSize;
-	                } else {
-	                        iOffsetY = 0;
-	                } //-if
+	                if(iOffsetY == 0) iOffsetY = iSize;
+	                else              iOffsetY = 0    ;
 	        } //-loop
 	        return oNew;
 	} //-method
