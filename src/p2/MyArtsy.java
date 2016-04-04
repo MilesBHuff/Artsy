@@ -98,7 +98,7 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doHorizontalStripes(Image oSrc1  ,
+	public Image doStripesHorizontal(Image oSrc1  ,
 		                         Image oSrc2  ,
 		                         int   iHeight)
 	{ //+method
@@ -124,7 +124,7 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doVerticalStripes(Image oSrc1 ,
+	public Image doStripesVertical(Image oSrc1 ,
 		                       Image oSrc2 ,
 		                       int   iWidth)
 	{ //method
