@@ -1,5 +1,5 @@
-package cs1302.p2               ;
-import  cs1302.effects.Artsy    ;
+package src.p2                  ;
+import  src.effects.Artsy       ;
 import  javafx.scene.image.Image;
 
 public class MyArtsy implements Artsy
