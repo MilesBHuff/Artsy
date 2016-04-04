@@ -1,7 +1,9 @@
 package src.effects;
 import  javafx.scene.image.Image;
 
-/** This interface describes Artsy!-effects that can be applied to Images. **/
+/** This interface describes Artsy!-effects that can be applied to Images. 
+ * @author Miles B Huff (rewording and formatting)
+**/
 public interface Artsy
 { //interface
 	////////////////////////////////////////////////////////////////////////
