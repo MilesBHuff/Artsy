@@ -15,9 +15,9 @@ public interface Artsy
 	 * @param  height The height, in pixels, of the horizontal stripes.
 	 * @return a checkered <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
-	public Image doCheckers(Image src1,
-		                Image src2,
-		                int   size );
+	public Image doCheckers(Image oSrc1,
+		                Image oSrc2,
+		                int   iSize);
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
@@ -29,9 +29,9 @@ public interface Artsy
 	 * @param  height The height, in pixels, of the horizontal stripes.
 	 * @return a horizontally striped <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
-	public Image doHorizontalStripes(Image src1  ,
-		                         Image src2  ,
-		                         int   height );
+	public Image doHorizontalStripes(Image oSrc1  ,
+		                         Image oSrc2  ,
+		                         int   iHeight);
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given two Images, this method returns a new Image, the contents of
@@ -43,9 +43,9 @@ public interface Artsy
 	 * @param  width The width, in pixels, of the vertical stripes.
 	 * @return an <code>Image</code> with the vertical stripes effect.
 	**/
-	public Image doVerticalStripes(Image src1 ,
-		                       Image src2 ,
-		                       int   width );
+	public Image doVerticalStripes(Image oSrc1 ,
+		                       Image oSrc2 ,
+		                       int   iWidth);
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given a Image, this method returns a new Image which contains the
@@ -60,6 +60,6 @@ public interface Artsy
 	 * @param  degrees The degrees to rotate the image, in degrees (not radians)
 	 * @return a new <code>Image</code> containing a rotated version of the source image.
 	**/
-	public Image doRotate(Image  src    ,
-		              double degrees );
+	public Image doRotate(Image  oSrc,
+		              double dDeg);
 } //interface
