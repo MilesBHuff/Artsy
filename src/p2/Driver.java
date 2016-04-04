@@ -13,15 +13,16 @@ public class Driver extends Application
 	 * @param stage Description
 	**/
 	@Override
-	public void start(Stage stage)
+	public void start(Stage oStage)
 	{ //method
-		FlowPane root  = new FlowPane(    );
-		Scene    scene = new    Scene(root);
+		FlowPane oRoot  = new FlowPane(     );
+		Scene    oScene = new    Scene(oRoot);
 		
-		stage.setScene(scene);
-		stage.setTitle("Artsy!");
-		stage.sizeToScene();
-		stage.show();
+		oStage.setScene(oScene  );
+		oStage.setTitle("Artsy!");
+	     oStage.sizeToScene(        );
+		    oStage.show(        );
+		
 	} //method
 
 	////////////////////////////////////////////////////////////////////////
