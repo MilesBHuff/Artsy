@@ -45,8 +45,8 @@ public class MyArtsy implements Artsy
 			        iY < oNew.getHeight();
 			        iY++                 )
 			{ //+loop
-				iNewX =  iX * cos(degrees) + iY * sin(degrees);
-				iNewY = -iX * sin(degrees) + iY * cos(degrees);
+				iNewX =  iX * (int)Math.cos(dDeg) + iY * (int)Math.sin(dDeg);
+				iNewY = -iX * (int)Math.sin(dDeg) + iY * (int)Math.cos(dDeg);
 				if((    0<= iNewX           )
 				&& (    0<= iNewY           )
 				&& (iNewX<= oNew.getWidth() )
@@ -66,7 +66,6 @@ public class MyArtsy implements Artsy
 	        Image       oNew = new            Image(doCopy(oSrc1));
 	        PixelReader oPR  = oSrc2.getPixelReader(             );
 	        PixelWriter oPW  =  oNew.getPixelWriter(             );
-	        int iPrevY = 0;
 	        for(int iOffsetY = 0              ,
 	                      iX = 0              ;
 	                      iX < oNew.getWidth();
@@ -76,7 +75,7 @@ public class MyArtsy implements Artsy
 	                        iY < oNew.getHeight();
 	                        iY+= iSize           )
 	                { //+loop
-	                        iY+= iOffsetY
+	                        iY+= iOffsetY;
 	                        for(int iNewX = iX   ,
 	                              iCountX = 0    ;
 	                              iCountX < iSize;
@@ -136,18 +135,18 @@ public class MyArtsy implements Artsy
 		PixelWriter oPW  =  oNew.getPixelWriter(             );
 		int x = 0;
 		for(int y = 0;
-			y < temp.getHeight();
+			y < oNew.getHeight();
 			y++)
 		{ //+loop
 			for(int count = 0;
-				count < height;
+				count < iWidth;
 				count++)
 			{ //+loop
 				x++;
-				pw.setArgb(x, y, pr.getArgb(x, y));
+				oPW.setArgb(x, y, oPR.getArgb(x, y));
 			} //-loop
-			x+= height;
+			x+= iWidth;
 		} //-loop
-		return temp;
+		return oNew;
 	} //-method
 } //-class
