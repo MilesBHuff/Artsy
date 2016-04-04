@@ -28,21 +28,34 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-
-	  @Override
-    public Image doRotate(Image src, double degrees) {
-      Image temp = new Image(copyImage(src1));
-      PixelReader pr=src.getPixelReader();
-      PixelWriter pw=temp.getPixelWriter();
-      for (int x=0, newX=0; x<temp.getWidth();x++){
-        for (int y=0, newY=0; y<temp.getHeight();y++){
-          newY = -x * sin(degrees) + y * cos(degrees);
-          newX = x * cos(degrees) + y * sin(degrees);
-            if ((0<=newX) && (newX<=temp.getWidth()) && (0<=newY) && (newY<=temp.getHeight())) pw.setArgb(newX,newY, pr.getArgb(x,y));
-        }
-      }
-	    return temp;
-    } // doRotate
+	@Override
+	public Image doRotate(Image  oSrc,
+		              double dDeg)
+	{ //+method
+		Image       oNew = new           Image(copyImage(oSrc));
+		PixelReader oPR  = oSrc.getPixelReader(               );
+		PixelWriter oPW  = oNew.getPixelWriter(               );
+		for(int iX = 0              ,
+		     iNewX = 0              ;
+		        iX < oNew.getWidth();
+		        iX++                )
+		{ //+loop
+			for(int iY = 0               ,
+			     iNewY = 0               ;
+			        iY < oNew.getHeight();
+			        iY++                 )
+			{ //+loop
+				iNewX =  iX * cos(degrees) + iY * sin(degrees);
+				iNewY = -iX * sin(degrees) + iY * cos(degrees);
+				if((    0<= iNewX           )
+				&& (    0<= iNewY           )
+				&& (iNewX<= oNew.getWidth() )
+				&& (iNewY<= oNew.getHeight()))
+				{ oPW.setArgb(iNewX, iNewY, oPR.getArgb(iX, iY)); }
+			} //-loop
+		} //-loop
+		return oNew;
+	} //-method
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
@@ -50,7 +63,7 @@ public class MyArtsy implements Artsy
 	                        Image oSrc2,
 	                        int   iSize)
 	{ //+method
-	        Image       oNew =            new Image(doCopy(oSrc1));
+	        Image       oNew = new            Image(doCopy(oSrc1));
 	        PixelReader oPR  = oSrc2.getPixelReader(             );
 	        PixelWriter oPW  =  oNew.getPixelWriter(             );
 	        int iPrevY = 0;
@@ -92,7 +105,7 @@ public class MyArtsy implements Artsy
 		                         Image oSrc2  ,
 		                         int   iHeight)
 	{ //+method
-		Image       oNew =            new Image(doCopy(oSrc1));
+		Image       oNew = new            Image(doCopy(oSrc1));
 		PixelReader oPR  = oSrc2.getPixelReader(             );
 		PixelWriter oPW  =  oNew.getPixelWriter(             );
 		for(int iY = 0              ,
@@ -114,11 +127,13 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doVerticalStripes(Image src1, Image src2, int width)
+	public Image doVerticalStripes(Image oSrc1 ,
+		                       Image oSrc2 ,
+		                       int   iWidth)
 	{ //method
-		Image temp = new Image(doCopy(src1));
-		PixelReader pr=src2.getPixelReader();
-		PixelWriter pw=temp.getPixelWriter();
+		Image       oNew = new            Image(doCopy(oSrc1));
+		PixelReader oPR  = oSrc2.getPixelReader(             );
+		PixelWriter oPW  =  oNew.getPixelWriter(             );
 		int x = 0;
 		for(int y = 0;
 			y < temp.getHeight();
