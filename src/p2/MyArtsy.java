@@ -2,6 +2,10 @@ package src.p2                  ;
 import  src.effects.Artsy       ;
 import  javafx.scene.image.Image;
 
+/**
+ * @author Preston Sheppard (coding)
+ * @author Miles B Huff (bugfixing and formatting)
+**/
 public class MyArtsy implements Artsy
 { //+class
 	////////////////////////////////////////////////////////////////////////
