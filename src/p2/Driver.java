@@ -35,17 +35,17 @@ public class Driver extends Application
 		// Menubar (0, 0, 2, 1)
 
 		// FIRST COLUMN
-		Label oImg1 = new Label(0, 1);
+		Label oLbl1 = new Label(""); oRoot.add(oLbl1, 0, 1)
 		// Img1 (0, 2)
 		// Img1 buttons (0, 3)
-		Label oImg2 = new Label(0, 4);
+		Label oLbl2 = new Label(""); oRoot.add(oLbl2, 0, 4)
 		// Img2 (0, 5)
 		// Img2 buttons (0, 6)
 
 		// SECOND COLUMN
-		Label oEffects = new Label(1, 1);
+		Label oLbl3 = new Label(""); oRoot.add(oLbl4, 1, 1)
 		// Effects buttons (1, 2, 1, 2)
-		Label oImg3 = new Label(1, 4);
+		Label oLbl4 = new Label(""); oRoot.add(oLbl4, 1, 4)
 		// Img3 (1, 5)
 		// Img3 buttons (1, 6)
 
