@@ -18,46 +18,48 @@ public class Driver extends Application
 	public void start(Stage oStage)
 	{ //method
 		// DATA
-		String sLbl1 = "Image 1:  ";
-		String sLbl2 = "Image 2:  ";
-		String sLbl3 = "Effects:"  ;
-		String sLbl4 = "Result:"   ;
+		String sBtnChecker = "Checker"
+		String oLblImage1  = "Image 1:  ";
+		String oLblImage2  = "Image 2:  ";
+		String sLblEffect  = "Effects:"  ;
+		String sLblResult  = "Result:"   ;
 
 		// IMG BUTTONS
+		GridPane oImageBtns = new GridPane();
+		oImageBtns.setHgap(10);
+		oImageBtns.setVgap(10);
 		// Close (0, 0)
 		// Open (0, 0)
 		// Save (0, 0)
 		// Rotate (0, 0)
 
 		// EFFECTS BUTTONS
-		// Checker (0, 0)
-		// Stripe H (0, 1)
-		// Stripe V (0, 2)
+		GridPane oEffectBtns = new GridPane();
+		oEffectBtns.setHgap(10);
+		oEffectBtns.setVgap(10);
+		Button oBtnChecker = new Button(sBtnChecker); oEffectBtns.add(oBtnChecker, 0, 0);
+		Button oBtnStripeH = new Button(oBtnStripeH); oEffectBtns.add(oBtnStripeH, 0, 1);
+		Button oBtnStripeV = new Button(oBtnStripeV); oEffectBtns.add(oBtnStripeV, 0, 2);
 
+		// MAIN PANE
 		GridPane oRoot = new GridPane();
 		oRoot.setHgap(10);
 		oRoot.setVgap(10);
 		oRoot.setPadding(new Insets(25, 25, 25, 25));
-
 		// Menubar (0, 0, 2, 1)
-
-		// FIRST COLUMN
-		Label oLbl1 = new Label(sLbl1); oRoot.add(oLbl1, 0, 1)
+		Label oLblImage1 = new Label(sLblImage1); oRoot.add(oLblImage1, 0, 1);
 		// Img1 (0, 2)
 		// Img1 buttons (0, 3)
-		Label oLbl2 = new Label(sLbl2); oRoot.add(oLbl2, 0, 4)
+		Label oLblImage2 = new Label(sLblImage2); oRoot.add(oLblImage2, 0, 4);
 		// Img2 (0, 5)
 		// Img2 buttons (0, 6)
-
-		// SECOND COLUMN
-		Label oLbl3 = new Label(sLbl3); oRoot.add(oLbl3, 1, 1)
+		Label oLblEffect = new Label(sLblEffect); oRoot.add(oLblEffect, 1, 1);
 		// Effects buttons (1, 2, 1, 2)
-		Label oLbl4 = new Label(sLbl4); oRoot.add(oLbl4, 1, 4)
+		Label oLblResult = new Label(sLblResult); oRoot.add(oLblResult, 1, 4);
 		// Img3 (1, 5)
 		// Img3 buttons (1, 6)
 
 		Scene oScene = new Scene(oRoot);
-
 		oStage.setScene(oScene);
 		oStage.setTitle("Artsy!");
 	        oStage.sizeToScene();
