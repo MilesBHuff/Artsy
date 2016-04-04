@@ -49,15 +49,15 @@ public class Driver extends Application
 		oRoot.setVgap(10);
 		oRoot.setPadding(new Insets(25, 25, 25, 25));
 		// Menubar (0, 0, 2, 1)
-		Label oLblImage1 = new Label(sLblImage1); oRoot.add(oLblImage1, 0, 1);
+		Label oLblImage1 = new Label(sLblImage1); oRoot.add(oLblImage1 , 0, 1      );
 		// Img1 (0, 2)
 		// Img1 buttons (0, 3)
-		Label oLblImage2 = new Label(sLblImage2); oRoot.add(oLblImage2, 0, 4);
+		Label oLblImage2 = new Label(sLblImage2); oRoot.add(oLblImage2 , 0, 4      );
 		// Img2 (0, 5)
 		// Img2 buttons (0, 6)
-		Label oLblEffect = new Label(sLblEffect); oRoot.add(oLblEffect, 1, 1);
-		// Effects buttons (1, 2, 1, 2)
-		Label oLblResult = new Label(sLblResult); oRoot.add(oLblResult, 1, 4);
+		Label oLblEffect = new Label(sLblEffect); oRoot.add(oLblEffect , 1, 1      );
+		                                          oRoot.add(oEffectBtns, 1, 2, 1, 2);
+		Label oLblResult = new Label(sLblResult); oRoot.add(oLblResult , 1, 4      );
 		// Img3 (1, 5)
 		// Img3 buttons (1, 6)
 
