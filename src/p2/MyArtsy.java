@@ -28,12 +28,21 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	@Override
-	public Image doRotate(Image  oSrc,
-		              double dDeg)
-	{ //+method
-		return null;
-	} //-method
+
+	  @Override
+    public Image doRotate(Image src, double degrees) {
+      Image temp = new Image(copyImage(src1));
+      PixelReader pr=src.getPixelReader();
+      PixelWriter pw=temp.getPixelWriter();
+      for (int x=0, newX=0; x<temp.getWidth();x++){
+        for (int y=0, newY=0; y<temp.getHeight();y++){
+          newY = -x * sin(degrees) + y * cos(degrees);
+          newX = x * cos(degrees) + y * sin(degrees);
+            if ((0<=newX) && (newX<=temp.getWidth()) && (0<=newY) && (newY<=temp.getHeight())) pw.setArgb(newX,newY, pr.getArgb(x,y));
+        }
+      }
+	    return temp;
+    } // doRotate
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
