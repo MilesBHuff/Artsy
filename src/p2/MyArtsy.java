@@ -140,12 +140,12 @@ public class MyArtsy implements Artsy
 		{ //+loop
 			for(int count = 0;
 				count < iWidth;
-				count++)
+				count++       ,
+				   iX+= iWidth)
 			{ //+loop
 				iX++;
 				oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
 			} //-loop
-			iX+= iWidth;
 		} //-loop
 		return oNew;
 	} //-method
