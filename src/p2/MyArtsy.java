@@ -24,9 +24,7 @@ public class MyArtsy implements Artsy
 			for(int iY = 0      ;
 				iY < iHeight;
 				iY++        )
-			{ //+loop
-				oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
-			} //-loop
+			{ oPW.setArgb(iX, iY, oPR.getArgb(iX, iY)); }
 		} //-loop
 		return oCopy;
 	} //-method
