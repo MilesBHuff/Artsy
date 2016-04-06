@@ -24,7 +24,7 @@ public class MyArtsy implements Artsy
 			for(int iY = 0      ;
 				iY < iHeight;
 				iY++        )
-			{ pw.setArgb(iX, iY, pr.getArgb(iX, iY)); }
+			{pw.setArgb(iX, iY, pr.getArgb(iX, iY));}
 		} //-loop
 		return wiCopy;  //TODO:  This currently returns a WritableImage, instead of an Image.
 	} //-method
@@ -53,7 +53,7 @@ public class MyArtsy implements Artsy
 				&& (    0<= iNewY             )
 				&& (iNewX<= imgNew.getWidth() )
 				&& (iNewY<= imgNew.getHeight()))
-				{ pw.setArgb(iNewX, iNewY, pr.getArgb(iX, iY)); }
+				{pw.setArgb(iNewX, iNewY, pr.getArgb(iX, iY));}
 			} //-loop
 		} //-loop
 		return imgNew;
@@ -89,7 +89,7 @@ public class MyArtsy implements Artsy
 	                                      iCountY < iSize;
 	                                      iCountY++      ,
 	                                        iNewY++      )
-	                                { pw.setArgb(iNewX, iNewY, pr.getArgb(iNewX, iNewY)); }
+	                                {pw.setArgb(iNewX, iNewY, pr.getArgb(iNewX, iNewY));}
 	                        } //-loop
 	                } //-loop
 	                if(iOffsetY == 0) iOffsetY = iSize;
