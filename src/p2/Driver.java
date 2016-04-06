@@ -72,7 +72,7 @@ public class Driver extends Application
 		gpRoot.setVgap(10);
 		
 		// MENUBAR
-		MenuBar mbrRoot = new MenuBar()        ; gpRoot.add(mbrRoot, 0, 0, 2, 1);
+		MenuBar mbrRoot = new MenuBar(      )  ; gpRoot.add(mbrRoot, 0, 0, 2, 1);
 	        Menu    menFile = new Menu   ("File")  ;
 	        Menu    menHelp = new Menu   ("Help")  ;
 	        mbrRoot.getMenus().addAll(menFile, menHelp);
