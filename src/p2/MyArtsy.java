@@ -10,13 +10,13 @@ public class MyArtsy implements Artsy
 { //+class
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doCopy(Image oSrc)
+	public Image doCopy(Image imgSrc)
 	{ //+method
-		int           iWidth  =        oSrc.getWidth(               );
-		int           iHeight =       oSrc.getHeight(               );
-		WritableImage oCopy   =    new WritableImage(iWidth, iHeight);
-		PixelReader   oPR     =  oSrc.getPixelReader(               );
-		PixelWriter   oPW     = oCopy.getPixelWriter(               );
+		int           iWidth  =     imgSrc.getWidth      (               );
+		int           iHeight =     imgSrc.getHeight     (               );
+		WritableImage wiCopy  = new WritableImage        (iWidth, iHeight);
+		PixelReader   pr      =     imgSrc.getPixelReader(               );
+		PixelWriter   pw      =     wiCopy.getPixelWriter(               );
 		for (int iX = 0     ;
 			 iX < iWidth;
 			 iX++       )
@@ -24,39 +24,39 @@ public class MyArtsy implements Artsy
 			for(int iY = 0      ;
 				iY < iHeight;
 				iY++        )
-			{ oPW.setArgb(iX, iY, oPR.getArgb(iX, iY)); }
+			{ pw.setArgb(iX, iY, pr.getArgb(iX, iY)); }
 		} //-loop
 		return oCopy;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doRotate(Image  oSrc,
+	public Image doRotate(Image  imgSrc,
 		              double dDeg)
 	{ //+method
-		Image       oNew = new           Image(copyImage(oSrc));
-		PixelReader oPR  = oSrc.getPixelReader(               );
-		PixelWriter oPW  = oNew.getPixelWriter(               );
-		for(int iX = 0              ,
-		     iNewX = 0              ;
-		        iX < oNew.getWidth();
-		        iX++                )
+		Image       imgNew = new Image                (copyImage(imgSrc));
+		PixelReader pr     =     imgSrc.getPixelReader(                 );
+		PixelWriter pw     =     imgNew.getPixelWriter(                 );
+		for(int iX = 0                ,
+		     iNewX = 0                ;
+		        iX < imgNew.getWidth();
+		        iX++                  )
 		{ //+loop
-			for(int iY = 0               ,
-			     iNewY = 0               ;
-			        iY < oNew.getHeight();
-			        iY++                 )
+			for(int iY = 0                 ,
+			     iNewY = 0                 ;
+			        iY < imgNew.getHeight();
+			        iY++                   )
 			{ //+loop
 				iNewX =  iX * (int)Math.cos(dDeg) + iY * (int)Math.sin(dDeg);
 				iNewY = -iX * (int)Math.sin(dDeg) + iY * (int)Math.cos(dDeg);
-				if((    0<= iNewX           )
-				&& (    0<= iNewY           )
-				&& (iNewX<= oNew.getWidth() )
-				&& (iNewY<= oNew.getHeight()))
-				{ oPW.setArgb(iNewX, iNewY, oPR.getArgb(iX, iY)); }
+				if((    0<= iNewX             )
+				&& (    0<= iNewY             )
+				&& (iNewX<= imgNew.getWidth() )
+				&& (iNewY<= imgNew.getHeight()))
+				{ pw.setArgb(iNewX, iNewY, pr.getArgb(iX, iY)); }
 			} //-loop
 		} //-loop
-		return oNew;
+		return imgNew;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
