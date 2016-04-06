@@ -99,10 +99,10 @@ public class Driver extends Application
 
 	////////////////////////////////////////////////////////////////////////
 	/** The default, 'main', method.  Runs when the programme is executed.
-	 * @param args The arguments provided to the programme
+	 * @param saArgs The arguments provided to the programme
 	**/
-	public static void main(String[] args)
+	public static void main(String[] saArgs)
 	{ //method
-		launch(args);
+		launch(saArgs);
 	} //method
 } //class
