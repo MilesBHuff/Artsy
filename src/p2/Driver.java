@@ -70,23 +70,26 @@ public class Driver extends Application
 		oRoot.setHgap(10);
 		oRoot.setVgap(10);
 		oRoot.setPadding(new Insets(25, 25, 25, 25));
-		// Menubar (0, 0, 2, 1)
-		MenuBar mbrMenu   = new MenuBar()        ; oRoot.add(mbrMenu    , 0, 0      );
-	        Menu    menFile   = new Menu("File")     ;
-	        Menu    menEdit   = new Menu("About")    ;
-		Label   lblImage1 = new Label(sLblImage1); oRoot.add(lblImage1  , 0, 1      );
+		
+		// MENUBAR
+		MenuBar mbrMenu = new MenuBar()   ; oRoot.add(mbrMenu, 0, 0, 2, 1);
+	        Menu    menFile = new Menu("File");
+	        Menu    menHelp = new Menu("Help");
+	        menuBar.getMenus().addAll(menFile, menHelp, menuView);
+	        
+	        // OTHER ITEMS ON THE MAIN PANE
+		Label lblImage1 = new Label(sLblImage1); oRoot.add(lblImage1  , 0, 1      );
 		// Img1 (0, 2)
-		                                           oRoot.add(img1Btns   , 0, 3      );
-		Label   lblImage2 = new Label(sLblImage2); oRoot.add(lblImage2  , 0, 4      );
+		                                         oRoot.add(img1Btns   , 0, 3      );
+		Label lblImage2 = new Label(sLblImage2); oRoot.add(lblImage2  , 0, 4      );
 		// Img2 (0, 5)
-		                                           oRoot.add(img2Btns   , 0, 6      );
-		Label   lblEffect = new Label(sLblEffect); oRoot.add(lblEffect  , 1, 1      );
-		                                           oRoot.add(oEffectBtns, 1, 2, 1, 2);
-		Label   lblResult = new Label(sLblResult); oRoot.add(lblResult  , 1, 4      );
+		                                         oRoot.add(img2Btns   , 0, 6      );
+		Label lblEffect = new Label(sLblEffect); oRoot.add(lblEffect  , 1, 1      );
+		                                         oRoot.add(oEffectBtns, 1, 2, 1, 2);
+		Label lblResult = new Label(sLblResult); oRoot.add(lblResult  , 1, 4      );
 		// Img3 (1, 5)
-		                                           oRoot.add(oImage3Btns, 1, 6      );
+		                                         oRoot.add(oImage3Btns, 1, 6      );
 
-	        menuBar.getMenus().addAll(menuFile, menuEdit, menuView);
 		Scene oScene = new Scene(oRoot);
 		oStage.setScene(oScene);
 		oStage.setTitle("Artsy!");
