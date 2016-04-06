@@ -12,7 +12,7 @@ public interface Artsy
 	 * @param  src The <code>Image</code> to copy
 	 * @return a deep copy of <code>src</code>.
 	**/
-	public Image doCopy(Image oSrc);
+	public Image doCopy(Image imgSrc);
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
@@ -25,9 +25,9 @@ public interface Artsy
 	 * @param  height The height, in pixels, of the horizontal stripes.
 	 * @return a checkered <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
-	public Image doCheckers(Image oSrc1,
-		                Image oSrc2,
-		                int   iSize);
+	public Image doCheckers(Image imgSrc1,
+		                Image imgSrc2,
+		                int   iSize  );
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
@@ -39,8 +39,8 @@ public interface Artsy
 	 * @param  height The height, in pixels, of the horizontal stripes.
 	 * @return a horizontally striped <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
-	public Image doHorizontalStripes(Image oSrc1  ,
-		                         Image oSrc2  ,
+	public Image doHorizontalStripes(Image imgSrc1,
+		                         Image imgSrc2,
 		                         int   iHeight);
 
 	////////////////////////////////////////////////////////////////////////
@@ -53,9 +53,9 @@ public interface Artsy
 	 * @param  width The width, in pixels, of the vertical stripes.
 	 * @return an <code>Image</code> with the vertical stripes effect.
 	**/
-	public Image doVerticalStripes(Image oSrc1 ,
-		                       Image oSrc2 ,
-		                       int   iWidth);
+	public Image doVerticalStripes(Image imgSrc1,
+		                       Image imgSrc2,
+		                       int   iWidth );
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given a Image, this method returns a new Image which contains the
@@ -70,6 +70,6 @@ public interface Artsy
 	 * @param  degrees The degrees to rotate the image, in degrees (not radians)
 	 * @return a new <code>Image</code> containing a rotated version of the source image.
 	**/
-	public Image doRotate(Image  oSrc,
-		              double dDeg);
+	public Image doRotate(Image  imgSrc,
+		              double dDeg  );
 } //interface
