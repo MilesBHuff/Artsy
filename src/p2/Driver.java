@@ -84,13 +84,13 @@ public class Driver extends Application
 		Label   lblImage2     = new Label   (sLblImage2 ); gpRoot.add(lblImage2   , 0, 4      );
 		// Img2 (0, 5)
 		                                                   gpRoot.add(gpImg2Btns  , 0, 6      );
-		Label lblEffect       = new Label   (sLblEffect ); gpRoot.add(lblEffect   , 1, 1      );
+		Label   lblEffect     = new Label   (sLblEffect ); gpRoot.add(lblEffect   , 1, 1      );
 		                                                   gpRoot.add(gpEffectBtns, 1, 2, 1, 2);
-		Label lblResult       = new Label   (sLblResult ); gpRoot.add(lblResult   , 1, 4      );
+		Label   lblResult     = new Label   (sLblResult ); gpRoot.add(lblResult   , 1, 4      );
 		// Img3 (1, 5)
 		                                                   gpRoot.add(gpImg3Btns  , 1, 6      );
 
-		Scene sceRoot = new Scene(gpRoot);
+		Scene   sceRoot       = new Scene   (gpRoot     );
 		stgRoot.setScene(sceRoot);
 		stgRoot.setTitle("Artsy!");
 	        stgRoot.sizeToScene();
