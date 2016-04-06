@@ -36,8 +36,6 @@ public class Driver extends Application
 		Button   btnClose1    = new Button  (sBtnClose  ); gpImg1Btns.add(btnClose1 , 1, 0);
 		Button   btnOpen1     = new Button  (sBtnOpen   ); gpImg1Btns.add(btnOpen1  , 2, 0);
 		Button   btnSave1     = new Button  (sBtnSave   ); gpImg1Btns.add(btnSave1  , 3, 0);
-		oImageBtns.setHgap(10);
-		oImageBtns.setVgap(10);
 		
 		// IMG2 BUTTONS
 		GridPane gpImg2Btns   = new GridPane(           );
@@ -45,8 +43,6 @@ public class Driver extends Application
 		Button   btnClose2    = new Button  (sBtnClose  ); gpImg2Btns.add(btnClose2 , 1, 0);
 		Button   btnOpen2     = new Button  (sBtnOpen   ); gpImg2Btns.add(btnOpen2  , 2, 0);
 		Button   btnSave2     = new Button  (sBtnSave   ); gpImg2Btns.add(btnSave2  , 3, 0);
-		oImageBtns.setHgap(10);
-		oImageBtns.setVgap(10);
 		
 		// IMG3 BUTTONS
 		GridPane gpImg3Btns   = new GridPane(           );
@@ -54,30 +50,15 @@ public class Driver extends Application
 		Button   btnClose3    = new Button  (sBtnClose  ); gpImg3Btns.add(btnClose3 , 1, 0);
 		Button   btnOpen3     = new Button  (sBtnOpen   ); gpImg3Btns.add(btnOpen3  , 2, 0);
 		Button   btnSave3     = new Button  (sBtnSave   ); gpImg3Btns.add(btnSave3  , 3, 0);
-		oImageBtns.setHgap(10);
-		oImageBtns.setVgap(10);
 
 		// EFFECTS BUTTONS
 		GridPane gpEffectBtns = new GridPane(           );
 		Button   btnChecker   = new Button  (sBtnChecker); gpEffectBtns.add(btnChecker, 0, 0);
 		Button   btnStripeH   = new Button  (sBtnStripeH); gpEffectBtns.add(btnStripeH, 0, 1);
 		Button   btnStripeV   = new Button  (sBtnStripeV); gpEffectBtns.add(btnStripeV, 0, 2);
-		gpEffectBtns.setHgap(10);
-		gpEffectBtns.setVgap(10);
 
 		// MAIN PANE
 		GridPane gpRoot       = new GridPane(           );
-		gpRoot.setPadding(new Insets(25, 25, 25, 25));
-		gpRoot.setHgap(10);
-		gpRoot.setVgap(10);
-		
-		// MENUBAR
-		MenuBar mbrRoot       = new MenuBar (           ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
-	        Menu    menFile       = new Menu    ("File"     );
-	        Menu    menHelp       = new Menu    ("Help"     );
-	        mbrRoot.getMenus().addAll(menFile, menHelp);
-	        
-	        // OTHER ITEMS ON THE MAIN PANE
 		Label   lblImage1     = new Label   (sLblImage1 ); gpRoot.add(lblImage1   , 0, 1      );
 		// Img1 (0, 2)
 		                                                   gpRoot.add(gpImg1Btns  , 0, 3      );
@@ -89,7 +70,27 @@ public class Driver extends Application
 		Label   lblResult     = new Label   (sLblResult ); gpRoot.add(lblResult   , 1, 4      );
 		// Img3 (1, 5)
 		                                                   gpRoot.add(gpImg3Btns  , 1, 6      );
+		
+		// MENUBAR
+		MenuBar mbrRoot       = new MenuBar (           ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
+	        Menu    menFile       = new Menu    ("File"     );
+	        Menu    menHelp       = new Menu    ("Help"     );
+	        mbrRoot.getMenus().addAll(menFile, menHelp);
 
+		// SPACING
+		gpRoot      .setPadding(new Insets(25, 25, 25, 25));
+		gpRoot      .setHgap   (10                        );
+		gpRoot      .setVgap   (10                        );
+		gpEffectBtns.setHgap   (10                        );
+		gpEffectBtns.setVgap   (10                        );
+		gpImg3Btns  .setHgap   (10                        );
+		gpImg3Btns  .setVgap   (10                        );
+		gpImg2Btns  .setHgap   (10                        );
+		gpImg2Btns  .setVgap   (10                        );
+		gpImg1Btns  .setHgap   (10                        );
+		gpImg1Btns  .setVgap   (10                        );
+		
+		// SET THE STAGE
 		Scene   sceRoot       = new Scene   (gpRoot     );
 		stgRoot.setScene(sceRoot);
 		stgRoot.setTitle("Artsy!");
