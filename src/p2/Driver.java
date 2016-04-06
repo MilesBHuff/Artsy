@@ -79,16 +79,16 @@ public class Driver extends Application
 
 		// SPACING
 		gpRoot      .setPadding(new Insets(25, 25, 25, 25));
-		gpRoot      .setHgap   (10                        );
-		gpRoot      .setVgap   (10                        );
-		gpEffectBtns.setHgap   (10                        );
-		gpEffectBtns.setVgap   (10                        );
-		gpImg3Btns  .setHgap   (10                        );
-		gpImg3Btns  .setVgap   (10                        );
-		gpImg2Btns  .setHgap   (10                        );
-		gpImg2Btns  .setVgap   (10                        );
-		gpImg1Btns  .setHgap   (10                        );
-		gpImg1Btns  .setVgap   (10                        );
+		gpRoot      .setHgap   (10);
+		gpRoot      .setVgap   (10);
+		gpEffectBtns.setHgap   (10);
+		gpEffectBtns.setVgap   (10);
+		gpImg3Btns  .setHgap   (10);
+		gpImg3Btns  .setVgap   (10);
+		gpImg2Btns  .setHgap   (10);
+		gpImg2Btns  .setVgap   (10);
+		gpImg1Btns  .setHgap   (10);
+		gpImg1Btns  .setVgap   (10);
 		
 		// SET THE STAGE
 		Scene sceRoot = new Scene (gpRoot);
