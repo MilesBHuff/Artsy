@@ -61,21 +61,21 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doCheckers(Image oSrc1,
-	                        Image oSrc2,
-	                        int   iSize)
+	public Image doCheckers(Image imgSrc1,
+	                        Image imgSrc2,
+	                        int   iSize  )
 	{ //+method
-	        Image       oNew = new            Image(doCopy(oSrc1));
-	        PixelReader oPR  = oSrc2.getPixelReader(             );
-	        PixelWriter oPW  =  oNew.getPixelWriter(             );
-	        for(int iOffsetY = 0              ,
-	                      iX = 0              ;
-	                      iX < oNew.getWidth();
-	                      iX+= iSize          )
+	        Image       imgNew = new Image                 (doCopy(imgSrc1));
+	        PixelReader pr     =     imgSrc2.getPixelReader(               );
+	        PixelWriter pw     =     imgNew.getPixelWriter (               );
+	        for(int iOffsetY = 0                ,
+	                      iX = 0                ;
+	                      iX < imgNew.getWidth();
+	                      iX+= iSize            )
 	        { //+loop
-	                for(int iY = 0               ;
-	                        iY < oNew.getHeight();
-	                        iY+= iSize           )
+	                for(int iY = 0                 ;
+	                        iY < imgNew.getHeight();
+	                        iY+= iSize             )
 	                { //+loop
 	                        iY+= iOffsetY;
 	                        for(int iNewX = iX   ,
@@ -89,35 +89,35 @@ public class MyArtsy implements Artsy
 	                                      iCountY < iSize;
 	                                      iCountY++      ,
 	                                        iNewY++      )
-	                                { oPW.setArgb(iNewX, iNewY, oPR.getArgb(iNewX, iNewY)); }
+	                                { pw.setArgb(iNewX, iNewY, pr.getArgb(iNewX, iNewY)); }
 	                        } //-loop
 	                } //-loop
 	                if(iOffsetY == 0) iOffsetY = iSize;
 	                else              iOffsetY = 0    ;
 	        } //-loop
-	        return oNew;
+	        return imgNew;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doStripesHorizontal(Image oSrc1  ,
-		                         Image oSrc2  ,
-		                         int   iHeight)
+	public Image doStripesHorizontal(Image imgSrc1  ,
+		                         Image imgSrc2  ,
+		                         int   iHeight  )
 	{ //+method
-		Image       oNew = new            Image(doCopy(oSrc1));
-		PixelReader oPR  = oSrc2.getPixelReader(             );
-		PixelWriter oPW  =  oNew.getPixelWriter(             );
-		for(int iY = 0              ,
-			iX = 0              ;
-			iX < oNew.getWidth();
-			iX++                )
+		Image       imgNew = new Image                 (doCopy(imgSrc1));
+		PixelReader pr     =     imgSrc2.getPixelReader(               );
+		PixelWriter pw     =     imgNew.getPixelWriter (               );
+		for(int iY = 0                ,
+			iX = 0                ;
+			iX < imgNew.getWidth();
+			iX++                  )
 		{ //+loop
 			for(int iCount = 0      ;
 				iCount < iHeight;
 				iCount++        ,
 				    iY++        )
 			{ //+loop
-				oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
+				pw.setArgb(iX, iY, pr.getArgb(iX, iY));
 			} //-loop
 			iY+= iHeight;
 		} //-loop
@@ -126,16 +126,16 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doStripesVertical(Image oSrc1 ,
-		                       Image oSrc2 ,
+	public Image doStripesVertical(Image imgSrc1 ,
+		                       Image imgSrc2 ,
 		                       int   iWidth)
 	{ //method
-		Image       oNew = new            Image(doCopy(oSrc1));
-		PixelReader oPR  = oSrc2.getPixelReader(             );
-		PixelWriter oPW  =  oNew.getPixelWriter(             );
+		Image       imgNew = new Image                 (doCopy(imgSrc1));
+		PixelReader pr     =     imgSrc2.getPixelReader(               );
+		PixelWriter pw     =     imgNew.getPixelWriter (               );
 		for(int iX = 0               ,
 			iY = 0               ;
-			iY < oNew.getHeight();
+			iY < imgNew.getHeight();
 			iY++                 )
 		{ //+loop
 			for(int count = 0;
@@ -144,9 +144,9 @@ public class MyArtsy implements Artsy
 				   iX+= iWidth)
 			{ //+loop
 				iX++;
-				oPW.setArgb(iX, iY, oPR.getArgb(iX, iY));
+				pw.setArgb(iX, iY, pr.getArgb(iX, iY));
 			} //-loop
 		} //-loop
-		return oNew;
+		return imgNew;
 	} //-method
 } //-class
