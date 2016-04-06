@@ -26,7 +26,7 @@ public class MyArtsy implements Artsy
 				iY++        )
 			{ pw.setArgb(iX, iY, pr.getArgb(iX, iY)); }
 		} //-loop
-		return oCopy;
+		return wiCopy;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
@@ -121,7 +121,7 @@ public class MyArtsy implements Artsy
 			} //-loop
 			iY+= iHeight;
 		} //-loop
-		return oNew;
+		return imgNew;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
