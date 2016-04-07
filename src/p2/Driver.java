@@ -18,17 +18,17 @@ public class Driver extends Application
 	public void start(Stage stgRoot)
 	{ //method
 		// DATA
-		String sBtnRotate  = "Rotate"              ;
-		String sBtnClose   = "Close"               ;
-		String sBtnOpen    = "Open"                ;
-		String sBtnSave    = "Save"                ;
-		String sBtnChecker = "Checker"             ;
-		String sBtnStripeH = "Stripe horizontally" ;
-		String sBtnStripeH = "Stripe vertically"   ;
-		String sLblImage1  = "Image 1:  "          ;
-		String sLblImage2  = "Image 2:  "          ;
-		String sLblEffect  = "Effects:"            ;
-		String sLblResult  = "Result:"             ;
+		String sBtnChecker = "Checker"            ;
+		String sBtnClose   = "Close"              ;
+		String sBtnOpen    = "Open"               ;
+		String sBtnRotate  = "Rotate"             ;
+		String sBtnSave    = "Save"               ;
+		String sBtnStripeH = "Stripe horizontally";
+		String sBtnStripeV = "Stripe vertically"  ;
+		String sLblFX      = "Effects:"           ;
+		String sLblImg1    = "Image 1:  "         ;
+		String sLblImg2    = "Image 2:  "         ;
+		String sLblImg3    = "Result:"            ;
 
 		// IMG1 BUTTONS
 		GridPane gpImg1Btns = new GridPane(          );
@@ -51,30 +51,30 @@ public class Driver extends Application
 		Button   btnOpen3   = new Button  (sBtnOpen  ); gpImg3Btns.add(btnOpen3  , 2, 0);
 		Button   btnSave3   = new Button  (sBtnSave  ); gpImg3Btns.add(btnSave3  , 3, 0);
 
-		// EFFECTS BUTTONS
-		GridPane gpEffectBtns = new GridPane(           );
-		Button   btnChecker   = new Button  (sBtnChecker); gpEffectBtns.add(btnChecker, 0, 0);
-		Button   btnStripeH   = new Button  (sBtnStripeH); gpEffectBtns.add(btnStripeH, 0, 1);
-		Button   btnStripeV   = new Button  (sBtnStripeV); gpEffectBtns.add(btnStripeV, 0, 2);
+		// FX BUTTONS
+		GridPane gpFXBtns   = new GridPane(           );
+		Button   btnChecker = new Button  (sBtnChecker); gpEffectBtns.add(btnChecker, 0, 0);
+		Button   btnStripeH = new Button  (sBtnStripeH); gpEffectBtns.add(btnStripeH, 0, 1);
+		Button   btnStripeV = new Button  (sBtnStripeV); gpEffectBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
-		GridPane gpRoot    = new GridPane(          );
-		Label    lblImage1 = new Label   (sLblImage1); gpRoot.add(lblImage1   , 0, 1      );
+		GridPane gpRoot  = new GridPane(        );
+		Label    lblImg1 = new Label   (sLblImg1); gpRoot.add(lblImg1   , 0, 1      );
 		// Img1 (0, 2)
-		                                               gpRoot.add(gpImg1Btns  , 0, 3      );
-		Label    lblImage2 = new Label   (sLblImage2); gpRoot.add(lblImage2   , 0, 4      );
+		                                           gpRoot.add(gpImg1Btns, 0, 3      );
+		Label    lblImg2 = new Label   (sLblImg2); gpRoot.add(lblImg2   , 0, 4      );
 		// Img2 (0, 5)
-		                                               gpRoot.add(gpImg2Btns  , 0, 6      );
-		Label    lblEffect = new Label   (sLblEffect); gpRoot.add(lblEffect   , 1, 1      );
-		                                               gpRoot.add(gpEffectBtns, 1, 2, 1, 2);
-		Label    lblResult = new Label   (sLblResult); gpRoot.add(lblResult   , 1, 4      );
+		                                           gpRoot.add(gpImg2Btns, 0, 6      );
+		Label    lblFX   = new Label   (sLblFX  ); gpRoot.add(lblFX     , 1, 1      );
+		                                           gpRoot.add(gpFXBtns  , 1, 2, 1, 2);
+		Label    lblImg3 = new Label   (sLblImg3); gpRoot.add(lblImg3   , 1, 4      );
 		// Img3 (1, 5)
-		                                               gpRoot.add(gpImg3Btns  , 1, 6      );
+		                                           gpRoot.add(gpImg3Btns, 1, 6      );
 		
 		// MENUBAR
-		MenuBar mbrRoot = new MenuBar (      ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
-	        Menu    menFile = new Menu    ("File");
-	        Menu    menHelp = new Menu    ("Help");
+		MenuBar mbrRoot = new MenuBar(      ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
+	        Menu    menFile = new Menu   ("File");
+	        Menu    menHelp = new Menu   ("Help");
 	        mbrRoot.getMenus().addAll(menFile, menHelp);
 
 		// SPACING
