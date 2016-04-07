@@ -11,7 +11,7 @@ import  src.effects.Artsy             ;
 public class Driver extends Application
 { //class
 	////////////////////////////////////////////////////////////////////////
-	/** Lays out the base GUI.  
+	/** Creates a GUI for the application.
 	 * @param stage $Description
 	**/
 	@Override
@@ -88,6 +88,19 @@ public class Driver extends Application
 	        Menu    menFile = new Menu   ("File");
 	        Menu    menHelp = new Menu   ("Help");
 	        mbrRoot.getMenus().addAll(menFile, menHelp);
+
+		// SPACING
+		gpFXBtns  .setHgap   (           10 );
+		gpFXBtns  .setVgap   (           10 );
+		gpImg1Btns.setHgap   (           10 );
+		gpImg1Btns.setVgap   (           10 );
+		gpImg2Btns.setHgap   (           10 );
+		gpImg2Btns.setVgap   (           10 );
+		gpImg3Btns.setHgap   (           10 );
+		gpImg3Btns.setVgap   (           10 );
+		gpRoot    .setPadding(new Insets(25));
+		gpRoot    .setHgap   (           10 );
+		gpRoot    .setVgap   (           10 );
 	        
 	        // IMAGES
 		btnChecker.setGraphic(new ImageView(imgChecker));
@@ -108,20 +121,10 @@ public class Driver extends Application
 		  rImg1   .setGraphic(new ImageView(img1      ));
 		  rImg2   .setGraphic(new ImageView(img2      ));
 		  rImg3   .setGraphic(new ImageView(img3      ));
-
-		// SPACING
-		gpFXBtns  .setHgap   (           10 );
-		gpFXBtns  .setVgap   (           10 );
-		gpImg1Btns.setHgap   (           10 );
-		gpImg1Btns.setVgap   (           10 );
-		gpImg2Btns.setHgap   (           10 );
-		gpImg2Btns.setVgap   (           10 );
-		gpImg3Btns.setHgap   (           10 );
-		gpImg3Btns.setVgap   (           10 );
-		gpRoot    .setPadding(new Insets(25));
-		gpRoot    .setHgap   (           10 );
-		gpRoot    .setVgap   (           10 );
 		
+		// ACTIONS
+		
+
 		// SET THE STAGE
 		Scene sceRoot = new Scene(gpRoot);
 		stgRoot.setScene   (sceRoot );
