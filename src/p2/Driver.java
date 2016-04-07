@@ -65,9 +65,9 @@ public class Driver extends Application
 
 		// FX BUTTONS
 		GridPane gpFXBtns  = new GridPane(           );
-		Button  btnChecker = new Button  (sBtnChecker); gpEffectBtns.add(btnChecker, 0, 0);
-		Button  btnStripeH = new Button  (sBtnStripeH); gpEffectBtns.add(btnStripeH, 0, 1);
-		Button  btnStripeV = new Button  (sBtnStripeV); gpEffectBtns.add(btnStripeV, 0, 2);
+		Button  btnChecker = new Button  (sBtnChecker); gpFXBtns.add(btnChecker, 0, 0);
+		Button  btnStripeH = new Button  (sBtnStripeH); gpFXBtns.add(btnStripeH, 0, 1);
+		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
 		GridPane  gpRoot = new GridPane (              );
