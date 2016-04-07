@@ -31,16 +31,16 @@ public class Driver extends Application
 		String sLblImg3    = "Result:"            ;
 		
 		// RESOURCES
-		Image img1       = new Image(getClass().getResourceAsStream("null.png"));
-		Image img2       = new Image(getClass().getResourceAsStream("null.png"));
-		Image img3       = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgChecker = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgOpen    = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgReset   = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgRotate  = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgSave    = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgStripeH = new Image(getClass().getResourceAsStream("null.png"));
-		Image imgStripeV = new Image(getClass().getResourceAsStream("null.png"));
+		Image img1       = new Image(getClass().getResourceAsStream("res/default.png"      ));
+		Image img2       = new Image(getClass().getResourceAsStream("res/default.png"      ));
+		Image img3       = new Image(getClass().getResourceAsStream("res/default.png"      ));
+		Image imgChecker = new Image(getClass().getResourceAsStream("res/icons/checker.png"));
+		Image imgOpen    = new Image(getClass().getResourceAsStream("res/icons/open.png"   ));
+		Image imgReset   = new Image(getClass().getResourceAsStream("res/icons/reset.png"  ));
+		Image imgRotate  = new Image(getClass().getResourceAsStream("res/icons/rotate.png" ));
+		Image imgSave    = new Image(getClass().getResourceAsStream("res/icons/save.png"   ));
+		Image imgStripeH = new Image(getClass().getResourceAsStream("res/icons/stripeH.png"));
+		Image imgStripeV = new Image(getClass().getResourceAsStream("res/icons/stripeV.png"));
 
 		// IMG1 BUTTONS
 		GridPane gpImg1Btns = new GridPane(          );
