@@ -91,7 +91,7 @@ public class Driver extends Application
 		gpRoot    .setPadding(new Insets(25, 25, 25, 25));
 		
 		// SET THE STAGE
-		Scene sceRoot = new Scene (gpRoot);
+		Scene sceRoot = new Scene(gpRoot);
 		stgRoot.setScene   (sceRoot );
 		stgRoot.setTitle   ("Artsy!");
 	        stgRoot.sizeToScene(        );
