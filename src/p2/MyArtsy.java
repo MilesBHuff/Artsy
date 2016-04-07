@@ -12,11 +12,11 @@ public class MyArtsy implements Artsy
 	@Override
 	public Image doCopy(Image imgSrc)
 	{ //+method
-		int           iWidth  =     imgSrc.getWidth      (               );
-		int           iHeight =     imgSrc.getHeight     (               );
-		WritableImage wiCopy  = new WritableImage        (iWidth, iHeight);
-		PixelReader   pr      =     imgSrc.getPixelReader(               );
-		PixelWriter   pw      =     wiCopy.getPixelWriter(               );
+		int           iWidth  = (int)imgSrc.getWidth      (               );
+		int           iHeight = (int)imgSrc.getHeight     (               );
+		WritableImage wiCopy  = new  WritableImage        (iWidth, iHeight);
+		PixelReader   pr      =      imgSrc.getPixelReader(               );
+		PixelWriter   pw      =      wiCopy.getPixelWriter(               );
 		for (int iX = 0     ;
 			 iX < iWidth;
 			 iX++       )
