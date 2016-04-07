@@ -91,9 +91,9 @@ public class Driver extends Application
 	        
 	        // IMAGES
 		btnChecker.setGraphic(new ImageView(imgChecker));
-		btnOpen1  .setGraphic(new ImageView(impOpen   ));
-		btnOpen2  .setGraphic(new ImageView(impOpen   ));
-		btnOpen3  .setGraphic(new ImageView(impOpen   ));
+		btnOpen1  .setGraphic(new ImageView(imgOpen   ));
+		btnOpen2  .setGraphic(new ImageView(imgOpen   ));
+		btnOpen3  .setGraphic(new ImageView(imgOpen   ));
 		btnReset1 .setGraphic(new ImageView(imgReset  ));
 		btnReset2 .setGraphic(new ImageView(imgReset  ));
 		btnReset3 .setGraphic(new ImageView(imgReset  ));
