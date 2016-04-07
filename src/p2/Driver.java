@@ -81,7 +81,7 @@ public class Driver extends Application
 		                                                  gpRoot.add( gpFXBtns  , 1, 2, 1, 2);
 		Label    lblImg3 = new Label    (sLblImg3      ); gpRoot.add(lblImg3    , 1, 4      );
 		Rectangle  rImg3 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg3    , 1, 5      );
-		                                                  gpRoot.add(gpImg3Btns , 1, 6      );
+		                                                  gpRoot.add( gpImg3Btns, 1, 6      );
 		
 		// MENUBAR
 		MenuBar mbrRoot = new MenuBar(      ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
