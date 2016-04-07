@@ -32,7 +32,7 @@ public class MyArtsy implements Artsy
 	////////////////////////////////////////////////////////////////////////
 	@Override
 	public Image doRotate(Image  imgSrc,
-		              double dDeg)
+		              double dDeg  )
 	{ //+method
 		Image       imgNew = new Image                (copyImage(imgSrc));
 		PixelReader pr     =     imgSrc.getPixelReader(                 );
