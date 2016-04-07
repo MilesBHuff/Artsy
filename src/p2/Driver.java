@@ -70,18 +70,18 @@ public class Driver extends Application
 		Button  btnStripeV = new Button  (sBtnStripeV); gpEffectBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
-		GridPane   gpRoot = new GridPane (              );
-		Label     lblImg1 = new Label    (sLblImg1      ); gpRoot.add(lblImg1    , 0, 1      );
-		Rectangle   rImg1 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg1    , 0, 2      );
-		                                                   gpRoot.add( gpImg1Btns, 0, 3      );
-		Label     lblImg2 = new Label    (sLblImg2      ); gpRoot.add(lblImg2    , 0, 4      );
-		Rectangle   rImg2 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg2    , 0, 5      );
-		                                                   gpRoot.add( gpImg2Btns, 0, 6      );
-		Label     lblFX   = new Label    (sLblFX        ); gpRoot.add(lblFX      , 1, 1      );
-		                                                   gpRoot.add( gpFXBtns  , 1, 2, 1, 2);
-		Label     lblImg3 = new Label    (sLblImg3      ); gpRoot.add(lblImg3    , 1, 4      );
-		Rectangle   rImg3 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg3    , 1, 5      );
-		                                                   gpRoot.add(gpImg3Btns , 1, 6      );
+		GridPane  gpRoot = new GridPane (              );
+		Label    lblImg1 = new Label    (sLblImg1      ); gpRoot.add(lblImg1    , 0, 1      );
+		Rectangle  rImg1 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg1    , 0, 2      );
+		                                                  gpRoot.add( gpImg1Btns, 0, 3      );
+		Label    lblImg2 = new Label    (sLblImg2      ); gpRoot.add(lblImg2    , 0, 4      );
+		Rectangle  rImg2 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg2    , 0, 5      );
+		                                                  gpRoot.add( gpImg2Btns, 0, 6      );
+		Label    lblFX   = new Label    (sLblFX        ); gpRoot.add(lblFX      , 1, 1      );
+		                                                  gpRoot.add( gpFXBtns  , 1, 2, 1, 2);
+		Label    lblImg3 = new Label    (sLblImg3      ); gpRoot.add(lblImg3    , 1, 4      );
+		Rectangle  rImg3 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg3    , 1, 5      );
+		                                                  gpRoot.add(gpImg3Btns , 1, 6      );
 		
 		// MENUBAR
 		MenuBar mbrRoot = new MenuBar(      ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
