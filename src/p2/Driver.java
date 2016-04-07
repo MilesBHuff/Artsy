@@ -11,7 +11,7 @@ import  src.effects.Artsy             ;
 public class Driver extends Application
 { //class
 	////////////////////////////////////////////////////////////////////////
-	/** Lays out oll the controls
+	/** Lays out the base GUI.  
 	 * @param stage $Description
 	**/
 	@Override
