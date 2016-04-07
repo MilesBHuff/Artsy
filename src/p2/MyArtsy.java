@@ -2,7 +2,7 @@ package src.p2                  ;
 import  javafx.scene.image.Image;
 import  src.effects.Artsy       ;
 
-/**
+/** Implements effects.Artsy.  
  * @author Preston Sheppard (coding)
  * @author Miles B Huff (bugfixing and formatting)
 **/
