@@ -9,14 +9,14 @@ import  src.effects.Artsy             ;
  * @author Miles B Huff
 **/
 public class Driver extends Application
-{ //class
+{ //+class
 	////////////////////////////////////////////////////////////////////////
 	/** Creates a GUI for the application.
 	 * @param stage $Description
 	**/
 	@Override
 	public void start(Stage stgRoot)
-	{ //method
+	{ //+method
 		// DATA
 		String sBtnChecker = "Checker"            ;
 	        String sBtnOpen    = ""                   ;
@@ -131,14 +131,14 @@ public class Driver extends Application
 		stgRoot.setTitle   ("Artsy!");
 	        stgRoot.sizeToScene(        );
 		stgRoot.show       (        );
-	} //method
+	} //-method
 
 	////////////////////////////////////////////////////////////////////////
 	/** The default, 'main', method.  Runs when the programme is executed.
 	 * @param saArgs The arguments provided to the programme
 	**/
 	public static void main(String[] saArgs)
-	{ //method
+	{ //+method
 		launch(saArgs);
-	} //method
-} //class
+	} //-method
+} //-class
