@@ -68,17 +68,15 @@ public class Driver extends Application
 		GridPane gpImg2Btns = new GridPane(          );
 		Button  btnRotate2  = new Button  (sBtnRotate); gpImg2Btns.add(btnRotate2, 0, 0);
 		Button  btnReset2   = new Button  (sBtnReset ); gpImg2Btns.add(btnReset2 , 1, 0);
-		Button  btnUrl2     = new Button  (sBtnUrl   ); gpImg1Btns.add(btnUrl2   , 2, 0);
-		Button  btnOpen2    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen2  , 3, 0);
-		Button  btnSave2    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave2  , 4, 0);
+		Button  btnUrl2     = new Button  (sBtnUrl   ); gpImg2Btns.add(btnUrl2   , 2, 0);
+		Button  btnOpen2    = new Button  (sBtnOpen  ); gpImg2Btns.add(btnOpen2  , 3, 0);
+		Button  btnSave2    = new Button  (sBtnSave  ); gpImg2Btns.add(btnSave2  , 4, 0);
 		
 		// IMG3 BUTTONS
 		GridPane gpImg3Btns = new GridPane(          );
 		Button  btnRotate3  = new Button  (sBtnRotate); gpImg3Btns.add(btnRotate3, 0, 0);
 		Button  btnReset3   = new Button  (sBtnReset ); gpImg3Btns.add(btnReset3 , 1, 0);
-		Button  btnUrl3     = new Button  (sBtnUrl   ); gpImg1Btns.add(btnUrl3   , 2, 0);
-		Button  btnOpen3    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen3  , 3, 0);
-		Button  btnSave3    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave3  , 4, 0);
+		Button  btnSave3    = new Button  (sBtnSave  ); gpImg3Btns.add(btnSave3  , 2, 0);
 
 		// FX BUTTONS
 		GridPane gpFXBtns  = new GridPane(           );
@@ -87,18 +85,18 @@ public class Driver extends Application
 		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
-		GridPane  gpMain = new GridPane (              );
-		Label    lblImg1 = new Label    (sLblImg1      ); gpMain.add(lblImg1    , 0, 1      );
-		Rectangle  rImg1 = new Rectangle(0, 0, 300, 300); gpMain.add(  rImg1    , 0, 2      );
-		                                                  gpMain.add( gpImg1Btns, 0, 3      );
-		Label    lblImg2 = new Label    (sLblImg2      ); gpMain.add(lblImg2    , 0, 4      );
-		Rectangle  rImg2 = new Rectangle(0, 0, 300, 300); gpMain.add(  rImg2    , 0, 5      );
-                                                                  gpMain.add( gpImg2Btns, 0, 6      );
-		Label    lblFX   = new Label    (sLblFX        ); gpMain.add(lblFX      , 1, 1      );
-                                                                  gpMain.add( gpFXBtns  , 1, 2, 1, 2);
-		Label    lblImg3 = new Label    (sLblImg3      ); gpMain.add(lblImg3    , 1, 4      );
-		Rectangle  rImg3 = new Rectangle(0, 0, 300, 300); gpMain.add(  rImg3    , 1, 5      );
-		                                                  gpMain.add( gpImg3Btns, 1, 6      );
+		GridPane  gpMain = new GridPane (          );
+		Label    lblImg1 = new Label    (  sLblImg1); gpMain.add(lblImg1    , 0, 1      );
+		ImageView ivImg1 = new ImageView(img3      ); gpMain.add( ivImg1    , 0, 2      );
+		                                              gpMain.add( gpImg1Btns, 0, 3      );
+		Label    lblImg2 = new Label    (  sLblImg2); gpMain.add(lblImg2    , 0, 4      );
+		ImageView ivImg2 = new ImageView(img3      ); gpMain.add( ivImg2    , 0, 5      );
+                                                              gpMain.add( gpImg2Btns, 0, 6      );
+		Label    lblFX   = new Label    (  sLblFX  ); gpMain.add(lblFX      , 1, 1      );
+                                                              gpMain.add( gpFXBtns  , 1, 2, 1, 2);
+		Label    lblImg3 = new Label    (  sLblImg3); gpMain.add(lblImg3    , 1, 4      );
+		ImageView ivImg3 = new ImageView(img3      ); gpMain.add( ivImg3    , 1, 5      );
+		                                              gpMain.add( gpImg3Btns, 1, 6      );
 		
 		// MENUBAR
 		GridPane gpRoot = new GridPane (      ); gpRoot.add( gpMain, 0, 1);
@@ -126,7 +124,6 @@ public class Driver extends Application
 		btnChecker.setGraphic(new ImageView(imgChecker));
 		btnOpen1  .setGraphic(new ImageView(imgOpen   ));
 		btnOpen2  .setGraphic(new ImageView(imgOpen   ));
-		btnOpen3  .setGraphic(new ImageView(imgOpen   ));
 		btnReset1 .setGraphic(new ImageView(imgReset  ));
 		btnReset2 .setGraphic(new ImageView(imgReset  ));
 		btnReset3 .setGraphic(new ImageView(imgReset  ));
@@ -138,12 +135,8 @@ public class Driver extends Application
 		btnSave3  .setGraphic(new ImageView(imgSave   ));
 		btnUrl1   .setGraphic(new ImageView(imgUrl    ));
 		btnUrl2   .setGraphic(new ImageView(imgUrl    ));
-		btnUrl3   .setGraphic(new ImageView(imgUrl    ));
 		btnStripeH.setGraphic(new ImageView(imgStripeH));
 		btnStripeV.setGraphic(new ImageView(imgStripeV));
-		  //rImg1   .setGraphic(new ImageView(img1      ));
-		  //rImg2   .setGraphic(new ImageView(img2      ));
-		  //rImg3   .setGraphic(new ImageView(img3      ));
 		
 		// ACTIONS
 		//TODO
