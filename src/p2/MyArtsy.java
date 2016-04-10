@@ -1,5 +1,5 @@
 package src.p2                  ;
-import  javafx.scene.image.Image;
+import javafx.scene.image.*;
 import  src.effects.Artsy       ;
 
 /** Implements effects.Artsy
@@ -10,13 +10,13 @@ public class MyArtsy implements Artsy
 { //+class
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doCopy(Image imgSrc)
+	public WritableImage doCopy(Image imgSrc)
 	{ //+method
-		int           iWidth  = (int)imgSrc.getWidth      (               );
-		int           iHeight = (int)imgSrc.getHeight     (               );
-		WritableImage wiCopy  = new  WritableImage        (iWidth, iHeight);
-		PixelReader   pr      =      imgSrc.getPixelReader(               );
-		PixelWriter   pw      =      wiCopy.getPixelWriter(               );
+		int           iWidth  =     (int) imgSrc.getWidth      ();
+		int           iHeight =     (int) imgSrc.getHeight     (               );
+		WritableImage wiCopy  = new WritableImage        (iWidth, iHeight);
+		PixelReader   pr      =     imgSrc.getPixelReader(               );
+		PixelWriter   pw      =     wiCopy.getPixelWriter(               );
 		for (int iX = 0     ;
 			 iX < iWidth;
 			 iX++       )
@@ -34,9 +34,9 @@ public class MyArtsy implements Artsy
 	public Image doRotate(Image  imgSrc,
 		              double dDeg  )
 	{ //+method
-		Image       imgNew = new Image                (copyImage(imgSrc));
+		WritableImage       imgNew = doCopy(imgSrc);
 		PixelReader pr     =     imgSrc.getPixelReader(                 );
-		PixelWriter pw     =     imgNew.getPixelWriter(                 );
+		PixelWriter pw     =     imgNew.getPixelWriter();
 		for(int iX = 0                ,
 		     iNewX = 0                ;
 		        iX < imgNew.getWidth();
@@ -65,7 +65,7 @@ public class MyArtsy implements Artsy
 	                        Image imgSrc2,
 	                        int   iSize  )
 	{ //+method
-	        Image       imgNew = new Image                 (doCopy(imgSrc1));
+		WritableImage       imgNew = doCopy(imgSrc1);
 	        PixelReader pr     =     imgSrc2.getPixelReader(               );
 	        PixelWriter pw     =     imgNew.getPixelWriter (               );
 	        for(int iOffsetY = 0                ,
@@ -100,11 +100,11 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	@Override
-	public Image doStripesHorizontal(Image imgSrc1  ,
+	public Image doHorizontalStripes(Image imgSrc1  ,
 		                         Image imgSrc2  ,
 		                         int   iHeight  )
 	{ //+method
-		Image       imgNew = new Image                 (doCopy(imgSrc1));
+		WritableImage       imgNew = doCopy(imgSrc1);
 		PixelReader pr     =     imgSrc2.getPixelReader(               );
 		PixelWriter pw     =     imgNew.getPixelWriter (               );
 		for(int iY = 0                ,
@@ -125,12 +125,12 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	@Override
-	public Image doStripesVertical(Image imgSrc1 ,
+	//@Override
+	public Image doVerticalStripes(Image imgSrc1 ,
 		                       Image imgSrc2 ,
 		                       int   iWidth)
 	{ //method
-		Image       imgNew = new Image                 (doCopy(imgSrc1));
+		WritableImage       imgNew = doCopy(imgSrc1);
 		PixelReader pr     =     imgSrc2.getPixelReader(               );
 		PixelWriter pw     =     imgNew.getPixelWriter (               );
 		for(int iX = 0               ,
@@ -149,4 +149,5 @@ public class MyArtsy implements Artsy
 		} //-loop
 		return imgNew;
 	} //-method
+
 } //-class
