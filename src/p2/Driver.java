@@ -27,10 +27,10 @@ public class Driver extends Application
 	{ //+method
 		// DATA
 		String sBtnChecker = "Checker"            ;
-	        String sBtnOpen    = ""                   ;
-	        String sBtnReset   = ""                   ;
-	        String sBtnRotate  = ""                   ;
-	        String sBtnSave    = ""                   ;
+		String sBtnOpen    = ""                   ;
+		String sBtnReset   = ""                   ;
+		String sBtnRotate  = ""                   ;
+		String sBtnSave    = ""                   ;
 		String sBtnStripeH = "Stripe horizontally";
 		String sBtnStripeV = "Stripe vertically"  ;
 		String sLblFX      = "Effects:"           ;
@@ -93,9 +93,9 @@ public class Driver extends Application
 		
 		// MENUBAR
 		MenuBar mbrRoot = new MenuBar(      ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
-	        Menu    menFile = new Menu   ("File");
-	        Menu    menHelp = new Menu   ("Help");
-	        mbrRoot.getMenus().addAll(menFile, menHelp);
+	    Menu    menFile = new Menu   ("File");
+	    Menu    menHelp = new Menu   ("Help");
+	    mbrRoot.getMenus().addAll(menFile, menHelp);
 
 		// SPACING
 		gpFXBtns  .setHgap   (           10 );
@@ -137,7 +137,7 @@ public class Driver extends Application
 		Scene sceRoot = new Scene(gpRoot);
 		stgRoot.setScene   (sceRoot );
 		stgRoot.setTitle   ("Artsy!");
-	        stgRoot.sizeToScene(        );
+	    stgRoot.sizeToScene(        );
 		stgRoot.show       (        );
 	} //-method
 
