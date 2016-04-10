@@ -30,18 +30,18 @@ public class Driver extends Application
 	public void start(Stage stgRoot)
 	{ //+method
 		// DATA
-		String sBtnChecker = "Checker"            ;
-		String sBtnOpen    = ""                   ;
-		String sBtnReset   = ""                   ;
-		String sBtnRotate  = ""                   ;
-		String sBtnSave    = ""                   ;
-		String sBtnStripeH = "Stripe horizontally";
-		String sBtnStripeV = "Stripe vertically"  ;
-		String sBtnUrl     = ""                   ;
-		String sLblFX      = "Effects:"           ;
-		String sLblImg1    = "Image 1:  "         ;
-		String sLblImg2    = "Image 2:  "         ;
-		String sLblImg3    = "Result:"            ;
+		String sChecker = "Checker"            ;
+		String sOpen    = ""                   ;
+		String sReset   = ""                   ;
+		String sRotate  = ""                   ;
+		String sSave    = ""                   ;
+		String sStripeH = "Stripe horizontally";
+		String sStripeV = "Stripe vertically"  ;
+		String sUrl     = ""                   ;
+		String sFX      = "Effects:"           ;
+		String sImg1    = "Image 1:  "         ;
+		String sImg2    = "Image 2:  "         ;
+		String sImg3    = "Result:"            ;
 		
 		// RESOURCES
 		Image img1       = new Image("file:res/default.png"      );
@@ -57,46 +57,46 @@ public class Driver extends Application
 		Image imgUrl     = new Image("file:res/icons/url.png"    );
 
 		// IMG1 BUTTONS
-		GridPane gpImg1Btns = new GridPane(          );
-		Button  btnRotate1  = new Button  (sBtnRotate); gpImg1Btns.add(btnRotate1, 0, 0);
-		Button  btnReset1   = new Button  (sBtnReset ); gpImg1Btns.add(btnReset1 , 1, 0);
-		Button  btnUrl1     = new Button  (sBtnUrl   ); gpImg1Btns.add(btnUrl1   , 2, 0);
-		Button  btnOpen1    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen1  , 3, 0);
-		Button  btnSave1    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave1  , 4, 0);
+		GridPane gpImg1Btns = new GridPane(       );
+		Button  btnRotate1  = new Button  (sRotate); gpImg1Btns.add(btnRotate1, 0, 0);
+		Button  btnReset1   = new Button  (sReset ); gpImg1Btns.add(btnReset1 , 1, 0);
+		Button  btnUrl1     = new Button  (sUrl   ); gpImg1Btns.add(btnUrl1   , 2, 0);
+		Button  btnOpen1    = new Button  (sOpen  ); gpImg1Btns.add(btnOpen1  , 3, 0);
+		Button  btnSave1    = new Button  (sSave  ); gpImg1Btns.add(btnSave1  , 4, 0);
 		
 		// IMG2 BUTTONS
-		GridPane gpImg2Btns = new GridPane(          );
-		Button  btnRotate2  = new Button  (sBtnRotate); gpImg2Btns.add(btnRotate2, 0, 0);
-		Button  btnReset2   = new Button  (sBtnReset ); gpImg2Btns.add(btnReset2 , 1, 0);
-		Button  btnUrl2     = new Button  (sBtnUrl   ); gpImg2Btns.add(btnUrl2   , 2, 0);
-		Button  btnOpen2    = new Button  (sBtnOpen  ); gpImg2Btns.add(btnOpen2  , 3, 0);
-		Button  btnSave2    = new Button  (sBtnSave  ); gpImg2Btns.add(btnSave2  , 4, 0);
+		GridPane gpImg2Btns = new GridPane(       );
+		Button  btnRotate2  = new Button  (sRotate); gpImg2Btns.add(btnRotate2, 0, 0);
+		Button  btnReset2   = new Button  (sReset ); gpImg2Btns.add(btnReset2 , 1, 0);
+		Button  btnUrl2     = new Button  (sUrl   ); gpImg2Btns.add(btnUrl2   , 2, 0);
+		Button  btnOpen2    = new Button  (sOpen  ); gpImg2Btns.add(btnOpen2  , 3, 0);
+		Button  btnSave2    = new Button  (sSave  ); gpImg2Btns.add(btnSave2  , 4, 0);
 		
 		// IMG3 BUTTONS
-		GridPane gpImg3Btns = new GridPane(          );
-		Button  btnRotate3  = new Button  (sBtnRotate); gpImg3Btns.add(btnRotate3, 0, 0);
-		Button  btnReset3   = new Button  (sBtnReset ); gpImg3Btns.add(btnReset3 , 1, 0);
-		Button  btnSave3    = new Button  (sBtnSave  ); gpImg3Btns.add(btnSave3  , 2, 0);
+		GridPane gpImg3Btns = new GridPane(       );
+		Button  btnRotate3  = new Button  (sRotate); gpImg3Btns.add(btnRotate3, 0, 0);
+		Button  btnReset3   = new Button  (sReset ); gpImg3Btns.add(btnReset3 , 1, 0);
+		Button  btnSave3    = new Button  (sSave  ); gpImg3Btns.add(btnSave3  , 2, 0);
 
 		// FX BUTTONS
-		GridPane gpFXBtns  = new GridPane(           );
-		Button  btnChecker = new Button  (sBtnChecker); gpFXBtns.add(btnChecker, 0, 0);
-		Button  btnStripeH = new Button  (sBtnStripeH); gpFXBtns.add(btnStripeH, 0, 1);
-		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
+		GridPane gpFXBtns  = new GridPane(        );
+		Button  btnChecker = new Button  (sChecker); gpFXBtns.add(btnChecker, 0, 0);
+		Button  btnStripeH = new Button  (sStripeH); gpFXBtns.add(btnStripeH, 0, 1);
+		Button  btnStripeV = new Button  (sStripeV); gpFXBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
-		GridPane  gpMain = new GridPane (        );
-		Label    lblImg1 = new Label    (sLblImg1); gpMain.add(lblImg1    , 0, 1      );
-		ImageView ivImg1 = new ImageView(        ); gpMain.add( ivImg1    , 0, 2      );
-		                                            gpMain.add( gpImg1Btns, 0, 3      );
-		Label    lblImg2 = new Label    (sLblImg2); gpMain.add(lblImg2    , 0, 4      );
-		ImageView ivImg2 = new ImageView(        ); gpMain.add( ivImg2    , 0, 5      );
-                                                            gpMain.add( gpImg2Btns, 0, 6      );
-		Label    lblFX   = new Label    (sLblFX  ); gpMain.add(lblFX      , 1, 1      );
-                                                            gpMain.add( gpFXBtns  , 1, 2, 1, 2);
-		Label    lblImg3 = new Label    (sLblImg3); gpMain.add(lblImg3    , 1, 4      );
-		ImageView ivImg3 = new ImageView(        ); gpMain.add( ivImg3    , 1, 5      );
-		                                            gpMain.add( gpImg3Btns, 1, 6      );
+		GridPane  gpMain = new GridPane (     );
+		Label    lblImg1 = new Label    (sImg1); gpMain.add(lblImg1    , 0, 1      );
+		ImageView ivImg1 = new ImageView(     ); gpMain.add( ivImg1    , 0, 2      );
+		                                         gpMain.add( gpImg1Btns, 0, 3      );
+		Label    lblImg2 = new Label    (sImg2); gpMain.add(lblImg2    , 0, 4      );
+		ImageView ivImg2 = new ImageView(     ); gpMain.add( ivImg2    , 0, 5      );
+                                                         gpMain.add( gpImg2Btns, 0, 6      );
+		Label    lblFX   = new Label    (sFX  ); gpMain.add(lblFX      , 1, 1      );
+                                                         gpMain.add( gpFXBtns  , 1, 2, 1, 2);
+		Label    lblImg3 = new Label    (sImg3); gpMain.add(lblImg3    , 1, 4      );
+		ImageView ivImg3 = new ImageView(     ); gpMain.add( ivImg3    , 1, 5      );
+		                                         gpMain.add( gpImg3Btns, 1, 6      );
 		
 		// MENUBAR
 		GridPane gpRoot = new GridPane (      ); gpRoot.add( gpMain, 0, 1);
