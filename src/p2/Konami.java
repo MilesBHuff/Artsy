@@ -23,24 +23,24 @@ public class Konami
         { //+method
                 switch(ke.getKeyCode())
                 { //+case
-                        case KeyEvent.VK_UP:     // 1: up
+                        case KeyEvent.VK_UP:
                                 return analyze(1);
-                                break;
-                        case KeyEvent.VK_DOWN:   // 2: down
+                                break;      // 1: up
+                        case KeyEvent.VK_DOWN:
                                 return analyze(2);
-                                break;
-                        case KeyEvent.VK_LEFT:   // 3: left
+                                break;      // 2: down
+                        case KeyEvent.VK_LEFT:
                                 return analyze(3);
-                                break;
-                        case KeyEvent.VK_RIGHT:  // 4: right
+                                break;      // 3: left
+                        case KeyEvent.VK_RIGHT:
                                 return analyze(4);
-                                break;
-                        case 65:                 // 5: a
+                                break;      // 4: right
+                        case 65:
                                 return analyze(5);
-                                break;
-                        case 66:                 // 6: b
+                                break;      // 5: a
+                        case 66:
                                 return analyze(6);
-                                break;
+                                break;      // 6: b
                         default:
                         	return false;
                 } //-case
