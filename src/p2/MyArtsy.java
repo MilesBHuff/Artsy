@@ -12,7 +12,6 @@ import  effects.Artsy                   ;
 public class MyArtsy implements Artsy
 { //+class
 	////////////////////////////////////////////////////////////////////////
-	@Override
 	public WritableImage doCopy(Image imgSrc)
 	{ //+method
 		int           iWidth  =     (int) imgSrc.getWidth (               );
@@ -29,11 +28,10 @@ public class MyArtsy implements Artsy
 				iY++        )
 			{pw.setArgb(iX, iY, pr.getArgb(iX, iY));}
 		} //-loop
-		return wiCopy;  //TODO:  This currently returns a WritableImage, instead of an Image.
+		return wiCopy;
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	@Override
 	public Image doRotate(Image  imgSrc,
 		              double dDeg  )
 	{ //+method
@@ -63,7 +61,6 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	@Override
 	public Image doCheckers(Image imgSrc1,
 	                        Image imgSrc2,
 	                        int   iSize  )
@@ -102,7 +99,6 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	@Override
 	public Image doStripesHorizontal(Image imgSrc1  ,
 		                         Image imgSrc2  ,
 		                         int   iHeight  )
@@ -128,7 +124,6 @@ public class MyArtsy implements Artsy
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
-	//@Override
 	public Image doStripesVertical(Image imgSrc1 ,
 		                       Image imgSrc2 ,
 		                       int   iWidth)
