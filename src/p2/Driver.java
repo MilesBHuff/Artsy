@@ -1,5 +1,5 @@
-package p2                            ;
-import  effects.Artsy                 ;
+package src.p2                            ;
+import  src.effects.Artsy                 ;
 import  java.awt.image.BufferedImage  ;
 import  java.net.URL                  ;
 import  javax.imageio.ImageIO         ;
@@ -15,7 +15,7 @@ import  javafx.scene.image.ImageView  ;
 import  javafx.scene.layout.GridPane  ;
 import  javafx.scene.shape.Rectangle  ;
 import  javafx.stage.Stage            ;
-
+@SuppressWarnings("restriction")
 /** This is the runner for this application.
  * @author Miles B Huff
 **/
@@ -43,17 +43,17 @@ public class Driver extends Application
 		String sLblImg3    = "Result:"            ;
 		
 		// RESOURCES
-		Image img1       = new Image(getClass().getResourceAsStream("res/default.png"      ));
-		Image img2       = new Image(getClass().getResourceAsStream("res/default.png"      ));
-		Image img3       = new Image(getClass().getResourceAsStream("res/default.png"      ));
-		Image imgChecker = new Image(getClass().getResourceAsStream("res/icons/checker.png"));
-		Image imgOpen    = new Image(getClass().getResourceAsStream("res/icons/open.png"   ));
-		Image imgReset   = new Image(getClass().getResourceAsStream("res/icons/reset.png"  ));
-		Image imgRotate  = new Image(getClass().getResourceAsStream("res/icons/rotate.png" ));
-		Image imgSave    = new Image(getClass().getResourceAsStream("res/icons/save.png"   ));
-		Image imgStripeH = new Image(getClass().getResourceAsStream("res/icons/stripeH.png"));
-		Image imgStripeV = new Image(getClass().getResourceAsStream("res/icons/stripeV.png"));
-		Image imgUrl     = new Image(getClass().getResourceAsStream("res/icons/url.png"    ));
+		Image img1       = new Image("file:res/default.png"      );
+		Image img2       = new Image("file:res/default.png"      );
+		Image img3       = new Image("file:res/default.png"      );
+		Image imgChecker = new Image("file:res/icons/checker.png");
+		Image imgOpen    = new Image("file:res/icons/open.png"   );
+		Image imgReset   = new Image("file:res/icons/reset.png"  );
+		Image imgRotate  = new Image("file:res/icons/rotate.png" );
+		Image imgSave    = new Image("file:res/icons/save.png"   );
+		Image imgStripeH = new Image("file:res/icons/stripeH.png");
+		Image imgStripeV = new Image("file:res/icons/stripeV.png");
+		Image imgUrl     = new Image("file:res/icons/url.png"    );
 
 		// IMG1 BUTTONS
 		GridPane gpImg1Btns = new GridPane(          );
@@ -134,9 +134,9 @@ public class Driver extends Application
 		btnSave3  .setGraphic(new ImageView(imgSave   ));
 		btnStripeH.setGraphic(new ImageView(imgStripeH));
 		btnStripeV.setGraphic(new ImageView(imgStripeV));
-		  rImg1   .setGraphic(new ImageView(img1      ));
-		  rImg2   .setGraphic(new ImageView(img2      ));
-		  rImg3   .setGraphic(new ImageView(img3      ));
+		  //rImg1   .setGraphic(new ImageView(img1      ));
+		  //rImg2   .setGraphic(new ImageView(img2      ));
+		  //rImg3   .setGraphic(new ImageView(img3      ));
 		
 		// ACTIONS
 		//TODO
