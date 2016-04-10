@@ -1,4 +1,4 @@
-package src.effects             ;
+package effects                 ;
 import  javafx.scene.image.Image;
 
 /** This interface describes Artsy!-effects that can be applied to Images. 
@@ -12,7 +12,7 @@ public interface Artsy
 	 * @param  src The <code>Image</code> to copy
 	 * @return a deep copy of <code>src</code>.
 	**/
-	public WritableImage doCopy(Image imgSrc);
+	public Image doCopy(Image imgSrc);
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
@@ -39,7 +39,7 @@ public interface Artsy
 	 * @param  height The height, in pixels, of the horizontal stripes.
 	 * @return a horizontally striped <code>Image</code> composed of <code>src1</code> and <code>src2</code>.
 	**/
-	public Image doHorizontalStripes(Image imgSrc1,
+	public Image doStripesHorizontal(Image imgSrc1,
 		                         Image imgSrc2,
 		                         int   iHeight);
 
@@ -53,7 +53,7 @@ public interface Artsy
 	 * @param  width The width, in pixels, of the vertical stripes.
 	 * @return an <code>Image</code> with the vertical stripes effect.
 	**/
-	public Image doVerticalStripes(Image imgSrc1,
+	public Image doStripesVertical(Image imgSrc1,
 		                       Image imgSrc2,
 		                       int   iWidth );
 
