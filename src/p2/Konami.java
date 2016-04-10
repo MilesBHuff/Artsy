@@ -5,6 +5,11 @@ public class Konami
 { //+class
         static ArrayBlockingQueue<String> que = new ArrayBlockingQueue<String>(6);
         
+        /** Adds <code>sArg</code> to <code>que</code> and checks if it matches the Konami code.
+         * @author Miles B Huff
+         * @param  sArg Which key has been pressed
+         * @return <code>true</code> if <code>que</code> matches the Konami code.
+        **/
         public static boolean analyze(String sArg) throws InterruptedException
         { //+method
         	que.put(sArg);  // Adds sArg as soon as there's space in que
@@ -16,8 +21,11 @@ public class Konami
         	return false;
         } //-method
         
-        /**
-         * @param 
+        /** Takes a <code>KeyEvent</code>, analyzes it, and returns <code>true</code> if it matches the Konami code.
+         * @author Preston Sheppard
+         * @author Miles B Huff
+         * @param  ke A <code>KeyEvent</code>
+         * @return <code>true</code> if <code>que</code> matches the Konami code.
         **/
         public static boolean keyInput(KeyEvent ke)
         { //+method
