@@ -1,6 +1,10 @@
 package p2                                     ;
 import  java.util.concurrent.ArrayBlockingQueue;
 
+/** A class to implement the Konami extra-credit task.
+ * @author Miles B Huff
+ * @author Preston Sheppard
+**/
 public class Konami
 { //+class
         static ArrayBlockingQueue<String> que = new ArrayBlockingQueue<String>(6);
