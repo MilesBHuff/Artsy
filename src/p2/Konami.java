@@ -41,6 +41,8 @@ public class Konami
                         case 66:                 // 6: b
                                 return analyze(6);
                                 break;
+                        default:
+                        	return false;
                 } //-case
 	} //-method
 } //-class
