@@ -12,7 +12,7 @@ public interface Artsy
 	 * @param  src The <code>Image</code> to copy
 	 * @return a deep copy of <code>src</code>.
 	**/
-	public Image doCopy(Image imgSrc);
+	public WritableImage doCopy(Image imgSrc);
 
 	////////////////////////////////////////////////////////////////////////
 	/** Given two <code>Image</code>s, this method returns a new
