@@ -1,9 +1,11 @@
+package p2                                     ;
+import  java.util.concurrent.ArrayBlockingQueue;
 
-
-public class Konami()
+public class Konami
 { //+class
-        Queue que = new ArrayBlockingQueue<String>(6);
-        public static boolean analyze(String sArg)
+        static ArrayBlockingQueue<String> que = new ArrayBlockingQueue<String>(6);
+        
+        public static boolean analyze(String sArg) throws InterruptedException
         { //+method
         	que.put(sArg);  // Adds sArg as soon as there's space in que
                 if(que.size() == 6)
