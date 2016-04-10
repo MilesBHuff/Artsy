@@ -1,9 +1,22 @@
 package src.p2                        ;
+import java.awt.Button;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.Label;
+import java.awt.Menu;
+import java.awt.MenuBar;
+import java.awt.Rectangle;
+import javafx.scene.image.*;
+import javax.swing.text.html.ImageView;
+
 import  javafx.application.Application;
 import  javafx.scene.Scene            ;
 import  javafx.scene.layout.FlowPane  ;
-import  javafx.stage.Stage            ;
+import  javafx.scene.layout.GridPane  ;
+import  javafx.stage.Stage            ;  //bad import
 import  src.effects.Artsy             ;
+
+@SuppressWarnings("restriction")
 
 /** This is the runner for this application.
  * @author Miles B Huff
@@ -19,10 +32,10 @@ public class Driver extends Application
 	{ //+method
 		// DATA
 		String sBtnChecker = "Checker"            ;
-	        String sBtnOpen    = ""                   ;
-	        String sBtnReset   = ""                   ;
-	        String sBtnRotate  = ""                   ;
-	        String sBtnSave    = ""                   ;
+        String sBtnOpen    = ""                   ;
+        String sBtnReset   = ""                   ;
+        String sBtnRotate  = ""                   ;
+        String sBtnSave    = ""                   ;
 		String sBtnStripeH = "Stripe horizontally";
 		String sBtnStripeV = "Stripe vertically"  ;
 		String sLblFX      = "Effects:"           ;
@@ -65,9 +78,9 @@ public class Driver extends Application
 
 		// FX BUTTONS
 		GridPane gpFXBtns  = new GridPane(           );
-		Button  btnChecker = new Button  (sBtnChecker); gpFXBtns.add(btnChecker, 0, 0);
-		Button  btnStripeH = new Button  (sBtnStripeH); gpFXBtns.add(btnStripeH, 0, 1);
-		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
+		Button  btnChecker = new Button  (sBtnChecker); gpEffectBtns.add(btnChecker, 0, 0);
+		Button  btnStripeH = new Button  (sBtnStripeH); gpEffectBtns.add(btnStripeH, 0, 1);
+		Button  btnStripeV = new Button  (sBtnStripeV); gpEffectBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
 		GridPane  gpRoot = new GridPane (              );
