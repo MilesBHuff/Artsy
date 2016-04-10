@@ -29,9 +29,9 @@ public class Konami
         /** Takes a <code>KeyEvent</code>, analyzes it, and returns <code>true</code> if it matches the Konami code.
          * @author Preston Sheppard
          * @author Miles B Huff
+         * @throws InterruptedException
          * @param  ke A <code>KeyEvent</code>
          * @return <code>true</code> if <code>que</code> matches the Konami code.
-         * @throws InterruptedException 
         **/
         public static boolean keyInput(KeyEvent ke) throws InterruptedException
         { //+method
