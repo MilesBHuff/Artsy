@@ -1,4 +1,6 @@
 package p2                            ;
+import  effects.Artsy                 ;
+import  java.awt.image.BufferedImage  ;
 import  java.net.URL                  ;
 import  javax.imageio.ImageIO         ;
 import  javafx.application.Application;
@@ -13,7 +15,6 @@ import  javafx.scene.image.ImageView  ;
 import  javafx.scene.layout.GridPane  ;
 import  javafx.scene.shape.Rectangle  ;
 import  javafx.stage.Stage            ;
-import  effects.Artsy                 ;
 
 /** This is the runner for this application.
  * @author Miles B Huff
@@ -35,6 +36,7 @@ public class Driver extends Application
 		String sBtnSave    = ""                   ;
 		String sBtnStripeH = "Stripe horizontally";
 		String sBtnStripeV = "Stripe vertically"  ;
+		String sBtnUrl     = ""                   ;
 		String sLblFX      = "Effects:"           ;
 		String sLblImg1    = "Image 1:  "         ;
 		String sLblImg2    = "Image 2:  "         ;
@@ -51,27 +53,31 @@ public class Driver extends Application
 		Image imgSave    = new Image(getClass().getResourceAsStream("res/icons/save.png"   ));
 		Image imgStripeH = new Image(getClass().getResourceAsStream("res/icons/stripeH.png"));
 		Image imgStripeV = new Image(getClass().getResourceAsStream("res/icons/stripeV.png"));
+		Image imgUrl     = new Image(getClass().getResourceAsStream("res/icons/url.png"    ));
 
 		// IMG1 BUTTONS
 		GridPane gpImg1Btns = new GridPane(          );
 		Button  btnRotate1  = new Button  (sBtnRotate); gpImg1Btns.add(btnRotate1, 0, 0);
 		Button  btnReset1   = new Button  (sBtnReset ); gpImg1Btns.add(btnReset1 , 1, 0);
-		Button  btnOpen1    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen1  , 2, 0);
-		Button  btnSave1    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave1  , 3, 0);
+		Button  btnUrl1     = new Button  (sBtnUrl   ); gpImg1Btns.add(btnUrl1   , 2, 0);
+		Button  btnOpen1    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen1  , 3, 0);
+		Button  btnSave1    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave1  , 4, 0);
 		
 		// IMG2 BUTTONS
 		GridPane gpImg2Btns = new GridPane(          );
 		Button  btnRotate2  = new Button  (sBtnRotate); gpImg2Btns.add(btnRotate2, 0, 0);
 		Button  btnReset2   = new Button  (sBtnReset ); gpImg2Btns.add(btnReset2 , 1, 0);
-		Button  btnOpen2    = new Button  (sBtnOpen  ); gpImg2Btns.add(btnOpen2  , 2, 0);
-		Button  btnSave2    = new Button  (sBtnSave  ); gpImg2Btns.add(btnSave2  , 3, 0);
+		Button  btnUrl2     = new Button  (sBtnUrl   ); gpImg1Btns.add(btnUrl2   , 2, 0);
+		Button  btnOpen2    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen2  , 3, 0);
+		Button  btnSave2    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave2  , 4, 0);
 		
 		// IMG3 BUTTONS
 		GridPane gpImg3Btns = new GridPane(          );
 		Button  btnRotate3  = new Button  (sBtnRotate); gpImg3Btns.add(btnRotate3, 0, 0);
 		Button  btnReset3   = new Button  (sBtnReset ); gpImg3Btns.add(btnReset3 , 1, 0);
-		Button  btnOpen3    = new Button  (sBtnOpen  ); gpImg3Btns.add(btnOpen3  , 2, 0);
-		Button  btnSave3    = new Button  (sBtnSave  ); gpImg3Btns.add(btnSave3  , 3, 0);
+		Button  btnUrl3     = new Button  (sBtnUrl   ); gpImg1Btns.add(btnUrl3   , 2, 0);
+		Button  btnOpen3    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen3  , 3, 0);
+		Button  btnSave3    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave3  , 4, 0);
 
 		// FX BUTTONS
 		GridPane gpFXBtns  = new GridPane(           );
@@ -134,8 +140,9 @@ public class Driver extends Application
 		
 		// ACTIONS
 		//TODO
-		URL   url   = new URL         (imageUrl);
-		Image image =     ImageIO.read(url     );
+		
+		//URL           url   = new URL         ("" );
+		//BufferedImage image =     ImageIO.read(url);
 
 		// SET THE STAGE
 		Scene sceRoot = new Scene(gpRoot);
