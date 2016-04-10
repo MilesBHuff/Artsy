@@ -1,5 +1,5 @@
-package src.p2                            ;
-import  src.effects.Artsy                 ;
+package p2                            ;
+import  effects.Artsy                 ;
 import  java.awt.image.BufferedImage  ;
 import  java.net.URL                  ;
 import  javax.imageio.ImageIO         ;
@@ -16,6 +16,7 @@ import  javafx.scene.layout.GridPane  ;
 import  javafx.scene.shape.Rectangle  ;
 import  javafx.stage.Stage            ;
 @SuppressWarnings("restriction")
+
 /** This is the runner for this application.
  * @author Miles B Huff
 **/
@@ -86,37 +87,40 @@ public class Driver extends Application
 		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
-		GridPane  gpRoot = new GridPane (              );
-		Label    lblImg1 = new Label    (sLblImg1      ); gpRoot.add(lblImg1    , 0, 1      );
-		Rectangle  rImg1 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg1    , 0, 2      );
-		                                                  gpRoot.add( gpImg1Btns, 0, 3      );
-		Label    lblImg2 = new Label    (sLblImg2      ); gpRoot.add(lblImg2    , 0, 4      );
-		Rectangle  rImg2 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg2    , 0, 5      );
-		                                                  gpRoot.add( gpImg2Btns, 0, 6      );
-		Label    lblFX   = new Label    (sLblFX        ); gpRoot.add(lblFX      , 1, 1      );
-		                                                  gpRoot.add( gpFXBtns  , 1, 2, 1, 2);
-		Label    lblImg3 = new Label    (sLblImg3      ); gpRoot.add(lblImg3    , 1, 4      );
-		Rectangle  rImg3 = new Rectangle(0, 0, 300, 300); gpRoot.add(  rImg3    , 1, 5      );
-		                                                  gpRoot.add( gpImg3Btns, 1, 6      );
+		GridPane  gpMain = new GridPane (              );
+		Label    lblImg1 = new Label    (sLblImg1      ); gpMain.add(lblImg1    , 0, 1      );
+		Rectangle  rImg1 = new Rectangle(0, 0, 300, 300); gpMain.add(  rImg1    , 0, 2      );
+		                                                  gpMain.add( gpImg1Btns, 0, 3      );
+		Label    lblImg2 = new Label    (sLblImg2      ); gpMain.add(lblImg2    , 0, 4      );
+		Rectangle  rImg2 = new Rectangle(0, 0, 300, 300); gpMain.add(  rImg2    , 0, 5      );
+                                                                  gpMain.add( gpImg2Btns, 0, 6      );
+		Label    lblFX   = new Label    (sLblFX        ); gpMain.add(lblFX      , 1, 1      );
+                                                                  gpMain.add( gpFXBtns  , 1, 2, 1, 2);
+		Label    lblImg3 = new Label    (sLblImg3      ); gpMain.add(lblImg3    , 1, 4      );
+		Rectangle  rImg3 = new Rectangle(0, 0, 300, 300); gpMain.add(  rImg3    , 1, 5      );
+		                                                  gpMain.add( gpImg3Btns, 1, 6      );
 		
 		// MENUBAR
-		MenuBar mbrRoot = new MenuBar(      ); gpRoot.add(mbrRoot, 0, 0, 2, 1);
-	        Menu    menFile = new Menu   ("File");
-	        Menu    menHelp = new Menu   ("Help");
+		GridPane gpRoot = new GridPane (      ); gpRoot.add( gpMain, 0, 1);
+		MenuBar mbrRoot = new MenuBar  (      ); gpRoot.add(mbrRoot, 0, 0);
+	        Menu    menFile = new Menu     ("File");
+	        Menu    menHelp = new Menu     ("Help");
 	        mbrRoot.getMenus().addAll(menFile, menHelp);
 
 		// SPACING
-		gpFXBtns  .setHgap   (           10 );
-		gpFXBtns  .setVgap   (           10 );
-		gpImg1Btns.setHgap   (           10 );
-		gpImg1Btns.setVgap   (           10 );
-		gpImg2Btns.setHgap   (           10 );
-		gpImg2Btns.setVgap   (           10 );
-		gpImg3Btns.setHgap   (           10 );
-		gpImg3Btns.setVgap   (           10 );
-		gpRoot    .setPadding(new Insets(25));
-		gpRoot    .setHgap   (           10 );
-		gpRoot    .setVgap   (           10 );
+		gpFXBtns  .setHgap   (10);
+		gpFXBtns  .setVgap   (10);
+		gpImg1Btns.setHgap   (10);
+		gpImg1Btns.setVgap   (10);
+		gpImg2Btns.setHgap   (10);
+		gpImg2Btns.setVgap   (10);
+		gpImg3Btns.setHgap   (10);
+		gpImg3Btns.setVgap   (10);
+		gpMain    .setPadding(new Insets(0, 25, 25, 25));
+		gpMain    .setHgap   (10);
+		gpMain    .setVgap   (10);
+		gpRoot    .setHgap   (10);
+		gpRoot    .setVgap   (10);
 	        
 	        // IMAGES
 		btnChecker.setGraphic(new ImageView(imgChecker));
@@ -132,6 +136,9 @@ public class Driver extends Application
 		btnSave1  .setGraphic(new ImageView(imgSave   ));
 		btnSave2  .setGraphic(new ImageView(imgSave   ));
 		btnSave3  .setGraphic(new ImageView(imgSave   ));
+		btnUrl1   .setGraphic(new ImageView(imgUrl    ));
+		btnUrl2   .setGraphic(new ImageView(imgUrl    ));
+		btnUrl3   .setGraphic(new ImageView(imgUrl    ));
 		btnStripeH.setGraphic(new ImageView(imgStripeH));
 		btnStripeV.setGraphic(new ImageView(imgStripeV));
 		  //rImg1   .setGraphic(new ImageView(img1      ));
