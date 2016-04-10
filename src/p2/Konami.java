@@ -1,4 +1,5 @@
 package p2                                     ;
+import  java.awt.event.KeyEvent                ;
 import  java.util.concurrent.ArrayBlockingQueue;
 
 /** A class to implement the Konami extra-credit task.
@@ -30,31 +31,26 @@ public class Konami
          * @author Miles B Huff
          * @param  ke A <code>KeyEvent</code>
          * @return <code>true</code> if <code>que</code> matches the Konami code.
+         * @throws InterruptedException 
         **/
-        public static boolean keyInput(KeyEvent ke)
+        public static boolean keyInput(KeyEvent ke) throws InterruptedException
         { //+method
                 switch(ke.getKeyCode())
                 { //+case
                         case KeyEvent.VK_UP:
-                                return analyze(1);
-                                break;      // 1: up
+                                return analyze("1");  // 1: up
                         case KeyEvent.VK_DOWN:
-                                return analyze(2);
-                                break;      // 2: down
+                                return analyze("2");  // 2: down
                         case KeyEvent.VK_LEFT:
-                                return analyze(3);
-                                break;      // 3: left
+                                return analyze("3");  // 3: left
                         case KeyEvent.VK_RIGHT:
-                                return analyze(4);
-                                break;      // 4: right
+                                return analyze("4");  // 4: right
                         case 65:
-                                return analyze(5);
-                                break;      // 5: a
+                                return analyze("5");  // 5: a
                         case 66:
-                                return analyze(6);
-                                break;      // 6: b
+                                return analyze("6");  // 6: b
                         default:
-                        	return false;
+                        	return analyze("0");  // 0: invalid key
                 } //-case
 	} //-method
 } //-class
