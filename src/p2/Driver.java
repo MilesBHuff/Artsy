@@ -85,18 +85,18 @@ public class Driver extends Application
 		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
 
 		// MAIN PANE
-		GridPane  gpMain = new GridPane (          );
-		Label    lblImg1 = new Label    (  sLblImg1); gpMain.add(lblImg1    , 0, 1      );
-		ImageView ivImg1 = new ImageView(img3      ); gpMain.add( ivImg1    , 0, 2      );
-		                                              gpMain.add( gpImg1Btns, 0, 3      );
-		Label    lblImg2 = new Label    (  sLblImg2); gpMain.add(lblImg2    , 0, 4      );
-		ImageView ivImg2 = new ImageView(img3      ); gpMain.add( ivImg2    , 0, 5      );
-                                                              gpMain.add( gpImg2Btns, 0, 6      );
-		Label    lblFX   = new Label    (  sLblFX  ); gpMain.add(lblFX      , 1, 1      );
-                                                              gpMain.add( gpFXBtns  , 1, 2, 1, 2);
-		Label    lblImg3 = new Label    (  sLblImg3); gpMain.add(lblImg3    , 1, 4      );
-		ImageView ivImg3 = new ImageView(img3      ); gpMain.add( ivImg3    , 1, 5      );
-		                                              gpMain.add( gpImg3Btns, 1, 6      );
+		GridPane  gpMain = new GridPane (        );
+		Label    lblImg1 = new Label    (sLblImg1); gpMain.add(lblImg1    , 0, 1      );
+		ImageView ivImg1 = new ImageView(        ); gpMain.add( ivImg1    , 0, 2      );
+		                                            gpMain.add( gpImg1Btns, 0, 3      );
+		Label    lblImg2 = new Label    (sLblImg2); gpMain.add(lblImg2    , 0, 4      );
+		ImageView ivImg2 = new ImageView(        ); gpMain.add( ivImg2    , 0, 5      );
+                                                            gpMain.add( gpImg2Btns, 0, 6      );
+		Label    lblFX   = new Label    (sLblFX  ); gpMain.add(lblFX      , 1, 1      );
+                                                            gpMain.add( gpFXBtns  , 1, 2, 1, 2);
+		Label    lblImg3 = new Label    (sLblImg3); gpMain.add(lblImg3    , 1, 4      );
+		ImageView ivImg3 = new ImageView(        ); gpMain.add( ivImg3    , 1, 5      );
+		                                            gpMain.add( gpImg3Btns, 1, 6      );
 		
 		// MENUBAR
 		GridPane gpRoot = new GridPane (      ); gpRoot.add( gpMain, 0, 1);
@@ -137,6 +137,14 @@ public class Driver extends Application
 		btnUrl2   .setGraphic(new ImageView(imgUrl    ));
 		btnStripeH.setGraphic(new ImageView(imgStripeH));
 		btnStripeV.setGraphic(new ImageView(imgStripeV));
+		 ivImg1   .setImage  (    img1                 );
+		 ivImg2   .setImage  (    img2                 );
+		 ivImg3   .setImage  (    img3                 );
+		
+		// IMAGE-SETTINGS
+		ivImg1.setFitWidth(300); ivImg1.setPreserveRatio(true); ivImg1.setSmooth(true); ivImg1.setCache(true);
+		ivImg2.setFitWidth(300); ivImg2.setPreserveRatio(true); ivImg2.setSmooth(true); ivImg2.setCache(true);
+		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
 		// ACTIONS
 		//TODO
