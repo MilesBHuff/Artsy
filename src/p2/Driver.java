@@ -16,7 +16,7 @@ import  javafx.scene.image.Image                       ;
 import  javafx.scene.image.ImageView                   ;
 import  javafx.scene.layout.GridPane                   ;
 import  javafx.stage.Stage                             ;
-@SuppressWarnings("restriction")
+
 /** This is the runner for this application.
  * @author Miles B Huff
  * @author Preston Sheppard
