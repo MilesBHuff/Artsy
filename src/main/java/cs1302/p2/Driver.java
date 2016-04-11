@@ -1,5 +1,5 @@
-package src.p2                                         ;
-import  src.effects.Artsy                              ;
+package cs1302.p2                                      ;
+import  cs1302.effects.Artsy                           ;
 import  javax.swing.JFileChooser                       ;
 import  javax.swing.filechooser.FileNameExtensionFilter;
 import  javafx.application.Application                 ;
