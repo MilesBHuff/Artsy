@@ -5,7 +5,7 @@ import  javafx.scene.image.Image;
  * @author Miles B Huff (rewording and formatting)
 **/
 public interface Artsy
-{ //interface
+{ //+interface
 	////////////////////////////////////////////////////////////////////////
 	/** Given an <code>Image</code>, this method returns a deep copy of the
 	 *  given <code>Image</code>.
@@ -72,4 +72,4 @@ public interface Artsy
 	**/
 	public Image doRotate(Image  imgSrc,
 		              double dDeg  );
-} //interface
+} //-interface
