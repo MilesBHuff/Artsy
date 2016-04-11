@@ -10,6 +10,8 @@ import  javafx.scene.control.Button   ;
 import  javafx.scene.control.Label    ;
 import  javafx.scene.control.Menu     ;
 import  javafx.scene.control.MenuBar  ;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import  javafx.scene.image.Image      ;
 import  javafx.scene.image.ImageView  ;
 import  javafx.scene.layout.GridPane  ;
@@ -98,13 +100,45 @@ public class Driver extends Application
 		ImageView ivImg3 = new ImageView(        ); gpMain.add( ivImg3    , 1, 5      );
 		                                            gpMain.add( gpImg3Btns, 1, 6      );
 		
+		// ROOT PANE
+		GridPane gpRoot = new GridPane(); gpRoot.add( gpMain, 0, 1);
+		MenuBar mbrRoot = new MenuBar (); gpRoot.add(mbrRoot, 0, 0);
+		
 		// MENUBAR
-		GridPane gpRoot = new GridPane (      ); gpRoot.add( gpMain, 0, 1);
-		MenuBar mbrRoot = new MenuBar  (      ); gpRoot.add(mbrRoot, 0, 0);
-	        Menu    menFile = new Menu     ("File");
-	        Menu    menHelp = new Menu     ("Help");
-	        mbrRoot.getMenus().addAll(menFile, menHelp);
-
+	        Menu     menFile           = new          Menu    ("File"                                                                       );
+	        Menu     menFileOpen       = new          Menu    ("Open from file"     , new ImageView(new Image("file:res/icons/open.png"   )));
+	        MenuItem menFileOpenImg1   = new          MenuItem("Image 1"                                                                    );
+	        MenuItem menFileOpenImg2   = new          MenuItem("Image 2"                                                                    );
+	        Menu     menFileUrl        = new          Menu    ("Open from URL"      , new ImageView(new Image("file:res/icons/url.png"    )));
+	        MenuItem menFileUrlImg1    = new          MenuItem("Image 1"                                                                    );
+	        MenuItem menFileUrlImg2    = new          MenuItem("Image 2"                                                                    );
+		MenuItem menFileSeparator  = new SeparatorMenuItem(                                                                             );
+	        Menu     menFileReset      = new          Menu    ("Reset"              , new ImageView(new Image("file:res/icons/reset.png"  )));
+	        MenuItem menFileResetImg1  = new          MenuItem("Image 1"                                                                    );
+	        MenuItem menFileResetImg2  = new          MenuItem("Image 2"                                                                    );
+	        MenuItem menFileResetImg3  = new          MenuItem("Image 3"                                                                    );
+	        Menu     menFileSave       = new          Menu    ("Save"               , new ImageView(new Image("file:res/icons/save.png"   )));
+	        MenuItem menFileSaveImg1   = new          MenuItem("Image 1"                                                                    );
+	        MenuItem menFileSaveImg2   = new          MenuItem("Image 2"                                                                    );
+	        MenuItem menFileSaveImg3   = new          MenuItem("Image 3"                                                                    );
+	        Menu     menEdit           = new          Menu    ("Edit"                                                                       );
+	        Menu     menEditRotate     = new          Menu    ("Rotate"             , new ImageView(new Image("file:res/icons/rotate.png" )));
+	        MenuItem menEditRotateImg1 = new          MenuItem("Image 1"                                                                    );
+	        MenuItem menEditRotateImg2 = new          MenuItem("Image 2"                                                                    );
+	        MenuItem menEditRotateImg3 = new          MenuItem("Image 3"                                                                    );
+		MenuItem menEditSeparator  = new SeparatorMenuItem(                                                                             );
+	        MenuItem menEditChecker    = new          MenuItem("Checker"            , new ImageView(new Image("file:res/icons/checker.png")));
+	        MenuItem menEditStripeH    = new          MenuItem("Stripe horizontally", new ImageView(new Image("file:res/icons/stripeH.png")));
+	        MenuItem menEditStripeV    = new          MenuItem("Stripe vertically"  , new ImageView(new Image("file:res/icons/stripeV.png")));
+	        mbrRoot      .getMenus().addAll(menFile          , menEdit                                                             );
+	        menFile      .getItems().addAll(menFileOpen      , menFileUrl       , menFileSeparator , menFileReset  , menFileSave   );
+	        menFileOpen  .getItems().addAll(menFileOpenImg1  , menFileOpenImg2                                                     );
+	        menFileUrl   .getItems().addAll(menFileUrlImg1   , menFileUrlImg2                                                      );
+	        menFileReset .getItems().addAll(menFileResetImg1 , menFileResetImg2 , menFileResetImg3                                 );
+	        menFileSave  .getItems().addAll(menFileSaveImg1  , menFileSaveImg2  , menFileSaveImg3                                  );
+	        menEdit      .getItems().addAll(menEditRotate    , menEditSeparator , menEditChecker   , menEditStripeH, menEditStripeV);
+	        menEditRotate.getItems().addAll(menEditRotateImg1, menEditRotateImg2, menEditRotateImg3                                );
+	        
 		// SPACING
 		gpFXBtns  .setHgap   (10);
 		gpFXBtns  .setVgap   (10);
@@ -114,8 +148,8 @@ public class Driver extends Application
 		gpImg2Btns.setVgap   (10);
 		gpImg3Btns.setHgap   (10);
 		gpImg3Btns.setVgap   (10);
-		gpMain    .setPadding(new Insets(0, 25, 25, 25));
 		gpMain    .setHgap   (10);
+		gpMain    .setPadding(new Insets(0, 25, 25, 25));
 		gpMain    .setVgap   (10);
 		gpRoot    .setHgap   (10);
 		gpRoot    .setVgap   (10);
@@ -141,16 +175,28 @@ public class Driver extends Application
 		 ivImg2   .setImage  (    img2                 );
 		 ivImg3   .setImage  (    img3                 );
 		
-		// IMAGE-SETTINGS
+		// IMAGEVIEW-SETTINGS
 		ivImg1.setFitWidth(300); ivImg1.setPreserveRatio(true); ivImg1.setSmooth(true); ivImg1.setCache(true);
 		ivImg2.setFitWidth(300); ivImg2.setPreserveRatio(true); ivImg2.setSmooth(true); ivImg2.setCache(true);
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
 		// ACTIONS
-		//TODO
-		
-		//URL           url   = new URL         ("" );
-		//BufferedImage image =     ImageIO.read(url);
+		//TODO:  btnChecker
+		//TODO:  btnOpen1
+		//TODO:  btnOpen2
+		//TODO:  btnReset1
+		//TODO:  btnReset2
+		//TODO:  btnReset3
+		//TODO:  btnRotate1
+		//TODO:  btnRotate2
+		//TODO:  btnRotate3
+		//TODO:  btnSave1
+		//TODO:  btnSave2
+		//TODO:  btnSave3
+		//TODO:  btnStripeH
+		//TODO:  btnStripeV
+		//TODO:  btnUrl1
+		//TODO:  btnUrl2
 
 		// SET THE STAGE
 		Scene sceRoot = new Scene(gpRoot);
