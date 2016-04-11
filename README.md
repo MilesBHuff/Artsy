@@ -12,7 +12,17 @@
 
 * URL-support
 
-  * Implemented via menu-item, rather than by own stage.  Instructor verified that this was okay.  
+  * Implemented via menu-item, rather than via own stage.  Instructor verified that this was okay.  
+
+## Overkill
+
+This section describes things we did which were complete overkill, and which will hopefully amount to even more extra credit:  
+
+* Entire GUI was coded by hand
+
+* All icons were custom-made by hand for this project
+
+* A Queue was used for to implement the Konami-code.  We have not gone over data-structures, and neither of us coders have used a queue before.  
 
 # About
 
