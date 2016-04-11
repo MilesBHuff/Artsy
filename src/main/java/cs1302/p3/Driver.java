@@ -220,28 +220,22 @@ public class Driver extends Application
 		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
 		chooser.setFileFilter(filter);
 		
-		// EFFECTS-ACTIONS ----------------------------------
+				// EFFECTS-ACTIONS ----------------------------------
 		btnChecker.setOnAction(event -> {
 			diaChecker.showAndWait();
 			String s = diaChecker.getResult();
 			System.out.println(s);
 			int i = Integer.parseInt(s);
-			if (i > -1)
-			{ //+if
-				img3 = art.doCheckers(img1,img2, i);
-				ivImg3.setImage(img3);
-			} //-if
+			img3 = art.doCheckers(img1,img2, i);
+			ivImg3.setImage(img3);
 		});
 		menEditChecker.setOnAction(btnChecker.getOnAction());
 		btnStripeH.setOnAction(event -> {
 			diaStripeH.showAndWait();
 			String s = diaStripeH.getResult();
 			int i = Integer.parseInt(s);
-			if(i > -1)
-			{ //+if
-				img3 = art.doStripesHorizontal(img1,img2, i);
-				ivImg3.setImage(img3);
-			} //-if
+			img3 = art.doStripesHorizontal(img1,img2, i);
+			ivImg3.setImage(img3);
 		});
 		menEditStripeH.setOnAction(btnStripeH.getOnAction());
 		btnStripeV.setOnAction(event -> {
@@ -249,15 +243,12 @@ public class Driver extends Application
 			String s = diaStripeV.getResult();
 			System.out.println(s);
 			int i = Integer.parseInt(s);
-			if (i > -1)
-			{ //+if
-				img3 = art.doStripesVertical(img1,img2, i);
-				ivImg3.setImage(img3);
-			} //-if
+			img3 = art.doStripesVertical(img1,img2, i);
+			ivImg3.setImage(img3);
 		});
 		menEditStripeV.setOnAction(btnStripeV.getOnAction());
 		
-		// OPEN-ACTIONS -----------------------------------------------------------------
+		// OPEN-ACTIONS ---------------------------------------------------------
 		btnOpen1.setOnAction(event -> {
 			int returnVal = chooser.showOpenDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION)
@@ -265,6 +256,7 @@ public class Driver extends Application
 				lblImg1.setText(sLblImg1 + chooser.getSelectedFile().getName ());
 				img1 = new Image("file:" + chooser.getSelectedFile().toString());
 			} //-if
+			img01=img1;
 			ivImg1.setImage(img1);
 		});
 		menFileOpenImg1.setOnAction(btnOpen1.getOnAction());
@@ -275,18 +267,19 @@ public class Driver extends Application
 				lblImg2.setText(sLblImg2 + chooser.getSelectedFile().getName ());
 				img2 = new Image("file:" + chooser.getSelectedFile().toString());
 			} //-if
+			img02=img2;
 			ivImg2.setImage(img2);
 		});
 		menFileOpenImg2.setOnAction(btnOpen2.getOnAction());
 		
 		// RESET-ACTIONS -------------------------------------
 		btnReset1.setOnAction(event -> {
-			//img1 = img01;
+			img1 = img01;
 			ivImg1.setImage(img1);
 		});
 		menFileResetImg1.setOnAction(btnReset1.getOnAction());
 		btnReset2.setOnAction(event -> {
-		//	img2 = img02;
+			img2 = img02;
 			ivImg2.setImage(img2);
 		});
 		menFileResetImg2.setOnAction(btnReset2.getOnAction());
@@ -302,11 +295,8 @@ public class Driver extends Application
 			String s = diaRotate.getResult();
 			System.out.println(s);
 			int i = Integer.parseInt(s);
-			if(i > -1)
-			{ //+if
-				img1=art.doRotate(img1, i);
-				ivImg1.setImage(img1);
-			} //-if
+			img1=art.doRotate(img1, i);
+			ivImg1.setImage(img1);
 		});
 		menEditRotateImg1.setOnAction(btnRotate1.getOnAction());
 		btnRotate2.setOnAction(event -> {
@@ -314,10 +304,8 @@ public class Driver extends Application
 			String s = diaRotate.getResult();
 			System.out.println(s);
 			int i = Integer.parseInt(s);
-			if(i > -1){
-				img2=art.doRotate(img2, i);
-				ivImg2.setImage(img2);
-			}
+			img2=art.doRotate(img2, i);
+			ivImg2.setImage(img2);
 		});
 		menEditRotateImg2.setOnAction(btnRotate3.getOnAction());
 		btnRotate3.setOnAction(event -> {
@@ -325,10 +313,8 @@ public class Driver extends Application
 			String s = diaRotate.getResult();
 			System.out.println(s);
 			int i = Integer.parseInt(s);
-			if(i > -1){
-				img3 = art.doRotate(img3, i);
-				ivImg3.setImage(img3);
-			}
+			img3 = art.doRotate(img3, i);
+			ivImg3.setImage(img3);
 		});
 		menEditRotateImg3.setOnAction(btnRotate3.getOnAction());
 		
