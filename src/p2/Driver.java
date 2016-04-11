@@ -23,21 +23,10 @@ import  javafx.stage.Stage                             ;
 **/
 public class Driver extends Application
 { //+class
-	// RESOURCES ----------------------------------------------
-	Image test       = new Image("file:res/sample1.png"      );
-	Image img0       = new Image("file:res/default.png"      );
-	Image img1       = new Image("file:res/default.png"      );
-	Image img2       = new Image("file:res/default.png"      );
-	Image img3       = new Image("file:res/default.png"      );
-	Image imgChecker = new Image("file:res/icons/checker.png");
-	Image imgOpen    = new Image("file:res/icons/open.png"   );
-	Image imgReset   = new Image("file:res/icons/reset.png"  );
-	Image imgRotate  = new Image("file:res/icons/rotate.png" );
-	Image imgSave    = new Image("file:res/icons/save.png"   );
-	Image imgStripeH = new Image("file:res/icons/stripeH.png");
-	Image imgStripeV = new Image("file:res/icons/stripeV.png");
-	Image imgUrl     = new Image("file:res/icons/url.png"    );
-	Artsy art        = new MyArtsy(                          );
+	// RESOURCES ----------------------------------
+	Image img1 = new Image("file:res/default.png");
+	Image img2 = new Image("file:res/default.png");
+	Image img3 = new Image("file:res/default.png");
 	
 	////////////////////////////////////////////////////////////////////////
 	/** Creates a GUI for the application.  (yes, we did this by hand.)
@@ -61,6 +50,18 @@ public class Driver extends Application
 		String sLblImg1    = "Image 1:  "         ;
 		String sLblImg2    = "Image 2:  "         ;
 		String sLblImg3    = "Result:"            ;
+		
+		// RESOURCES ----------------------------------------------
+		Image img0       = new Image("file:res/default.png"      );
+		Image imgChecker = new Image("file:res/icons/checker.png");
+		Image imgOpen    = new Image("file:res/icons/open.png"   );
+		Image imgReset   = new Image("file:res/icons/reset.png"  );
+		Image imgRotate  = new Image("file:res/icons/rotate.png" );
+		Image imgSave    = new Image("file:res/icons/save.png"   );
+		Image imgStripeH = new Image("file:res/icons/stripeH.png");
+		Image imgStripeV = new Image("file:res/icons/stripeV.png");
+		Image imgUrl     = new Image("file:res/icons/url.png"    );
+		Artsy art        = new MyArtsy(                          );
 		
 		// IMG1 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg1Btns = new GridPane(          );
