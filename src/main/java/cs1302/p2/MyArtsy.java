@@ -1,9 +1,9 @@
-package p2                              ;
+package cs1302.p2                       ;
+import  cs1302.effects.Artsy            ;
 import  javafx.scene.image.Image        ;
 import  javafx.scene.image.PixelReader  ;
 import  javafx.scene.image.PixelWriter  ;
 import  javafx.scene.image.WritableImage;
-import  effects.Artsy                   ;
 
 /** Implements effects.Artsy
  * @author Preston Sheppard (coding)
