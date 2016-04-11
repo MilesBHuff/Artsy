@@ -1,9 +1,9 @@
 # Compilation
 
-## UNIX: 
+## UNIX
 
 <code>$ sbt</code>
 
-## Windows:  
+## Windows
 
 Execute <code>sbt.bat</code>
