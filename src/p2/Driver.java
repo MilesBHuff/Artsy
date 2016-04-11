@@ -1,22 +1,22 @@
-package p2                            ;
-import  effects.Artsy                 ;
-import  java.awt.image.BufferedImage  ;
-import  java.net.URL                  ;
-import  javax.imageio.ImageIO         ;
-import  javafx.application.Application;
-import  javafx.geometry.Insets        ;
-import  javafx.scene.Scene            ;
-import  javafx.scene.control.Button   ;
-import  javafx.scene.control.Label    ;
-import  javafx.scene.control.Menu     ;
-import  javafx.scene.control.MenuBar  ;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
-import  javafx.scene.image.Image      ;
-import  javafx.scene.image.ImageView  ;
-import  javafx.scene.layout.GridPane  ;
-import  javafx.scene.shape.Rectangle  ;
-import  javafx.stage.Stage            ;
+package p2                                    ;
+import  effects.Artsy                         ;
+import  java.awt.image.BufferedImage          ;
+import  java.net.URL                          ;
+import  javax.imageio.ImageIO                 ;
+import  javafx.application.Application        ;
+import  javafx.geometry.Insets                ;
+import  javafx.scene.Scene                    ;
+import  javafx.scene.control.Button           ;
+import  javafx.scene.control.Label            ;
+import  javafx.scene.control.Menu             ;
+import  javafx.scene.control.MenuBar          ;
+import  javafx.scene.control.MenuItem         ;
+import  javafx.scene.control.SeparatorMenuItem;
+import  javafx.scene.image.Image              ;
+import  javafx.scene.image.ImageView          ;
+import  javafx.scene.layout.GridPane          ;
+import  javafx.scene.shape.Rectangle          ;
+import  javafx.stage.Stage                    ;
 @SuppressWarnings("restriction")
 
 /** This is the runner for this application.
