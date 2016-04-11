@@ -1,4 +1,4 @@
-package p2                                    ;
+package src.p2                                ;
 import  javafx.application.Application        ;
 import  javafx.geometry.Insets                ;
 import  javafx.scene.Scene                    ;
@@ -139,19 +139,19 @@ public class Driver extends Application
 	        menEditRotate.getItems().addAll(menEditRotateImg1, menEditRotateImg2, menEditRotateImg3                                                                 );
 	        
 		// SPACING
-		gpFXBtns  .setHgap   (10);
-		gpFXBtns  .setVgap   (10);
-		gpImg1Btns.setHgap   (10);
-		gpImg1Btns.setVgap   (10);
-		gpImg2Btns.setHgap   (10);
-		gpImg2Btns.setVgap   (10);
-		gpImg3Btns.setHgap   (10);
-		gpImg3Btns.setVgap   (10);
-		gpMain    .setHgap   (10);
+		gpFXBtns  .setHgap   (    10                   );
+		gpFXBtns  .setVgap   (    10                   );
+		gpImg1Btns.setHgap   (    10                   );
+		gpImg1Btns.setVgap   (    10                   );
+		gpImg2Btns.setHgap   (    10                   );
+		gpImg2Btns.setVgap   (    10                   );
+		gpImg3Btns.setHgap   (    10                   );
+		gpImg3Btns.setVgap   (    10                   );
+		gpMain    .setHgap   (    10                   );
 		gpMain    .setPadding(new Insets(0, 25, 25, 25));
-		gpMain    .setVgap   (10);
-		gpRoot    .setHgap   (10);
-		gpRoot    .setVgap   (10);
+		gpMain    .setVgap   (    10                   );
+		gpRoot    .setHgap   (    10                   );
+		gpRoot    .setVgap   (    10                   );
 	        
 	        // IMAGES
 		btnChecker.setGraphic(new ImageView(imgChecker));
