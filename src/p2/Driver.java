@@ -208,9 +208,43 @@ public class Driver extends Application
 		JFileChooser            chooser = new JFileChooser           (                   );
 		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
 		chooser.setFileFilter(filter);
-		int x=5;
+		int x = 5;
+		
 		// EFFECTS-ACTIONS
+		btnChecker.setOnAction(event->{
+			diaChecker.showAndWait();
+			String q=diaChecker.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doCheckers(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
+		});
+		menEditChecker.setOnAction(event->{
+			diaChecker.showAndWait();
+			String q=diaChecker.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doCheckers(img1,img2, z);
+				img3=test;
+				ivImg3.setImage(img3);
+			}
+		});
 		btnStripeH.setOnAction(event->{
+			diaStripeH.showAndWait();
+			String q=diaStripeH.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doStripesHorizontal(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
+		});
+		menEditStripeH.setOnAction(event->{
 			diaStripeH.showAndWait();
 			String q=diaStripeH.getResult();
 			System.out.println(q);
@@ -232,17 +266,6 @@ public class Driver extends Application
 				ivImg3.setImage(img3);
 			}
 		});
-		btnChecker.setOnAction(event->{
-			diaChecker.showAndWait();
-			String q=diaChecker.getResult();
-			System.out.println(q);
-			int z=Integer.parseInt(q);
-			if (z>-1){
-				img3=art.doCheckers(img1,img2, z);
-				//img3=test;
-				ivImg3.setImage(img3);
-			}
-		});
 		menEditStripeV.setOnAction(event->{
 			diaStripeV.showAndWait();
 			String q=diaStripeV.getResult();
@@ -254,28 +277,7 @@ public class Driver extends Application
 				ivImg3.setImage(img3);
 			}
 		});
-		menEditStripeH.setOnAction(event->{
-			diaStripeH.showAndWait();
-			String q=diaStripeH.getResult();
-			System.out.println(q);
-			int z=Integer.parseInt(q);
-			if (z>-1){
-				img3=art.doStripesHorizontal(img1,img2, z);
-				//img3=test;
-				ivImg3.setImage(img3);
-			}
-		});
-		menEditChecker.setOnAction(event->{
-			diaChecker.showAndWait();
-			String q=diaChecker.getResult();
-			System.out.println(q);
-			int z=Integer.parseInt(q);
-			if (z>-1){
-				img3=art.doCheckers(img1,img2, z);
-				img3=test;
-				ivImg3.setImage(img3);
-			}
-		});
+		
 		// ROTATE-ACTIONS
 		btnRotate1.setOnAction(event->{
 			diaRotate.showAndWait();
@@ -285,6 +287,17 @@ public class Driver extends Application
 			if (z>-1){
 				img1=art.doRotate(img1, z);
 				//img1=test;
+				ivImg1.setImage(img1);
+			}
+		});
+		menEditRotateImg1.setOnAction(event->{
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img1=art.doRotate(img1, z);
+				
 				ivImg1.setImage(img1);
 			}
 		});
@@ -299,28 +312,6 @@ public class Driver extends Application
 				ivImg2.setImage(img2);
 			}
 		});
-		btnRotate3.setOnAction(event->{
-			diaRotate.showAndWait();
-			String q=diaRotate.getResult();
-			System.out.println(q);
-			int z=Integer.parseInt(q);
-			if (z>-1){
-				img3=art.doRotate(img3, z);
-		
-				ivImg3.setImage(img3);
-			}
-		});
-		menEditRotateImg1.setOnAction(event->{
-			diaRotate.showAndWait();
-			String q=diaRotate.getResult();
-			System.out.println(q);
-			int z=Integer.parseInt(q);
-			if (z>-1){
-				img1=art.doRotate(img1, z);
-				
-				ivImg1.setImage(img1);
-			}
-		});
 		menEditRotateImg2.setOnAction(event->{
 			diaRotate.showAndWait();
 			String q=diaRotate.getResult();
@@ -330,6 +321,17 @@ public class Driver extends Application
 				img2=art.doRotate(img2, z);
 				//img2=test;
 				ivImg2.setImage(img2);
+			}
+		});
+		btnRotate3.setOnAction(event->{
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doRotate(img3, z);
+		
+				ivImg3.setImage(img3);
 			}
 		});
 		menEditRotateImg3.setOnAction(event->{
@@ -343,8 +345,13 @@ public class Driver extends Application
 				ivImg3.setImage(img3);
 			}
 		});
+		
 		// RESET-ACTIONS
 		btnReset1.setOnAction(event->{
+			//img1 = img01;
+			ivImg1.setImage(img1);
+		});
+		menFileResetImg1.setOnAction(event->{
 			//img1 = img01;
 			ivImg1.setImage(img1);
 		});
@@ -352,24 +359,28 @@ public class Driver extends Application
 		//	img2 = img02;
 			ivImg2.setImage(img2);
 		});
-		btnReset3.setOnAction(event->{
-			img3 = img0;
-			ivImg3.setImage(img3);
-		});
-		menFileResetImg1.setOnAction(event->{
-			//img1 = img01;
-			ivImg1.setImage(img1);
-		});
 		menFileResetImg2.setOnAction(event->{
 			//img2 = img02;
 			ivImg2.setImage(img2);
+		});
+		btnReset3.setOnAction(event->{
+			img3 = img0;
+			ivImg3.setImage(img3);
 		});
 		menFileResetImg3.setOnAction(event->{
 			img3 = img0;
 			ivImg3.setImage(img3);
 		});
 		
+		// URL-ACTIONS
 		btnUrl1.setOnAction(event->{
+			diaUrl.showAndWait();
+			String url=diaUrl.getResult();
+			System.out.println(url);
+		//	img1=ImageIO.read(url);
+			ivImg1.setImage(img1);
+		});
+		menFileUrlImg1.setOnAction(event->{
 			diaUrl.showAndWait();
 			String url=diaUrl.getResult();
 			System.out.println(url);
@@ -383,13 +394,6 @@ public class Driver extends Application
 			//img2=ImageIO.read(url);
 			ivImg2.setImage(img2);
 		});
-		menFileUrlImg1.setOnAction(event->{
-			diaUrl.showAndWait();
-			String url=diaUrl.getResult();
-			System.out.println(url);
-		//	img1=ImageIO.read(url);
-			ivImg1.setImage(img1);
-		});
 		menFileUrlImg2.setOnAction(event->{
 			diaUrl.showAndWait();
 			String url=diaUrl.getResult();
@@ -397,11 +401,23 @@ public class Driver extends Application
 			//img2=ImageIO.read(url);
 			ivImg1.setImage(img2);
 		});
+		
+		// OPEN-ACTIONS
 		btnOpen1.setOnAction(event->{
 			int returnVal = chooser.showOpenDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION) {
 				String s = "file:" + chooser.getSelectedFile().toString();
+				lblImg1.setText(sLblOpen1 + chooser.getSelectedFile().getName());
 				System.out.println("You chose to open this file: " + s);
+				img1 = new Image(s);
+			}			
+			ivImg1.setImage(img1);
+		});
+		menFileOpenImg1.setOnAction(event->{
+			int returnVal = chooser.showOpenDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				String s = "file:" + chooser.getSelectedFile().toString();
+				lblImg1.setText(sLblOpen1 + chooser.getSelectedFile().getName());
 				img1 = new Image(s);
 			}			
 			ivImg1.setImage(img1);
@@ -410,34 +426,27 @@ public class Driver extends Application
 			int returnVal = chooser.showOpenDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION) {
 				String s = "file:" + chooser.getSelectedFile().toString();
+				lblImg1.setText(sLblOpen1 + chooser.getSelectedFile().getName());
 				System.out.println("You chose to open this file: " + s);
 				img2 = new Image(s);
 			}			
 			ivImg2.setImage(img2);
 		});
-		
-		menFileOpenImg1.setOnAction(event->{
-			int returnVal = chooser.showOpenDialog(null);
-			if(returnVal == JFileChooser.APPROVE_OPTION) {
-				String s = "file:" + chooser.getSelectedFile().toString();
-				System.out.println("You chose to open this file: " + s);
-				img1 = new Image(s);
-			}			
-			ivImg1.setImage(img1);
-		});
-		
 		menFileOpenImg2.setOnAction(event->{
 			int returnVal = chooser.showOpenDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION) {
 				String s = "file:" + chooser.getSelectedFile().toString();
+				lblImg1.setText(sLblOpen1 + chooser.getSelectedFile().getName());
 				System.out.println("You chose to open this file: " + s);
 				img2 = new Image(s);
 			}			
 			ivImg2.setImage(img2);
 		});
+		
+		// OTHER ACTIONS
 		menFileClose.setOnAction(event->System.exit(0));
+		
 		// SAVE-ACTIONS
-		//TODO:  btnSave1
 		menFileSaveImg1.setOnAction(event->{
 			int returnVal = chooser.showSaveDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION) {
@@ -447,6 +456,7 @@ public class Driver extends Application
 			}			
 			ivImg2.setImage(img2);
 		});
+		//TODO:  btnSave1
 		//TODO:  btnSave2
 		//TODO:  btnSave3
 		//TODO:  menFileSaveImg1
