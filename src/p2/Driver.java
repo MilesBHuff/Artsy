@@ -1,8 +1,4 @@
 package p2                                    ;
-import  effects.Artsy                         ;
-import  java.awt.image.BufferedImage          ;
-import  java.net.URL                          ;
-import  javax.imageio.ImageIO                 ;
 import  javafx.application.Application        ;
 import  javafx.geometry.Insets                ;
 import  javafx.scene.Scene                    ;
@@ -15,17 +11,18 @@ import  javafx.scene.control.SeparatorMenuItem;
 import  javafx.scene.image.Image              ;
 import  javafx.scene.image.ImageView          ;
 import  javafx.scene.layout.GridPane          ;
-import  javafx.scene.shape.Rectangle          ;
 import  javafx.stage.Stage                    ;
-@SuppressWarnings("restriction")
 
 /** This is the runner for this application.
  * @author Miles B Huff
+ * @author Preston Sheppard
 **/
 public class Driver extends Application
 { //+class
 	////////////////////////////////////////////////////////////////////////
-	/** Creates a GUI for the application.
+	/** Creates a GUI for the application.  (yes, we did this by hand.)
+	 * @author Miles B Huff (everything else)
+	 * @author Preston Sheppard (events)
 	 * @param stage $Description
 	**/
 	@Override
