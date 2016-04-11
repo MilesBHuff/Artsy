@@ -182,20 +182,52 @@ public class Driver extends Application
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
 		// ACTIONS
+				btnStripeH.setOnAction(event->{
+			img3=art.doStripesHorizontal(img1,img2, 5);
+			img3=test;
+			ivImg3.setImage(test);
+			});
+		btnStripeV.setOnAction(event->{
+			img3=art.doStripesVertical(img1,img2, 5);
+			img3=test;
+			ivImg3.setImage(test);
+			});
+		
+		btnRotate1.setOnAction(event->{
+			img1=art.doRotate(img1, 50);
+			ivImg1.setImage(img1);
+			}
+		);
+		btnRotate2.setOnAction(event->{
+			img2=art.doRotate(img2, x);
+			ivImg2.setImage(img2);
+			}
+		);
+		btnRotate3.setOnAction(event->{
+			img3=art.doRotate(img3, x);
+			ivImg3.setImage(img3);
+			}
+		);
+		
+		btnReset1.setOnAction(event->{
+			img1 = defaultImage;
+			ivImg1.setImage(img1);
+			});
+		btnReset2.setOnAction(event->{
+			img2 = defaultImage;
+			ivImg2.setImage(img2);
+			});
+		btnReset3.setOnAction(event->{
+			img3 = defaultImage;
+			ivImg3.setImage(img3);
+			});
+		
 		//TODO:  btnChecker
 		//TODO:  btnOpen1
 		//TODO:  btnOpen2
-		//TODO:  btnReset1
-		//TODO:  btnReset2
-		//TODO:  btnReset3
-		//TODO:  btnRotate1
-		//TODO:  btnRotate2
-		//TODO:  btnRotate3
 		//TODO:  btnSave1
 		//TODO:  btnSave2
 		//TODO:  btnSave3
-		//TODO:  btnStripeH
-		//TODO:  btnStripeV
 		//TODO:  btnUrl1
 		//TODO:  btnUrl2
 		//TODO:  menEditChecker
