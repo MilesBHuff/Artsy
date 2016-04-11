@@ -23,20 +23,6 @@ import  javafx.stage.Stage                             ;
 **/
 public class Driver extends Application
 { //+class
-	// DATA -----------------------------------
-	String sBtnChecker = "Checker"            ;
-	String sBtnOpen    = ""                   ;
-	String sBtnReset   = ""                   ;
-	String sBtnRotate  = ""                   ;
-	String sBtnSave    = ""                   ;
-	String sBtnStripeH = "Stripe horizontally";
-	String sBtnStripeV = "Stripe vertically"  ;
-	String sBtnUrl     = ""                   ;
-	String sLblFX      = "Effects:"           ;
-	String sLblImg1    = "Image 1:  "         ;
-	String sLblImg2    = "Image 2:  "         ;
-	String sLblImg3    = "Result:"            ;
-	
 	// RESOURCES ----------------------------------------------
 	Image test       = new Image("file:res/sample1.png"      );
 	Image img0       = new Image("file:res/default.png"      );
@@ -62,6 +48,20 @@ public class Driver extends Application
 	@Override
 	public void start(Stage stgRoot)
 	{ //+method
+		// DATA -----------------------------------
+		String sBtnChecker = "Checker"            ;
+		String sBtnOpen    = ""                   ;
+		String sBtnReset   = ""                   ;
+		String sBtnRotate  = ""                   ;
+		String sBtnSave    = ""                   ;
+		String sBtnStripeH = "Stripe horizontally";
+		String sBtnStripeV = "Stripe vertically"  ;
+		String sBtnUrl     = ""                   ;
+		String sLblFX      = "Effects:"           ;
+		String sLblImg1    = "Image 1:  "         ;
+		String sLblImg2    = "Image 2:  "         ;
+		String sLblImg3    = "Result:"            ;
+		
 		// IMG1 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg1Btns = new GridPane(          );
 		Button  btnRotate1  = new Button  (sBtnRotate); gpImg1Btns.add(btnRotate1, 0, 0);
