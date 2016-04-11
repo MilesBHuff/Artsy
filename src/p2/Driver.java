@@ -1,4 +1,4 @@
-package src.p2                                ;
+package p2                                    ;
 import  javafx.application.Application        ;
 import  javafx.geometry.Insets                ;
 import  javafx.scene.Scene                    ;
@@ -28,7 +28,7 @@ public class Driver extends Application
 	@Override
 	public void start(Stage stgRoot)
 	{ //+method
-		// DATA
+		// DATA -----------------------------------
 		String sBtnChecker = "Checker"            ;
 		String sBtnOpen    = ""                   ;
 		String sBtnReset   = ""                   ;
@@ -42,7 +42,7 @@ public class Driver extends Application
 		String sLblImg2    = "Image 2:  "         ;
 		String sLblImg3    = "Result:"            ;
 		
-		// RESOURCES
+		// RESOURCES ----------------------------------------------
 		Image img1       = new Image("file:res/default.png"      );
 		Image img2       = new Image("file:res/default.png"      );
 		Image img3       = new Image("file:res/default.png"      );
@@ -55,7 +55,7 @@ public class Driver extends Application
 		Image imgStripeV = new Image("file:res/icons/stripeV.png");
 		Image imgUrl     = new Image("file:res/icons/url.png"    );
 
-		// IMG1 BUTTONS
+		// IMG1 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg1Btns = new GridPane(          );
 		Button  btnRotate1  = new Button  (sBtnRotate); gpImg1Btns.add(btnRotate1, 0, 0);
 		Button  btnReset1   = new Button  (sBtnReset ); gpImg1Btns.add(btnReset1 , 1, 0);
@@ -63,7 +63,7 @@ public class Driver extends Application
 		Button  btnOpen1    = new Button  (sBtnOpen  ); gpImg1Btns.add(btnOpen1  , 3, 0);
 		Button  btnSave1    = new Button  (sBtnSave  ); gpImg1Btns.add(btnSave1  , 4, 0);
 		
-		// IMG2 BUTTONS
+		// IMG2 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg2Btns = new GridPane(          );
 		Button  btnRotate2  = new Button  (sBtnRotate); gpImg2Btns.add(btnRotate2, 0, 0);
 		Button  btnReset2   = new Button  (sBtnReset ); gpImg2Btns.add(btnReset2 , 1, 0);
@@ -71,19 +71,19 @@ public class Driver extends Application
 		Button  btnOpen2    = new Button  (sBtnOpen  ); gpImg2Btns.add(btnOpen2  , 3, 0);
 		Button  btnSave2    = new Button  (sBtnSave  ); gpImg2Btns.add(btnSave2  , 4, 0);
 		
-		// IMG3 BUTTONS
+		// IMG3 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg3Btns = new GridPane(          );
 		Button  btnRotate3  = new Button  (sBtnRotate); gpImg3Btns.add(btnRotate3, 0, 0);
 		Button  btnReset3   = new Button  (sBtnReset ); gpImg3Btns.add(btnReset3 , 1, 0);
 		Button  btnSave3    = new Button  (sBtnSave  ); gpImg3Btns.add(btnSave3  , 2, 0);
 
-		// FX BUTTONS
+		// FX BUTTONS -----------------------------------------------------------------
 		GridPane gpFXBtns  = new GridPane(           );
 		Button  btnChecker = new Button  (sBtnChecker); gpFXBtns.add(btnChecker, 0, 0);
 		Button  btnStripeH = new Button  (sBtnStripeH); gpFXBtns.add(btnStripeH, 0, 1);
 		Button  btnStripeV = new Button  (sBtnStripeV); gpFXBtns.add(btnStripeV, 0, 2);
 
-		// MAIN PANE
+		// MAIN PANE -------------------------------------------------------------------
 		GridPane  gpMain = new GridPane (        );
 		Label    lblImg1 = new Label    (sLblImg1); gpMain.add(lblImg1    , 0, 0      );
 		ImageView ivImg1 = new ImageView(        ); gpMain.add( ivImg1    , 0, 1      );
@@ -97,11 +97,11 @@ public class Driver extends Application
     		Label    lblFX   = new Label    (sLblFX  ); gpMain.add(lblFX      , 3, 0      );
                                                             gpMain.add( gpFXBtns  , 3, 1, 1, 2);
 		
-		// ROOT PANE
+		// ROOT PANE -----------------------------------------------
 		GridPane gpRoot = new GridPane(); gpRoot.add( gpMain, 0, 1);
 		MenuBar mbrRoot = new MenuBar (); gpRoot.add(mbrRoot, 0, 0);
 		
-		// MENUBAR
+		// MENUBAR -----------------------------------------------------------------------------------------------------------------------
 	        Menu     menFile           = new          Menu    ("File"                                                                       );
 	        Menu     menFileOpen       = new          Menu    ("Open from file"     , new ImageView(new Image("file:res/icons/open.png"   )));
 	        MenuItem menFileOpenImg1   = new          MenuItem("Image 1"                                                                    );
@@ -138,7 +138,7 @@ public class Driver extends Application
 	        menEdit      .getItems().addAll(menEditRotate    , menEditSeparator , menEditChecker   , menEditStripeH, menEditStripeV                                 );
 	        menEditRotate.getItems().addAll(menEditRotateImg1, menEditRotateImg2, menEditRotateImg3                                                                 );
 	        
-		// SPACING
+		// SPACING --------------------------------------
 		gpFXBtns  .setHgap   (    10                   );
 		gpFXBtns  .setVgap   (    10                   );
 		gpImg1Btns.setHgap   (    10                   );
@@ -153,7 +153,7 @@ public class Driver extends Application
 		gpRoot    .setHgap   (    10                   );
 		gpRoot    .setVgap   (    10                   );
 	        
-	        // IMAGES
+	        // IMAGES ---------------------------------------
 		btnChecker.setGraphic(new ImageView(imgChecker));
 		btnOpen1  .setGraphic(new ImageView(imgOpen   ));
 		btnOpen2  .setGraphic(new ImageView(imgOpen   ));
@@ -174,7 +174,7 @@ public class Driver extends Application
 		 ivImg2   .setImage  (    img2                 );
 		 ivImg3   .setImage  (    img3                 );
 		
-		// IMAGEVIEW-SETTINGS
+		// IMAGEVIEW-SETTINGS --------------------------------------------------------------------------------
 		ivImg1.setFitWidth(300); ivImg1.setPreserveRatio(true); ivImg1.setSmooth(true); ivImg1.setCache(true);
 		ivImg2.setFitWidth(300); ivImg2.setPreserveRatio(true); ivImg2.setSmooth(true); ivImg2.setCache(true);
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
@@ -213,7 +213,7 @@ public class Driver extends Application
 		//TODO:  menFileUrlImg1
 		//TODO:  menFileUrlImg2
 
-		// SET THE STAGE
+		// SET THE STAGE -----------------
 		Scene sceRoot = new Scene(gpRoot);
 		stgRoot.setScene   (sceRoot );
 		stgRoot.setTitle   ("Artsy!");
