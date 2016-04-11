@@ -32,7 +32,7 @@ public class Driver extends Application
 	/** Creates a GUI for the application.  (yes, we did this by hand.)
 	 * @author Miles B Huff (everything else)
 	 * @author Preston Sheppard (events)
-	 * @param stage $Description
+	 * @param stage The window on which to display
 	**/
 	@Override
 	public void start(Stage stgRoot)
