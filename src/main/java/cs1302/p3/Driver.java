@@ -32,6 +32,8 @@ public class Driver extends Application
 	Image img1 = new Image("file:res/images/default.png");
 	Image img2 = new Image("file:res/images/default.png");
 	Image img3 = new Image("file:res/images/default.png");
+	Image img01 = new Image("file:res/images/default.png");
+	Image img02 = new Image("file:res/images/default.png");
 	
 	////////////////////////////////////////////////////////////////////////
 	/** Creates a GUI for the application.  (yes, we did this by hand.)
