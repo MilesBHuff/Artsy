@@ -13,6 +13,7 @@ import  javafx.scene.control.TextInputDialog  ;
 import  javafx.scene.image.Image              ;
 import  javafx.scene.image.ImageView          ;
 import  javafx.scene.layout.GridPane          ;
+import javafx.stage.FileChooser;
 import  javafx.stage.Stage                    ;
 
 /** This is the runner for this application.
@@ -190,6 +191,7 @@ public class Driver extends Application
 		TextInputDialog diaStripeH = new TextInputDialog();
 		TextInputDialog diaStripeV = new TextInputDialog();
 		TextInputDialog diaUrl     = new TextInputDialog();
+		FileChooser     fic        = new FileChooser    ();
 		// DIALOG-TITLING ---------------------
 		diaChecker.setTitle("Checker options");
 		diaStripeH.setTitle("Stripe options" );
