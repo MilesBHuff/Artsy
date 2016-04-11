@@ -67,17 +67,17 @@ public class Driver extends Application
 		String sLblImg2    = "Image 2:  "         ;
 		String sLblImg3    = "Result:"            ;
 		
-		// RESOURCES -----------------------------------------------
-		Image img0       = new Image("file:res/images/default.png");
-		Image imgChecker = new Image("file:res/icons/checker.png" );
-		Image imgOpen    = new Image("file:res/icons/open.png"    );
-		Image imgReset   = new Image("file:res/icons/reset.png"   );
-		Image imgRotate  = new Image("file:res/icons/rotate.png"  );
-		Image imgSave    = new Image("file:res/icons/save.png"    );
-		Image imgStripeH = new Image("file:res/icons/stripeH.png" );
-		Image imgStripeV = new Image("file:res/icons/stripeV.png" );
-		Image imgUrl     = new Image("file:res/icons/url.png"     );
-		Artsy art        = new MyArtsy(                           );
+		// RESOURCES -------------------------------------------------
+		Artsy art        = new MyArtsy(                             );
+		Image img0       = new Image  ("file:res/images/default.png");
+		Image imgChecker = new Image  ("file:res/icons/checker.png" );
+		Image imgOpen    = new Image  ("file:res/icons/open.png"    );
+		Image imgReset   = new Image  ("file:res/icons/reset.png"   );
+		Image imgRotate  = new Image  ("file:res/icons/rotate.png"  );
+		Image imgSave    = new Image  ("file:res/icons/save.png"    );
+		Image imgStripeH = new Image  ("file:res/icons/stripeH.png" );
+		Image imgStripeV = new Image  ("file:res/icons/stripeV.png" );
+		Image imgUrl     = new Image  ("file:res/icons/url.png"     );
 		
 		// IMG1 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg1Btns = new GridPane(          );
