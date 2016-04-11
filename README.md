@@ -4,7 +4,7 @@ Copyright © 2016 University of Georgia, All Rights Reserved.
 
 This is a school-project completed by the below authors as part of UGA's Spring 2016 CSCI-1302 course.  It implements a GUI which allows one to combine any two 300x300px pictures in multiple ways.  
 
-# Project Submission
+# Project-submission
 
 * **Author:**  Miles B Huff (330)
 
@@ -35,6 +35,10 @@ This section describes things we did which were complete overkill, and which wil
 * Extra buttons were provided below each picture.  
 
 * Application can support pictures of dimensions different than 300x300px.  
+
+## Further notes
+
+* One of the packages we used, we called <code>p3</code> instead of <code>p2</code>, as this was the third project.  The instructor verified that this was okay.  
 
 # Instructions
 
