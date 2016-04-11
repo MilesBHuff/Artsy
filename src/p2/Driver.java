@@ -1,20 +1,21 @@
-package p2                                    ;
-import  effects.Artsy                         ;
-import  javafx.application.Application        ;
-import  javafx.geometry.Insets                ;
-import  javafx.scene.Scene                    ;
-import  javafx.scene.control.Button           ;
-import  javafx.scene.control.Label            ;
-import  javafx.scene.control.Menu             ;
-import  javafx.scene.control.MenuBar          ;
-import  javafx.scene.control.MenuItem         ;
-import  javafx.scene.control.SeparatorMenuItem;
-import  javafx.scene.control.TextInputDialog  ;
-import  javafx.scene.image.Image              ;
-import  javafx.scene.image.ImageView          ;
-import  javafx.scene.layout.GridPane          ;
-import javafx.stage.FileChooser;
-import  javafx.stage.Stage                    ;
+package src.p2                                         ;
+import  javax.swing.JFileChooser                       ;
+import  javax.swing.filechooser.FileNameExtensionFilter;
+import  effects.Artsy                                  ;
+import  javafx.application.Application                 ;
+import  javafx.geometry.Insets                         ;
+import  javafx.scene.Scene                             ;
+import  javafx.scene.control.Button                    ;
+import  javafx.scene.control.Label                     ;
+import  javafx.scene.control.Menu                      ;
+import  javafx.scene.control.MenuBar                   ;
+import  javafx.scene.control.MenuItem                  ;
+import  javafx.scene.control.SeparatorMenuItem         ;
+import  javafx.scene.control.TextInputDialog           ;
+import  javafx.scene.image.Image                       ;
+import  javafx.scene.image.ImageView                   ;
+import  javafx.scene.layout.GridPane                   ;
+import  javafx.stage.Stage                             ;
 
 /** This is the runner for this application.
  * @author Miles B Huff
