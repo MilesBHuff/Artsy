@@ -101,7 +101,7 @@ public class Driver extends Application
 		GridPane gpRoot = new GridPane(); gpRoot.add( gpMain, 0, 1);
 		MenuBar mbrRoot = new MenuBar (); gpRoot.add(mbrRoot, 0, 0);
 		
-		// MENUBAR -----------------------------------------------------------------------------------------------------------------------
+		// MENUBAR-INSTANTIATION ---------------------------------------------------------------------------------------------------------
 	        Menu     menFile           = new          Menu    ("File"                                                                       );
 	        Menu     menFileOpen       = new          Menu    ("Open from file"     , new ImageView(new Image("file:res/icons/open.png"   )));
 	        MenuItem menFileOpenImg1   = new          MenuItem("Image 1"                                                                    );
@@ -129,6 +129,8 @@ public class Driver extends Application
 	        MenuItem menEditChecker    = new          MenuItem("Checker"            , new ImageView(new Image("file:res/icons/checker.png")));
 	        MenuItem menEditStripeH    = new          MenuItem("Stripe horizontally", new ImageView(new Image("file:res/icons/stripeH.png")));
 	        MenuItem menEditStripeV    = new          MenuItem("Stripe vertically"  , new ImageView(new Image("file:res/icons/stripeV.png")));
+	        
+	        // MENUBAR-FINALIZATION ----------------------------------------------------------------------------------------------------------------------------------
 	        mbrRoot      .getMenus().addAll(menFile          , menEdit                                                                                              );
 	        menFile      .getItems().addAll(menFileOpen      , menFileUrl       , menFileSeparator1, menFileReset  , menFileSave   , menFileSeparator2, menFileClose);
 	        menFileOpen  .getItems().addAll(menFileOpenImg1  , menFileOpenImg2                                                                                      );
