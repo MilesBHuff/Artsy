@@ -192,7 +192,6 @@ public class Driver extends Application
 		TextInputDialog diaStripeH = new TextInputDialog();
 		TextInputDialog diaStripeV = new TextInputDialog();
 		TextInputDialog diaUrl     = new TextInputDialog();
-		FileChooser     fic        = new FileChooser    ();
 		// DIALOG-TITLING ---------------------
 		diaChecker.setTitle("Checker options");
 		diaStripeH.setTitle("Stripe options" );
