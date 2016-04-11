@@ -1,4 +1,4 @@
-package effects                 ;
+package cs1302.effects          ;
 import  javafx.scene.image.Image;
 
 /** This interface describes Artsy!-effects that can be applied to Images. 
