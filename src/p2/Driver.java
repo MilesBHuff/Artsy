@@ -1,22 +1,22 @@
-package src.p2                                         ;
-import  javax.swing.JFileChooser                       ;
-import  javax.swing.filechooser.FileNameExtensionFilter;
-import  effects.Artsy                                  ;
-import  javafx.application.Application                 ;
-import  javafx.geometry.Insets                         ;
-import  javafx.scene.Scene                             ;
-import  javafx.scene.control.Button                    ;
-import  javafx.scene.control.Label                     ;
-import  javafx.scene.control.Menu                      ;
-import  javafx.scene.control.MenuBar                   ;
-import  javafx.scene.control.MenuItem                  ;
-import  javafx.scene.control.SeparatorMenuItem         ;
-import  javafx.scene.control.TextInputDialog           ;
-import  javafx.scene.image.Image                       ;
-import  javafx.scene.image.ImageView                   ;
-import  javafx.scene.layout.GridPane                   ;
-import  javafx.stage.Stage                             ;
-
+package src.p2                                    ;
+import  src.effects.Artsy                         ;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import  javafx.application.Application        ;
+import  javafx.geometry.Insets                ;
+import  javafx.scene.Scene                    ;
+import  javafx.scene.control.Button           ;
+import  javafx.scene.control.Label            ;
+import  javafx.scene.control.Menu             ;
+import  javafx.scene.control.MenuBar          ;
+import  javafx.scene.control.MenuItem         ;
+import  javafx.scene.control.SeparatorMenuItem;
+import  javafx.scene.control.TextInputDialog  ;
+import  javafx.scene.image.Image              ;
+import  javafx.scene.image.ImageView          ;
+import  javafx.scene.layout.GridPane          ;
+import  javafx.stage.Stage                    ;
+@SuppressWarnings("restriction")
 /** This is the runner for this application.
  * @author Miles B Huff
  * @author Preston Sheppard
@@ -208,113 +208,250 @@ public class Driver extends Application
 		JFileChooser            chooser = new JFileChooser           (                   );
 		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
 		chooser.setFileFilter(filter);
-		
+		int x=5;
 		// EFFECTS-ACTIONS
-		//TODO:  btnStripeH
 		btnStripeH.setOnAction(event->{
-			img3=art.doStripesHorizontal(img1,img2, 5);
-			img3=test;
-			ivImg3.setImage(test);
+			diaStripeH.showAndWait();
+			String q=diaStripeH.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doStripesHorizontal(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
-		//TODO:  btnStripeV
 		btnStripeV.setOnAction(event->{
-			img3=art.doStripesVertical(img1,img2, 5);
-			img3=test;
-			ivImg3.setImage(test);
+			diaStripeV.showAndWait();
+			String q=diaStripeV.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doStripesVertical(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
-		//TODO:  btnChecker
 		btnChecker.setOnAction(event->{
-			img3=art.doCheckers(img1,img2, 5);
-			img3=test;
-			ivImg3.setImage(test);
+			diaChecker.showAndWait();
+			String q=diaChecker.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doCheckers(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
-		//TODO:  menEditStripeV
 		menEditStripeV.setOnAction(event->{
-			img3=art.doStripesVertical(img1,img2, 5);
-			img3=test;
-			ivImg3.setImage(test);
+			diaStripeV.showAndWait();
+			String q=diaStripeV.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doStripesVertical(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
-		//TODO:  menEditStripeH
 		menEditStripeH.setOnAction(event->{
-			img3=art.doStripesHorizontal(img1,img2, 5);
-			img3=test;
-			ivImg3.setImage(test);
+			diaStripeH.showAndWait();
+			String q=diaStripeH.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doStripesHorizontal(img1,img2, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
-		//TODO:  menEditChecker
 		menEditChecker.setOnAction(event->{
-			img3=art.doCheckers(img1,img2, 5);
-			img3=test;
-			ivImg3.setImage(test);
+			diaChecker.showAndWait();
+			String q=diaChecker.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doCheckers(img1,img2, z);
+				img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
 		// ROTATE-ACTIONS
-		//TODO:  btnRotate1
 		btnRotate1.setOnAction(event->{
-			img1=art.doRotate(img1, 50);
-			ivImg1.setImage(img1);
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img1=art.doRotate(img1, z);
+				//img1=test;
+				ivImg1.setImage(img1);
+			}
 		});
-		//TODO:  btnRotate2
 		btnRotate2.setOnAction(event->{
-			img2=art.doRotate(img2, x);
-			ivImg2.setImage(img2);
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img2=art.doRotate(img2, z);
+				
+				ivImg2.setImage(img2);
+			}
 		});
-		//TODO:  btnRotate3
 		btnRotate3.setOnAction(event->{
-			img3=art.doRotate(img3, x);
-			ivImg3.setImage(img3);
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doRotate(img3, z);
+		
+				ivImg3.setImage(img3);
+			}
 		});
-		//TODO:  menEditRotateImg1
 		menEditRotateImg1.setOnAction(event->{
-			img1=art.doRotate(img1, 50);
-			ivImg1.setImage(img1);
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img1=art.doRotate(img1, z);
+				
+				ivImg1.setImage(img1);
+			}
 		});
-		//TODO:  menEditRotateImg2
 		menEditRotateImg2.setOnAction(event->{
-			img2=art.doRotate(img2, x);
-			ivImg2.setImage(img2);
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img2=art.doRotate(img2, z);
+				//img2=test;
+				ivImg2.setImage(img2);
+			}
 		});
-		//TODO:  menEditRotateImg3
 		menEditRotateImg3.setOnAction(event->{
-			img3=art.doRotate(img3, x);
-			ivImg3.setImage(img3);
+			diaRotate.showAndWait();
+			String q=diaRotate.getResult();
+			System.out.println(q);
+			int z=Integer.parseInt(q);
+			if (z>-1){
+				img3=art.doRotate(img3, z);
+				//img3=test;
+				ivImg3.setImage(img3);
+			}
 		});
 		// RESET-ACTIONS
-		//TODO:  btnReset1
 		btnReset1.setOnAction(event->{
-			img1 = img0;
+			//img1 = img01;
 			ivImg1.setImage(img1);
 		});
-		//TODO:  btnReset2
 		btnReset2.setOnAction(event->{
-			img2 = img0;
+		//	img2 = img02;
 			ivImg2.setImage(img2);
 		});
-		//TODO:  btnReset3
 		btnReset3.setOnAction(event->{
 			img3 = img0;
 			ivImg3.setImage(img3);
 		});
-		//TODO:  menFileResetImg1
-		//TODO:  menFileResetImg2
-		//TODO:  menFileResetImg3
-		// OPEN-ACTIONS
-		//TODO:  btnOpen1
-		//TODO:  btnOpen2
-		//TODO:  menFileOpenImg1
-		//TODO:  menFileOpenImg2
-		// URL-ACTIONS
-		//TODO:  btnUrl1
-		//TODO:  btnUrl2
-		//TODO:  menFileUrlImg1
-		//TODO:  menFileUrlImg2
+		menFileResetImg1.setOnAction(event->{
+			//img1 = img01;
+			ivImg1.setImage(img1);
+		});
+		menFileResetImg2.setOnAction(event->{
+			//img2 = img02;
+			ivImg2.setImage(img2);
+		});
+		menFileResetImg3.setOnAction(event->{
+			img3 = img0;
+			ivImg3.setImage(img3);
+		});
+		
+		btnUrl1.setOnAction(event->{
+			diaUrl.showAndWait();
+			String url=diaUrl.getResult();
+			System.out.println(url);
+		//	img1=ImageIO.read(url);
+			ivImg1.setImage(img1);
+		});
+		btnUrl2.setOnAction(event->{
+			diaUrl.showAndWait();
+			String url=diaUrl.getResult();
+			System.out.println(url);
+			//img2=ImageIO.read(url);
+			ivImg2.setImage(img2);
+		});
+		menFileUrlImg1.setOnAction(event->{
+			diaUrl.showAndWait();
+			String url=diaUrl.getResult();
+			System.out.println(url);
+		//	img1=ImageIO.read(url);
+			ivImg1.setImage(img1);
+		});
+		menFileUrlImg2.setOnAction(event->{
+			diaUrl.showAndWait();
+			String url=diaUrl.getResult();
+			System.out.println(url);
+			//img2=ImageIO.read(url);
+			ivImg1.setImage(img2);
+		});
+		btnOpen1.setOnAction(event->{
+			int returnVal = chooser.showOpenDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				String s = "file:" + chooser.getSelectedFile().toString();
+				System.out.println("You chose to open this file: " + s);
+				img1 = new Image(s);
+			}			
+			ivImg1.setImage(img1);
+		});
+		btnOpen2.setOnAction(event->{
+			int returnVal = chooser.showOpenDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				String s = "file:" + chooser.getSelectedFile().toString();
+				System.out.println("You chose to open this file: " + s);
+				img2 = new Image(s);
+			}			
+			ivImg2.setImage(img2);
+		});
+		
+		menFileOpenImg1.setOnAction(event->{
+			int returnVal = chooser.showOpenDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				String s = "file:" + chooser.getSelectedFile().toString();
+				System.out.println("You chose to open this file: " + s);
+				img1 = new Image(s);
+			}			
+			ivImg1.setImage(img1);
+		});
+		
+		menFileOpenImg2.setOnAction(event->{
+			int returnVal = chooser.showOpenDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				String s = "file:" + chooser.getSelectedFile().toString();
+				System.out.println("You chose to open this file: " + s);
+				img2 = new Image(s);
+			}			
+			ivImg2.setImage(img2);
+		});
+		menFileClose.setOnAction(event->System.exit(0));
 		// SAVE-ACTIONS
 		//TODO:  btnSave1
+		menFileSaveImg1.setOnAction(event->{
+			int returnVal = chooser.showSaveDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION) {
+				String s = "file:" + chooser.getSelectedFile().toString();
+				System.out.println("You chose to save to this file: " + s);
+				//TODO
+			}			
+			ivImg2.setImage(img2);
+		});
 		//TODO:  btnSave2
 		//TODO:  btnSave3
 		//TODO:  menFileSaveImg1
 		//TODO:  menFileSaveImg2
 		//TODO:  menFileSaveImg3
-		// OTHER ACTIONS
-		//TODO:  menFileClose
 
 		// SET THE STAGE -----------------
 		Scene sceRoot = new Scene(gpRoot);
