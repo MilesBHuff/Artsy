@@ -19,6 +19,7 @@ import  javafx.scene.control.SeparatorMenuItem         ;
 import  javafx.scene.control.TextInputDialog           ;
 import  javafx.scene.image.Image                       ;
 import  javafx.scene.image.ImageView                   ;
+import javafx.scene.layout.FlowPane;
 import  javafx.scene.layout.GridPane                   ;
 import  javafx.stage.Stage                             ;
 
@@ -44,6 +45,14 @@ public class Driver extends Application
 	@Override
 	public void start(Stage stgRoot)
 	{ //+method
+		// SPLASH ----------------------------------
+		FlowPane fpSplash  = new FlowPane(        );
+		Scene   sceSplash  = new Scene   (fpSplash);
+		stgRoot.setScene   (sceSplash);
+		stgRoot.setTitle   ("Artsy!" );
+		stgRoot.sizeToScene(         );
+		stgRoot.show       (         );
+		
 		// DATA -----------------------------------
 		String sBtnChecker = "Checker"            ;
 		String sBtnOpen    = ""                   ;
@@ -368,6 +377,17 @@ public class Driver extends Application
 
 		// OTHER ACTIONS ----------------------------------------------------
 		menFileClose.setOnAction(event -> {stgRoot.hide(); System.exit(0);});
+		
+		// KONAMI-STAGE -----------------------------------------------------
+		Image    imgKonami = new Image    ("file:res/images/xtrakr3d1t.png");
+		FlowPane  fpKonami = new FlowPane (                                );
+		ImageView ivKonami = new ImageView(imgKonami                       );
+		 fpKonami.getChildren().add(ivKonami);
+		Scene    sceKonami = new Scene    (fpKonami                        );
+		Stage    stgKonami = new Stage    (                                );
+		stgKonami.setScene   (sceKonami   );
+		stgKonami.setTitle   ("Easter-Egg");
+		stgKonami.sizeToScene(            );
 
 		// SET THE STAGE -----------------
 		Scene sceRoot = new Scene(gpRoot);
