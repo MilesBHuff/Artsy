@@ -1,4 +1,4 @@
-package cs1302.p2                                      ;
+package cs1302.p3                                      ;
 import  cs1302.effects.Artsy                           ;
 import  javax.swing.JFileChooser                       ;
 import  javax.swing.filechooser.FileNameExtensionFilter;
