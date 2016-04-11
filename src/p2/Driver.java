@@ -204,6 +204,10 @@ public class Driver extends Application
 		diaStripeV.setHeaderText("Please enter the width of each stripe:"                                          );
 		diaRotate .setHeaderText("Please enter the number of degrees by which you would like to rotate this image:");
 		diaUrl    .setHeaderText("Please enter the URL from which you'd like to load an image:"                    );
+		// FILE-DIALOG --------------------------------------------------------------------
+		JFileChooser            chooser = new JFileChooser           (                   );
+		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
+		chooser.setFileFilter(filter);
 		
 		// EFFECTS-ACTIONS
 		//TODO:  btnStripeH
