@@ -209,7 +209,6 @@ public class Driver extends Application
 		JFileChooser            chooser = new JFileChooser           (                   );
 		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
 		chooser.setFileFilter(filter);
-		int x = 5;
 		
 		// EFFECTS-ACTIONS
 		btnChecker.setOnAction(event->{
