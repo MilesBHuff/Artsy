@@ -88,17 +88,17 @@ public class Driver extends Application
 
 		// MAIN PANE
 		GridPane  gpMain = new GridPane (        );
-		Label    lblImg1 = new Label    (sLblImg1); gpMain.add(lblImg1    , 0, 1      );
-		ImageView ivImg1 = new ImageView(        ); gpMain.add( ivImg1    , 0, 2      );
-		                                            gpMain.add( gpImg1Btns, 0, 3      );
-		Label    lblImg2 = new Label    (sLblImg2); gpMain.add(lblImg2    , 0, 4      );
-		ImageView ivImg2 = new ImageView(        ); gpMain.add( ivImg2    , 0, 5      );
-                                                            gpMain.add( gpImg2Btns, 0, 6      );
-		Label    lblFX   = new Label    (sLblFX  ); gpMain.add(lblFX      , 1, 1      );
-                                                            gpMain.add( gpFXBtns  , 1, 2, 1, 2);
-		Label    lblImg3 = new Label    (sLblImg3); gpMain.add(lblImg3    , 1, 4      );
-		ImageView ivImg3 = new ImageView(        ); gpMain.add( ivImg3    , 1, 5      );
-		                                            gpMain.add( gpImg3Btns, 1, 6      );
+		Label    lblImg1 = new Label    (sLblImg1); gpMain.add(lblImg1    , 0, 0      );
+		ImageView ivImg1 = new ImageView(        ); gpMain.add( ivImg1    , 0, 1      );
+		                                            gpMain.add( gpImg1Btns, 0, 2      );
+		Label    lblImg2 = new Label    (sLblImg2); gpMain.add(lblImg2    , 1, 0      );
+		ImageView ivImg2 = new ImageView(        ); gpMain.add( ivImg2    , 1, 1      );
+                                                            gpMain.add( gpImg2Btns, 1, 2      );
+		Label    lblImg3 = new Label    (sLblImg3); gpMain.add(lblImg3    , 2, 0      );
+		ImageView ivImg3 = new ImageView(        ); gpMain.add( ivImg3    , 2, 1      );
+		                                            gpMain.add( gpImg3Btns, 2, 2      );
+    		Label    lblFX   = new Label    (sLblFX  ); gpMain.add(lblFX      , 3, 0      );
+                                                            gpMain.add( gpFXBtns  , 3, 1, 1, 2);
 		
 		// ROOT PANE
 		GridPane gpRoot = new GridPane(); gpRoot.add( gpMain, 0, 1);
@@ -112,7 +112,7 @@ public class Driver extends Application
 	        Menu     menFileUrl        = new          Menu    ("Open from URL"      , new ImageView(new Image("file:res/icons/url.png"    )));
 	        MenuItem menFileUrlImg1    = new          MenuItem("Image 1"                                                                    );
 	        MenuItem menFileUrlImg2    = new          MenuItem("Image 2"                                                                    );
-		MenuItem menFileSeparator  = new SeparatorMenuItem(                                                                             );
+		MenuItem menFileSeparator1 = new SeparatorMenuItem(                                                                             );
 	        Menu     menFileReset      = new          Menu    ("Reset"              , new ImageView(new Image("file:res/icons/reset.png"  )));
 	        MenuItem menFileResetImg1  = new          MenuItem("Image 1"                                                                    );
 	        MenuItem menFileResetImg2  = new          MenuItem("Image 2"                                                                    );
@@ -121,6 +121,8 @@ public class Driver extends Application
 	        MenuItem menFileSaveImg1   = new          MenuItem("Image 1"                                                                    );
 	        MenuItem menFileSaveImg2   = new          MenuItem("Image 2"                                                                    );
 	        MenuItem menFileSaveImg3   = new          MenuItem("Image 3"                                                                    );
+	        MenuItem menFileClose      = new          MenuItem("Close"                                                                      );
+		MenuItem menFileSeparator2 = new SeparatorMenuItem(                                                                             );
 	        Menu     menEdit           = new          Menu    ("Edit"                                                                       );
 	        Menu     menEditRotate     = new          Menu    ("Rotate"             , new ImageView(new Image("file:res/icons/rotate.png" )));
 	        MenuItem menEditRotateImg1 = new          MenuItem("Image 1"                                                                    );
@@ -130,14 +132,14 @@ public class Driver extends Application
 	        MenuItem menEditChecker    = new          MenuItem("Checker"            , new ImageView(new Image("file:res/icons/checker.png")));
 	        MenuItem menEditStripeH    = new          MenuItem("Stripe horizontally", new ImageView(new Image("file:res/icons/stripeH.png")));
 	        MenuItem menEditStripeV    = new          MenuItem("Stripe vertically"  , new ImageView(new Image("file:res/icons/stripeV.png")));
-	        mbrRoot      .getMenus().addAll(menFile          , menEdit                                                             );
-	        menFile      .getItems().addAll(menFileOpen      , menFileUrl       , menFileSeparator , menFileReset  , menFileSave   );
-	        menFileOpen  .getItems().addAll(menFileOpenImg1  , menFileOpenImg2                                                     );
-	        menFileUrl   .getItems().addAll(menFileUrlImg1   , menFileUrlImg2                                                      );
-	        menFileReset .getItems().addAll(menFileResetImg1 , menFileResetImg2 , menFileResetImg3                                 );
-	        menFileSave  .getItems().addAll(menFileSaveImg1  , menFileSaveImg2  , menFileSaveImg3                                  );
-	        menEdit      .getItems().addAll(menEditRotate    , menEditSeparator , menEditChecker   , menEditStripeH, menEditStripeV);
-	        menEditRotate.getItems().addAll(menEditRotateImg1, menEditRotateImg2, menEditRotateImg3                                );
+	        mbrRoot      .getMenus().addAll(menFile          , menEdit                                                                                              );
+	        menFile      .getItems().addAll(menFileOpen      , menFileUrl       , menFileSeparator1, menFileReset  , menFileSave   , menFileSeparator2, menFileClose);
+	        menFileOpen  .getItems().addAll(menFileOpenImg1  , menFileOpenImg2                                                                                      );
+	        menFileUrl   .getItems().addAll(menFileUrlImg1   , menFileUrlImg2                                                                                       );
+	        menFileReset .getItems().addAll(menFileResetImg1 , menFileResetImg2 , menFileResetImg3                                                                  );
+	        menFileSave  .getItems().addAll(menFileSaveImg1  , menFileSaveImg2  , menFileSaveImg3                                                                   );
+	        menEdit      .getItems().addAll(menEditRotate    , menEditSeparator , menEditChecker   , menEditStripeH, menEditStripeV                                 );
+	        menEditRotate.getItems().addAll(menEditRotateImg1, menEditRotateImg2, menEditRotateImg3                                                                 );
 	        
 		// SPACING
 		gpFXBtns  .setHgap   (10);
@@ -181,48 +183,6 @@ public class Driver extends Application
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
 		// ACTIONS
-		btnStripeH.setOnAction(event->{
-			
-			img3=art.doStripesHorizontal(img1,img2, x);
-			ivImg3.setImage(img3);
-			});
-		btnStripeV.setOnAction(event->{
-			img3=art.doStripesVertical(img1,img2, x);
-			ivImg3.setImage(img3);
-			});
-		
-		btnRotate1.setOnAction(event->{
-			
-			img1=art.doRotate(img1, 50);
-			//ivImg1.setImage(tempImage);
-			System.out.println("fuck");
-			}
-		);
-		btnRotate2.setOnAction(event->{
-			
-			img2=art.doRotate(img2, x);
-			ivImg2.setImage(img2);
-			}
-		);
-		btnRotate1.setOnAction(event->{
-			img3=art.doRotate(img3, x);
-			ivImg3.setImage(img3);
-			}
-		);
-		
-		btnReset1.setOnAction(event->{
-			img1 = defaultImage;
-			ivImg1.setImage(img1);
-			});
-		btnReset2.setOnAction(event->{
-			img2 = defaultImage;
-			ivImg2.setImage(img1);
-			});
-		btnReset3.setOnAction(event->{
-			img3 = defaultImage;
-			ivImg3.setImage(img1);
-			});
-		
 		//TODO:  btnChecker
 		//TODO:  btnOpen1
 		//TODO:  btnOpen2
@@ -239,6 +199,22 @@ public class Driver extends Application
 		//TODO:  btnStripeV
 		//TODO:  btnUrl1
 		//TODO:  btnUrl2
+		//TODO:  menEditChecker
+		//TODO:  menEditRotateImg1
+		//TODO:  menEditRotateImg2
+		//TODO:  menEditRotateImg3
+		//TODO:  menEditStripeH
+		//TODO:  menEditStripeV
+		//TODO:  menFileOpenImg1
+		//TODO:  menFileOpenImg2
+		//TODO:  menFileResetImg1
+		//TODO:  menFileResetImg2
+		//TODO:  menFileResetImg3
+		//TODO:  menFileSaveImg1
+		//TODO:  menFileSaveImg2
+		//TODO:  menFileSaveImg3
+		//TODO:  menFileUrlImg1
+		//TODO:  menFileUrlImg2
 
 		// SET THE STAGE
 		Scene sceRoot = new Scene(gpRoot);
