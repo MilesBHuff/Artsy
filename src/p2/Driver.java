@@ -181,6 +181,48 @@ public class Driver extends Application
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
 		// ACTIONS
+		btnStripeH.setOnAction(event->{
+			
+			img3=art.doStripesHorizontal(img1,img2, x);
+			ivImg3.setImage(img3);
+			});
+		btnStripeV.setOnAction(event->{
+			img3=art.doStripesVertical(img1,img2, x);
+			ivImg3.setImage(img3);
+			});
+		
+		btnRotate1.setOnAction(event->{
+			
+			img1=art.doRotate(img1, 50);
+			//ivImg1.setImage(tempImage);
+			System.out.println("fuck");
+			}
+		);
+		btnRotate2.setOnAction(event->{
+			
+			img2=art.doRotate(img2, x);
+			ivImg2.setImage(img2);
+			}
+		);
+		btnRotate1.setOnAction(event->{
+			img3=art.doRotate(img3, x);
+			ivImg3.setImage(img3);
+			}
+		);
+		
+		btnReset1.setOnAction(event->{
+			img1 = defaultImage;
+			ivImg1.setImage(img1);
+			});
+		btnReset2.setOnAction(event->{
+			img2 = defaultImage;
+			ivImg2.setImage(img1);
+			});
+		btnReset3.setOnAction(event->{
+			img3 = defaultImage;
+			ivImg3.setImage(img1);
+			});
+		
 		//TODO:  btnChecker
 		//TODO:  btnOpen1
 		//TODO:  btnOpen2
