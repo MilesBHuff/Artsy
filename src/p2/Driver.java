@@ -1,4 +1,5 @@
 package p2                                    ;
+import  effects.Artsy                         ;
 import  javafx.application.Application        ;
 import  javafx.geometry.Insets                ;
 import  javafx.scene.Scene                    ;
@@ -8,6 +9,7 @@ import  javafx.scene.control.Menu             ;
 import  javafx.scene.control.MenuBar          ;
 import  javafx.scene.control.MenuItem         ;
 import  javafx.scene.control.SeparatorMenuItem;
+import  javafx.scene.control.TextInputDialog  ;
 import  javafx.scene.image.Image              ;
 import  javafx.scene.image.ImageView          ;
 import  javafx.scene.layout.GridPane          ;
@@ -19,6 +21,36 @@ import  javafx.stage.Stage                    ;
 **/
 public class Driver extends Application
 { //+class
+	// DATA -----------------------------------
+	String sBtnChecker = "Checker"            ;
+	String sBtnOpen    = ""                   ;
+	String sBtnReset   = ""                   ;
+	String sBtnRotate  = ""                   ;
+	String sBtnSave    = ""                   ;
+	String sBtnStripeH = "Stripe horizontally";
+	String sBtnStripeV = "Stripe vertically"  ;
+	String sBtnUrl     = ""                   ;
+	String sLblFX      = "Effects:"           ;
+	String sLblImg1    = "Image 1:  "         ;
+	String sLblImg2    = "Image 2:  "         ;
+	String sLblImg3    = "Result:"            ;
+	
+	// RESOURCES ----------------------------------------------
+	Image test       = new Image("file:res/sample1.png"      );
+	Image img0       = new Image("file:res/default.png"      );
+	Image img1       = new Image("file:res/default.png"      );
+	Image img2       = new Image("file:res/default.png"      );
+	Image img3       = new Image("file:res/default.png"      );
+	Image imgChecker = new Image("file:res/icons/checker.png");
+	Image imgOpen    = new Image("file:res/icons/open.png"   );
+	Image imgReset   = new Image("file:res/icons/reset.png"  );
+	Image imgRotate  = new Image("file:res/icons/rotate.png" );
+	Image imgSave    = new Image("file:res/icons/save.png"   );
+	Image imgStripeH = new Image("file:res/icons/stripeH.png");
+	Image imgStripeV = new Image("file:res/icons/stripeV.png");
+	Image imgUrl     = new Image("file:res/icons/url.png"    );
+	Artsy art        = new MyArtsy(                          );
+	
 	////////////////////////////////////////////////////////////////////////
 	/** Creates a GUI for the application.  (yes, we did this by hand.)
 	 * @author Miles B Huff (everything else)
@@ -28,33 +60,6 @@ public class Driver extends Application
 	@Override
 	public void start(Stage stgRoot)
 	{ //+method
-		// DATA -----------------------------------
-		String sBtnChecker = "Checker"            ;
-		String sBtnOpen    = ""                   ;
-		String sBtnReset   = ""                   ;
-		String sBtnRotate  = ""                   ;
-		String sBtnSave    = ""                   ;
-		String sBtnStripeH = "Stripe horizontally";
-		String sBtnStripeV = "Stripe vertically"  ;
-		String sBtnUrl     = ""                   ;
-		String sLblFX      = "Effects:"           ;
-		String sLblImg1    = "Image 1:  "         ;
-		String sLblImg2    = "Image 2:  "         ;
-		String sLblImg3    = "Result:"            ;
-		
-		// RESOURCES ----------------------------------------------
-		Image img1       = new Image("file:res/default.png"      );
-		Image img2       = new Image("file:res/default.png"      );
-		Image img3       = new Image("file:res/default.png"      );
-		Image imgChecker = new Image("file:res/icons/checker.png");
-		Image imgOpen    = new Image("file:res/icons/open.png"   );
-		Image imgReset   = new Image("file:res/icons/reset.png"  );
-		Image imgRotate  = new Image("file:res/icons/rotate.png" );
-		Image imgSave    = new Image("file:res/icons/save.png"   );
-		Image imgStripeH = new Image("file:res/icons/stripeH.png");
-		Image imgStripeV = new Image("file:res/icons/stripeV.png");
-		Image imgUrl     = new Image("file:res/icons/url.png"    );
-
 		// IMG1 BUTTONS -----------------------------------------------------------------
 		GridPane gpImg1Btns = new GridPane(          );
 		Button  btnRotate1  = new Button  (sBtnRotate); gpImg1Btns.add(btnRotate1, 0, 0);
@@ -129,7 +134,6 @@ public class Driver extends Application
 	        MenuItem menEditChecker    = new          MenuItem("Checker"            , new ImageView(new Image("file:res/icons/checker.png")));
 	        MenuItem menEditStripeH    = new          MenuItem("Stripe horizontally", new ImageView(new Image("file:res/icons/stripeH.png")));
 	        MenuItem menEditStripeV    = new          MenuItem("Stripe vertically"  , new ImageView(new Image("file:res/icons/stripeV.png")));
-	        
 	        // MENUBAR-FINALIZATION ----------------------------------------------------------------------------------------------------------------------------------
 	        mbrRoot      .getMenus().addAll(menFile          , menEdit                                                                                              );
 	        menFile      .getItems().addAll(menFileOpen      , menFileUrl       , menFileSeparator1, menFileReset  , menFileSave   , menFileSeparator2, menFileClose);
@@ -139,21 +143,6 @@ public class Driver extends Application
 	        menFileSave  .getItems().addAll(menFileSaveImg1  , menFileSaveImg2  , menFileSaveImg3                                                                   );
 	        menEdit      .getItems().addAll(menEditRotate    , menEditSeparator , menEditChecker   , menEditStripeH, menEditStripeV                                 );
 	        menEditRotate.getItems().addAll(menEditRotateImg1, menEditRotateImg2, menEditRotateImg3                                                                 );
-	        
-		// SPACING --------------------------------------
-		gpFXBtns  .setHgap   (    10                   );
-		gpFXBtns  .setVgap   (    10                   );
-		gpImg1Btns.setHgap   (    10                   );
-		gpImg1Btns.setVgap   (    10                   );
-		gpImg2Btns.setHgap   (    10                   );
-		gpImg2Btns.setVgap   (    10                   );
-		gpImg3Btns.setHgap   (    10                   );
-		gpImg3Btns.setVgap   (    10                   );
-		gpMain    .setHgap   (    10                   );
-		gpMain    .setPadding(new Insets(0, 25, 25, 25));
-		gpMain    .setVgap   (    10                   );
-		gpRoot    .setHgap   (    10                   );
-		gpRoot    .setVgap   (    10                   );
 	        
 	        // IMAGES ---------------------------------------
 		btnChecker.setGraphic(new ImageView(imgChecker));
@@ -175,108 +164,151 @@ public class Driver extends Application
 		 ivImg1   .setImage  (    img1                 );
 		 ivImg2   .setImage  (    img2                 );
 		 ivImg3   .setImage  (    img3                 );
-		
 		// IMAGEVIEW-SETTINGS --------------------------------------------------------------------------------
 		ivImg1.setFitWidth(300); ivImg1.setPreserveRatio(true); ivImg1.setSmooth(true); ivImg1.setCache(true);
 		ivImg2.setFitWidth(300); ivImg2.setPreserveRatio(true); ivImg2.setSmooth(true); ivImg2.setCache(true);
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
-		// ACTIONS
-				
+		// SPACING --------------------------------------
+		gpFXBtns  .setHgap   (    10                   );
+		gpFXBtns  .setVgap   (    10                   );
+		gpImg1Btns.setHgap   (    10                   );
+		gpImg1Btns.setVgap   (    10                   );
+		gpImg2Btns.setHgap   (    10                   );
+		gpImg2Btns.setVgap   (    10                   );
+		gpImg3Btns.setHgap   (    10                   );
+		gpImg3Btns.setVgap   (    10                   );
+		gpMain    .setHgap   (    10                   );
+		gpMain    .setPadding(new Insets(0, 25, 25, 25));
+		gpMain    .setVgap   (    10                   );
+		gpRoot    .setHgap   (    10                   );
+		gpRoot    .setVgap   (    10                   );
+		
+		// DIALOG-INSTANTIATION ---------------------------
+		TextInputDialog diaChecker = new TextInputDialog();
+		TextInputDialog diaRotate  = new TextInputDialog();
+		TextInputDialog diaStripeH = new TextInputDialog();
+		TextInputDialog diaStripeV = new TextInputDialog();
+		TextInputDialog diaUrl     = new TextInputDialog();
+		// DIALOG-TITLING ---------------------
+		diaChecker.setTitle("Checker options");
+		diaStripeH.setTitle("Stripe options" );
+		diaStripeV.setTitle("Stripe options" );
+		diaRotate .setTitle("Rotate options" );
+		diaUrl    .setTitle("Open from URL"  );
+		// DIALOG-HEADERS -------------------------------------------------------------------------------------------
+		diaChecker.setHeaderText("Please enter the width of each checker:"                                         );
+		diaStripeH.setHeaderText("Please enter the height of each stripe:"                                         );
+		diaStripeV.setHeaderText("Please enter the width of each stripe:"                                          );
+		diaRotate .setHeaderText("Please enter the number of degrees by which you would like to rotate this image:");
+		diaUrl    .setHeaderText("Please enter the URL from which you'd like to load an image:"                    );
+		
+		// EFFECTS-ACTIONS
+		//TODO:  btnStripeH
 		btnStripeH.setOnAction(event->{
 			img3=art.doStripesHorizontal(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
-			});
+		});
+		//TODO:  btnStripeV
 		btnStripeV.setOnAction(event->{
 			img3=art.doStripesVertical(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
-			});
+		});
+		//TODO:  btnChecker
 		btnChecker.setOnAction(event->{
 			img3=art.doCheckers(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
-			});
-		
-		btnRotate1.setOnAction(event->{
-			img1=art.doRotate(img1, 50);
-			ivImg1.setImage(img1);
-			}
-		);
-		btnRotate2.setOnAction(event->{
-			img2=art.doRotate(img2, x);
-			ivImg2.setImage(img2);
-			}
-		);
-		btnRotate3.setOnAction(event->{
-			img3=art.doRotate(img3, x);
-			ivImg3.setImage(img3);
-			}
-		);
-		
-		btnReset1.setOnAction(event->{
-			img1 = defaultImage;
-			ivImg1.setImage(img1);
-			});
-		btnReset2.setOnAction(event->{
-			img2 = defaultImage;
-			ivImg2.setImage(img2);
-			});
-		btnReset3.setOnAction(event->{
-			img3 = defaultImage;
-			ivImg3.setImage(img3);
-			});
-		
-		menEditRotateImg1.setOnAction(event->{
-			img1=art.doRotate(img1, 50);
-			ivImg1.setImage(img1);
-			}
-		);
-		menEditRotateImg2.setOnAction(event->{
-			img2=art.doRotate(img2, x);
-			ivImg2.setImage(img2);
-			}
-		);
-		menEditRotateImg3.setOnAction(event->{
-			img3=art.doRotate(img3, x);
-			ivImg3.setImage(img3);
-			}
-		);
+		});
+		//TODO:  menEditStripeV
 		menEditStripeV.setOnAction(event->{
 			img3=art.doStripesVertical(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
-			});
+		});
+		//TODO:  menEditStripeH
 		menEditStripeH.setOnAction(event->{
 			img3=art.doStripesHorizontal(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
-			});
+		});
+		//TODO:  menEditChecker
 		menEditChecker.setOnAction(event->{
 			img3=art.doCheckers(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
-			});
-
-
-		//TODO:  btnOpen1
-		//TODO:  btnOpen2
-		//TODO:  btnSave1
-		//TODO:  btnSave2
-		//TODO:  btnSave3
-		//TODO:  btnUrl1
-		//TODO:  btnUrl2
-		//TODO:  menFileOpenImg1
-		//TODO:  menFileOpenImg2
+		});
+		// ROTATE-ACTIONS
+		//TODO:  btnRotate1
+		btnRotate1.setOnAction(event->{
+			img1=art.doRotate(img1, 50);
+			ivImg1.setImage(img1);
+		});
+		//TODO:  btnRotate2
+		btnRotate2.setOnAction(event->{
+			img2=art.doRotate(img2, x);
+			ivImg2.setImage(img2);
+		});
+		//TODO:  btnRotate3
+		btnRotate3.setOnAction(event->{
+			img3=art.doRotate(img3, x);
+			ivImg3.setImage(img3);
+		});
+		//TODO:  menEditRotateImg1
+		menEditRotateImg1.setOnAction(event->{
+			img1=art.doRotate(img1, 50);
+			ivImg1.setImage(img1);
+		});
+		//TODO:  menEditRotateImg2
+		menEditRotateImg2.setOnAction(event->{
+			img2=art.doRotate(img2, x);
+			ivImg2.setImage(img2);
+		});
+		//TODO:  menEditRotateImg3
+		menEditRotateImg3.setOnAction(event->{
+			img3=art.doRotate(img3, x);
+			ivImg3.setImage(img3);
+		});
+		// RESET-ACTIONS
+		//TODO:  btnReset1
+		btnReset1.setOnAction(event->{
+			img1 = img0;
+			ivImg1.setImage(img1);
+		});
+		//TODO:  btnReset2
+		btnReset2.setOnAction(event->{
+			img2 = img0;
+			ivImg2.setImage(img2);
+		});
+		//TODO:  btnReset3
+		btnReset3.setOnAction(event->{
+			img3 = img0;
+			ivImg3.setImage(img3);
+		});
 		//TODO:  menFileResetImg1
 		//TODO:  menFileResetImg2
 		//TODO:  menFileResetImg3
+		// OPEN-ACTIONS
+		//TODO:  btnOpen1
+		//TODO:  btnOpen2
+		//TODO:  menFileOpenImg1
+		//TODO:  menFileOpenImg2
+		// URL-ACTIONS
+		//TODO:  btnUrl1
+		//TODO:  btnUrl2
+		//TODO:  menFileUrlImg1
+		//TODO:  menFileUrlImg2
+		// SAVE-ACTIONS
+		//TODO:  btnSave1
+		//TODO:  btnSave2
+		//TODO:  btnSave3
 		//TODO:  menFileSaveImg1
 		//TODO:  menFileSaveImg2
 		//TODO:  menFileSaveImg3
-		//TODO:  menFileUrlImg1
-		//TODO:  menFileUrlImg2
+		// OTHER ACTIONS
+		//TODO:  menFileClose
 
 		// SET THE STAGE -----------------
 		Scene sceRoot = new Scene(gpRoot);
