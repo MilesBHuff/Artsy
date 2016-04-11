@@ -20,7 +20,7 @@ This section describes things we did which were complete overkill, and which wil
 
 * Entire GUI was coded by hand.  
 
-* All icons were custom-made by hand for this project.  
+* All icons were custom-made by hand for this project.  Instructor is welcome to use them for future iterations of this project.  
 
 * A Queue was used for to implement the Konami-code.  We have not gone over data-structures, and neither of us coders have used a queue before.  
 
