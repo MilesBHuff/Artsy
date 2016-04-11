@@ -182,13 +182,19 @@ public class Driver extends Application
 		ivImg3.setFitWidth(300); ivImg3.setPreserveRatio(true); ivImg3.setSmooth(true); ivImg3.setCache(true);
 		
 		// ACTIONS
-				btnStripeH.setOnAction(event->{
+				
+		btnStripeH.setOnAction(event->{
 			img3=art.doStripesHorizontal(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
 			});
 		btnStripeV.setOnAction(event->{
 			img3=art.doStripesVertical(img1,img2, 5);
+			img3=test;
+			ivImg3.setImage(test);
+			});
+		btnChecker.setOnAction(event->{
+			img3=art.doCheckers(img1,img2, 5);
 			img3=test;
 			ivImg3.setImage(test);
 			});
@@ -222,7 +228,38 @@ public class Driver extends Application
 			ivImg3.setImage(img3);
 			});
 		
-		//TODO:  btnChecker
+		menEditRotateImg1.setOnAction(event->{
+			img1=art.doRotate(img1, 50);
+			ivImg1.setImage(img1);
+			}
+		);
+		menEditRotateImg2.setOnAction(event->{
+			img2=art.doRotate(img2, x);
+			ivImg2.setImage(img2);
+			}
+		);
+		menEditRotateImg3.setOnAction(event->{
+			img3=art.doRotate(img3, x);
+			ivImg3.setImage(img3);
+			}
+		);
+		menEditStripeV.setOnAction(event->{
+			img3=art.doStripesVertical(img1,img2, 5);
+			img3=test;
+			ivImg3.setImage(test);
+			});
+		menEditStripeH.setOnAction(event->{
+			img3=art.doStripesHorizontal(img1,img2, 5);
+			img3=test;
+			ivImg3.setImage(test);
+			});
+		menEditChecker.setOnAction(event->{
+			img3=art.doCheckers(img1,img2, 5);
+			img3=test;
+			ivImg3.setImage(test);
+			});
+
+
 		//TODO:  btnOpen1
 		//TODO:  btnOpen2
 		//TODO:  btnSave1
@@ -230,12 +267,6 @@ public class Driver extends Application
 		//TODO:  btnSave3
 		//TODO:  btnUrl1
 		//TODO:  btnUrl2
-		//TODO:  menEditChecker
-		//TODO:  menEditRotateImg1
-		//TODO:  menEditRotateImg2
-		//TODO:  menEditRotateImg3
-		//TODO:  menEditStripeH
-		//TODO:  menEditStripeV
 		//TODO:  menFileOpenImg1
 		//TODO:  menFileOpenImg2
 		//TODO:  menFileResetImg1
