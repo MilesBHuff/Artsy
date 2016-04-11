@@ -8,4 +8,4 @@
 
 ## What it's doing
 
-SBT, aka the "Simple Build System", is a compiler using a mixture of Java and Scala to compile this particular project.  
+SBT, aka the "Simple Build System", is a compile-script which uses a mixture of Java and Scala.  
