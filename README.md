@@ -22,7 +22,7 @@ This is a school-project completed by the below authors as part of UGA's Spring 
 
 ## Overkill
 
-This section describes things we did which were complete overkill, and which will hopefully amount to even more extra credit:  
+This section describes things we did which were complete overkill, and which will hopefully amount to even more extra credit, or at least a by on the late-penalty:  
 
 * Entire GUI was coded by hand.  
 
