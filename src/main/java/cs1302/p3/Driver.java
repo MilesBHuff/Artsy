@@ -28,7 +28,7 @@ import  javafx.stage.Stage                             ;
 **/
 public class Driver extends Application
 { //+class
-	// RESOURCES ----------------------------------
+	// RESOURCES -----------------------------------------
 	Image img1 = new Image("file:res/images/default.png");
 	Image img2 = new Image("file:res/images/default.png");
 	Image img3 = new Image("file:res/images/default.png");
@@ -56,7 +56,7 @@ public class Driver extends Application
 		String sLblImg2    = "Image 2:  "         ;
 		String sLblImg3    = "Result:"            ;
 		
-		// RESOURCES ----------------------------------------------
+		// RESOURCES -----------------------------------------------
 		Image img0       = new Image("file:res/images/default.png");
 		Image imgChecker = new Image("file:res/icons/checker.png" );
 		Image imgOpen    = new Image("file:res/icons/open.png"    );
@@ -142,6 +142,7 @@ public class Driver extends Application
 	        MenuItem menEditChecker    = new          MenuItem("Checker"            , new ImageView(new Image("file:res/icons/checker.png")));
 	        MenuItem menEditStripeH    = new          MenuItem("Stripe horizontally", new ImageView(new Image("file:res/icons/stripeH.png")));
 	        MenuItem menEditStripeV    = new          MenuItem("Stripe vertically"  , new ImageView(new Image("file:res/icons/stripeV.png")));
+	        
 	        // MENUBAR-FINALIZATION ----------------------------------------------------------------------------------------------------------------------------------
 	        mbrRoot      .getMenus().addAll(menFile          , menEdit                                                                                              );
 	        menFile      .getItems().addAll(menFileOpen      , menFileUrl       , menFileSeparator1, menFileReset  , menFileSave   , menFileSeparator2, menFileClose);
@@ -172,6 +173,7 @@ public class Driver extends Application
 		 ivImg1   .setImage  (    img1                 );
 		 ivImg2   .setImage  (    img2                 );
 		 ivImg3   .setImage  (    img3                 );
+		 
 		// IMAGEVIEW-SETTINGS --------------------------------------------------------------------------------
 		ivImg1.setFitWidth(300); ivImg1.setPreserveRatio(true); ivImg1.setSmooth(true); ivImg1.setCache(true);
 		ivImg2.setFitWidth(300); ivImg2.setPreserveRatio(true); ivImg2.setSmooth(true); ivImg2.setCache(true);
@@ -198,18 +200,21 @@ public class Driver extends Application
 		TextInputDialog diaStripeH = new TextInputDialog();
 		TextInputDialog diaStripeV = new TextInputDialog();
 		TextInputDialog diaUrl     = new TextInputDialog();
+		
 		// DIALOG-TITLING ---------------------
 		diaChecker.setTitle("Checker options");
 		diaStripeH.setTitle("Stripe options" );
 		diaStripeV.setTitle("Stripe options" );
 		diaRotate .setTitle("Rotate options" );
 		diaUrl    .setTitle("Open from URL"  );
+		
 		// DIALOG-HEADERS -------------------------------------------------------------------------------------------
 		diaChecker.setHeaderText("Please enter the width of each checker:"                                         );
 		diaStripeH.setHeaderText("Please enter the height of each stripe:"                                         );
 		diaStripeV.setHeaderText("Please enter the width of each stripe:"                                          );
 		diaRotate .setHeaderText("Please enter the number of degrees by which you would like to rotate this image:");
 		diaUrl    .setHeaderText("Please enter the URL from which you'd like to load an image:"                    );
+		
 		// FILE-DIALOG --------------------------------------------------------------------
 		JFileChooser            chooser = new JFileChooser           (                   );
 		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
@@ -252,7 +257,7 @@ public class Driver extends Application
 		});
 		menEditStripeV.setOnAction(btnStripeV.getOnAction());
 		
-		// OPEN-ACTIONS ---------------------------------------------------------
+		// OPEN-ACTIONS -----------------------------------------------------------------
 		btnOpen1.setOnAction(event -> {
 			int returnVal = chooser.showOpenDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION)
@@ -327,7 +332,7 @@ public class Driver extends Application
 		});
 		menEditRotateImg3.setOnAction(btnRotate3.getOnAction());
 		
-		// SAVE-ACTIONS -------------------------------------------------------------------------
+		// SAVE-ACTIONS ---------------------------------------------------------------------------------
 		//TODO:  btnSave1
 		menFileSaveImg1.setOnAction(event -> {
 			int returnVal = chooser.showSaveDialog(null);
@@ -345,7 +350,7 @@ public class Driver extends Application
 		//TODO:  btnSave3
 		menFileSaveImg3.setOnAction(btnSave3.getOnAction());
 		
-		// URL-ACTIONS -----------------------------------
+		// URL-ACTIONS ---------------------------------------
 		//TODO:  Doesn't work yet.
 		btnUrl1.setOnAction(event -> {
 			diaUrl.showAndWait();
