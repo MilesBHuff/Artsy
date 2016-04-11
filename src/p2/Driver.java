@@ -1,21 +1,21 @@
-package src.p2                                    ;
-import  src.effects.Artsy                         ;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import  javafx.application.Application        ;
-import  javafx.geometry.Insets                ;
-import  javafx.scene.Scene                    ;
-import  javafx.scene.control.Button           ;
-import  javafx.scene.control.Label            ;
-import  javafx.scene.control.Menu             ;
-import  javafx.scene.control.MenuBar          ;
-import  javafx.scene.control.MenuItem         ;
-import  javafx.scene.control.SeparatorMenuItem;
-import  javafx.scene.control.TextInputDialog  ;
-import  javafx.scene.image.Image              ;
-import  javafx.scene.image.ImageView          ;
-import  javafx.scene.layout.GridPane          ;
-import  javafx.stage.Stage                    ;
+package src.p2                                         ;
+import  src.effects.Artsy                              ;
+import  javax.swing.JFileChooser                       ;
+import  javax.swing.filechooser.FileNameExtensionFilter;
+import  javafx.application.Application                 ;
+import  javafx.geometry.Insets                         ;
+import  javafx.scene.Scene                             ;
+import  javafx.scene.control.Button                    ;
+import  javafx.scene.control.Label                     ;
+import  javafx.scene.control.Menu                      ;
+import  javafx.scene.control.MenuBar                   ;
+import  javafx.scene.control.MenuItem                  ;
+import  javafx.scene.control.SeparatorMenuItem         ;
+import  javafx.scene.control.TextInputDialog           ;
+import  javafx.scene.image.Image                       ;
+import  javafx.scene.image.ImageView                   ;
+import  javafx.scene.layout.GridPane                   ;
+import  javafx.stage.Stage                             ;
 @SuppressWarnings("restriction")
 /** This is the runner for this application.
  * @author Miles B Huff
