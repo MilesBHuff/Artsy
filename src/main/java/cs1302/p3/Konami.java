@@ -1,6 +1,12 @@
 package cs1302.p3                              ;
-import  java.awt.event.KeyEvent                ;
 import  java.util.concurrent.ArrayBlockingQueue;
+
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
 
 /** A class to implement the Konami extra-credit task.
  * @author Miles B Huff
@@ -8,49 +14,73 @@ import  java.util.concurrent.ArrayBlockingQueue;
 **/
 public class Konami
 { //+class
-        static ArrayBlockingQueue<String> que = new ArrayBlockingQueue<String>(10);
-        
-        /** Adds <code>sArg</code> to <code>que</code> and checks if it matches the Konami code.
-         * @author Miles B Huff
-         * @param  sArg Which key has been pressed
-         * @return <code>true</code> if <code>que</code> matches the Konami code.
-        **/
-        public static boolean analyze(String sArg) throws InterruptedException
-        { //+method
-        	que.put(sArg);  // Adds sArg as soon as there's space in que
-                if(que.size() == 10)
-                { //+if
-                        que.take();  // Removes the head of the queue
-                	if(que.toString().equals("[1, 1, 2, 2, 3, 4, 3, 4, 5, 6]")) return true;
-                } //-if
-        	return false;
-        } //-method
-        
-        /** Takes a <code>KeyEvent</code>, analyzes it, and returns <code>true</code> if it matches the Konami code.
-         * @author Preston Sheppard
-         * @author Miles B Huff
-         * @throws InterruptedException
-         * @param  ke A <code>KeyEvent</code>
-         * @return <code>true</code> if <code>que</code> matches the Konami code.
-        **/
-        public static boolean keyInput(KeyEvent ke) throws InterruptedException
-        { //+method
-                switch(ke.getKeyCode())
-                { //+case
-                        case KeyEvent.VK_UP:
-                                return analyze("1");  // 1: up
-                        case KeyEvent.VK_DOWN:
-                                return analyze("2");  // 2: down
-                        case KeyEvent.VK_LEFT:
-                                return analyze("3");  // 3: left
-                        case KeyEvent.VK_RIGHT:
-                                return analyze("4");  // 4: right
-                        case 65:
-                                return analyze("5");  // 5: a
-                        case 66:
-                                return analyze("6");  // 6: b
-                        default:
-                        	return analyze("0");  // 0: invalid key
-                } //-case
+	static ArrayBlockingQueue<String> que = new ArrayBlockingQueue<String>(10);
+	
+	/** Adds <code>sArg</code> to <code>que</code> and checks if it matches the Konami code.
+	 * @author Miles B Huff
+	 * @param  sArg Which key has been pressed
+	 * @return <code>true</code> if <code>que</code> matches the Konami code.
+	**/
+	private static boolean analyze(String sArg)
+	{ //+method
+		try
+		{ //+try
+			if(que.size() == 10) que.take();  // Removes the head of the queue
+			que.put(sArg);                    // Adds sArg as soon as there's space in que
+			System.out.println(que.toString());
+			if(que.toString().equals("[1, 1, 2, 2, 3, 4, 3, 4, 5, 6]")) return true;
+		} //-try
+		catch(InterruptedException exc) {exc.printStackTrace();}
+		return false;
 	} //-method
+	
+	/** Takes a <code>KeyEvent</code>, analyzes it, and returns <code>true</code> if it matches the Konami code.
+	 * @author Preston Sheppard
+	 * @author Miles B Huff
+	 * @throws InterruptedException
+	 * @param  ke A <code>KeyEvent</code>
+	 * @return <code>true</code> if <code>que</code> matches the Konami code.
+	**/
+	public static void keyInput(KeyEvent key)
+	{ //+method
+		String s = key.getCode().toString();
+		System.out.println(s);
+		switch(s)
+		{ //+case
+			case "UP":
+				if(analyze("1")) showKonami();  // 1: up
+				break;
+			case "DOWN":
+				if(analyze("2")) showKonami();  // 2: down
+				break;
+			case "LEFT":
+				if(analyze("3")) showKonami();  // 3: left
+				break;
+			case "RIGHT":
+				if(analyze("4")) showKonami();  // 4: right
+				break;
+			case "A":
+				if(analyze("5")) showKonami();  // 5: a
+				break;
+			case "B":
+				if(analyze("6")) showKonami();  // 6: b
+				break;
+			default:
+				   analyze("0")              ;  // 0: invalid key
+				break;
+		} //-case
+	} //-method
+	
+	private static void showKonami() {
+		Image    imgKonami = new Image    ("file:res/images/xtrakr3d1t.png");
+		FlowPane  fpKonami = new FlowPane (                                );
+		ImageView ivKonami = new ImageView(imgKonami                       );
+		 fpKonami.getChildren().add(ivKonami);
+		Scene    sceKonami = new Scene    (fpKonami                        );
+		Stage    stgKonami = new Stage    (                                );
+		stgKonami.setScene   (sceKonami   );
+		stgKonami.setTitle   ("Easter-Egg");
+		stgKonami.sizeToScene(            );
+		stgKonami.show       (            );
+	}
 } //-class
