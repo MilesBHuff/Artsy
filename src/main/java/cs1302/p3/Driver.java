@@ -19,7 +19,7 @@ import  javafx.scene.control.SeparatorMenuItem         ;
 import  javafx.scene.control.TextInputDialog           ;
 import  javafx.scene.image.Image                       ;
 import  javafx.scene.image.ImageView                   ;
-import javafx.scene.layout.FlowPane;
+import  javafx.scene.layout.FlowPane                   ;
 import  javafx.scene.layout.GridPane                   ;
 import  javafx.stage.Stage                             ;
 
@@ -40,7 +40,7 @@ public class Driver extends Application
 	/** Creates a GUI for the application.  (yes, we did this by hand.)
 	 * @author Miles B Huff (everything else)
 	 * @author Preston Sheppard (events)
-	 * @param stage The window on which to display
+	 * @param  stage The window on which to display
 	**/
 	@Override
 	public void start(Stage stgRoot)
@@ -377,24 +377,15 @@ public class Driver extends Application
 
 		// OTHER ACTIONS ----------------------------------------------------
 		menFileClose.setOnAction(event -> {stgRoot.hide(); System.exit(0);});
-		
-		// KONAMI-STAGE -----------------------------------------------------
-		Image    imgKonami = new Image    ("file:res/images/xtrakr3d1t.png");
-		FlowPane  fpKonami = new FlowPane (                                );
-		ImageView ivKonami = new ImageView(imgKonami                       );
-		 fpKonami.getChildren().add(ivKonami);
-		Scene    sceKonami = new Scene    (fpKonami                        );
-		Stage    stgKonami = new Stage    (                                );
-		stgKonami.setScene   (sceKonami   );
-		stgKonami.setTitle   ("Easter-Egg");
-		stgKonami.sizeToScene(            );
 
 		// SET THE STAGE -----------------
 		Scene sceRoot = new Scene(gpRoot);
-		stgRoot.setScene   (sceRoot );
-		stgRoot.setTitle   ("Artsy!");
-		stgRoot.sizeToScene(        );
-		stgRoot.show       (        );
+		stgRoot.setScene    (sceRoot );
+		stgRoot.setTitle    ("Artsy!");
+		stgRoot.sizeToScene (        );
+		stgRoot.show        (        );
+		gpRoot.setOnKeyReleased(key -> Konami.keyInput(key));
+		
 	} //-method
 
 	////////////////////////////////////////////////////////////////////////
@@ -405,4 +396,5 @@ public class Driver extends Application
 	{ //+method
 		launch(saArgs);
 	} //-method
+	
 } //-class
