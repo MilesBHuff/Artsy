@@ -235,7 +235,6 @@ public class Driver extends Application
 		btnChecker.setOnAction(event -> {
 			diaChecker.showAndWait();
 			String s = diaChecker.getResult();
-			System.out.println(s);
 			int i = Integer.parseInt(s);
 			img3 = art.doCheckers(img1,img2, i);
 			ivImg3.setImage(img3);
@@ -252,7 +251,6 @@ public class Driver extends Application
 		btnStripeV.setOnAction(event -> {
 			diaStripeV.showAndWait();
 			String s = diaStripeV.getResult();
-			System.out.println(s);
 			int i = Integer.parseInt(s);
 			img3 = art.doStripesVertical(img1,img2, i);
 			ivImg3.setImage(img3);
@@ -304,7 +302,6 @@ public class Driver extends Application
 		btnRotate1.setOnAction(event -> {
 			diaRotate.showAndWait();
 			String s = diaRotate.getResult();
-			System.out.println(s);
 			int i = Integer.parseInt(s);
 			img1=art.doRotate(img1, i);
 			ivImg1.setImage(img1);
@@ -313,7 +310,6 @@ public class Driver extends Application
 		btnRotate2.setOnAction(event -> {
 			diaRotate.showAndWait();
 			String s = diaRotate.getResult();
-			System.out.println(s);
 			int i = Integer.parseInt(s);
 			img2=art.doRotate(img2, i);
 			ivImg2.setImage(img2);
@@ -322,7 +318,6 @@ public class Driver extends Application
 		btnRotate3.setOnAction(event -> {
 			diaRotate.showAndWait();
 			String s = diaRotate.getResult();
-			System.out.println(s);
 			int i = Integer.parseInt(s);
 			img3 = art.doRotate(img3, i);
 			ivImg3.setImage(img3);
