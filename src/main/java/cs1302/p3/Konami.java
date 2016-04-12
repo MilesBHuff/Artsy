@@ -1,12 +1,11 @@
 package cs1302.p3                              ;
 import  java.util.concurrent.ArrayBlockingQueue;
-
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.FlowPane;
-import javafx.stage.Stage;
+import  javafx.scene.Scene                     ;
+import  javafx.scene.image.Image               ;
+import  javafx.scene.image.ImageView           ;
+import  javafx.scene.input.KeyEvent            ;
+import  javafx.scene.layout.FlowPane           ;
+import  javafx.stage.Stage                     ;
 
 /** A class to implement the Konami extra-credit task.
  * @author Miles B Huff
@@ -35,11 +34,8 @@ public class Konami
 	} //-method
 	
 	/** Takes a <code>KeyEvent</code>, analyzes it, and returns <code>true</code> if it matches the Konami code.
-	 * @author Preston Sheppard
 	 * @author Miles B Huff
-	 * @throws InterruptedException
 	 * @param  ke A <code>KeyEvent</code>
-	 * @return <code>true</code> if <code>que</code> matches the Konami code.
 	**/
 	public static void keyInput(KeyEvent key)
 	{ //+method
@@ -71,6 +67,9 @@ public class Konami
 		} //-case
 	} //-method
 	
+	/** Shows the easter-egg
+	 * @author Miles B Huff
+	**/
 	private static void showKonami() {
 		Image    imgKonami = new Image    ("file:res/images/xtrakr3d1t.png");
 		FlowPane  fpKonami = new FlowPane (                                );
