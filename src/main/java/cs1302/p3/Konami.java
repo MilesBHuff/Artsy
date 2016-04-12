@@ -70,7 +70,8 @@ public class Konami
 	/** Shows the easter-egg
 	 * @author Miles B Huff
 	**/
-	private static void showKonami() {
+	private static void showKonami()
+	{ //+method
 		Image    imgKonami = new Image    ("file:res/images/xtrakr3d1t.png");
 		FlowPane  fpKonami = new FlowPane (                                );
 		ImageView ivKonami = new ImageView(imgKonami                       );
@@ -81,5 +82,5 @@ public class Konami
 		stgKonami.setTitle   ("Easter-Egg");
 		stgKonami.sizeToScene(            );
 		stgKonami.show       (            );
-	}
+	} //-method
 } //-class
