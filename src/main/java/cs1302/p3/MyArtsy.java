@@ -1,5 +1,8 @@
 package main.java.cs1302.p3                       ;
 import  main.java.cs1302.effects.Artsy            ;
+
+import java.awt.Color;
+import javafx.scene.paint.*;
 import  javafx.scene.image.Image        ;
 import  javafx.scene.image.PixelReader  ;
 import  javafx.scene.image.PixelWriter  ;
@@ -37,13 +40,57 @@ public class MyArtsy implements Artsy
 		WritableImage rotated  = new WritableImage ((int) imgSrc.getWidth(), (int) imgSrc.getHeight());
 		PixelReader pr=imgSrc.getPixelReader();
 		PixelWriter pw=rotated.getPixelWriter();
-		int xx=0, yy=0;
+		
+		int midX=(int) (imgSrc.getWidth()/2);
+		int midY=(int) (imgSrc.getHeight()/2);
+		int xTemp= (int) (midX*Math.cos(radians)-(midY*Math.sin(radians)));
+		int yTemp= (int) (midX*Math.sin(radians)+(midY*Math.cos(radians)));
+		int recenterX=midX-xTemp;
+		int recenterY=midY-yTemp;
+		int xR=0, yR=0;
 		for (int x=0; x<imgSrc.getWidth();x++){
 			for (int y=0; y<imgSrc.getHeight(); y++){
-				xx= (int) (x*Math.cos(radians)-y*Math.sin(radians)+150);
-				yy= (int) (x*Math.sin(radians)+y*Math.cos(radians)-75);
-				if ((0<xx)&&(xx<imgSrc.getWidth())&&(0<yy)&&(yy<imgSrc.getWidth())){
-					pw.setArgb(xx, yy, pr.getArgb(x, y));
+				xR= (int) (x*Math.cos(radians)-y*Math.sin(radians)+recenterX);
+				yR= (int) (x*Math.sin(radians)+y*Math.cos(radians)+recenterY);
+				if ((0<xR)&&(xR<imgSrc.getWidth())&&(0<yR)&&(yR<imgSrc.getWidth())){
+					pw.setArgb(xR, yR, pr.getArgb(x, y));
+				}//end if
+			}//end y loop	
+		}//end x loop
+		
+		PixelReader prRot=rotated.getPixelReader();
+		for (int x=0; x<rotated.getWidth();x++){
+			for (int y=0; y<rotated.getHeight(); y++){
+				int red=0;
+				int green=0;
+				int blue=0;
+				int count=0;
+				int rgb=0;
+				int alpha=0;
+				if (prRot.getArgb(x, y)==0){
+					for(int i = -1; i < 2; i++) {
+						for(int j = -1; j < 2; j++) {
+							if(x + i >= 0 && x + i < 300 && y + j >= 0 && y + j < 300) {
+									rgb=prRot.getArgb(x+i,y+j);
+									alpha +=(rgb >> 24) & 0xff;
+								    red +=(rgb >> 16) & 0xff;
+								    green +=(rgb >> 8) & 0xff;
+								    blue +=(rgb) & 0xff;
+								    count++;
+						    }
+						}
+					}
+					if (count!=0){
+						red= (red/count);
+						green= (green/count);
+						blue=  (blue/count);
+						alpha=(alpha/count);
+						int total=alpha;
+						total=(total << 8) + red;
+						total=(total << 8) + green;
+						total=(total << 8) + blue;
+						pw.setArgb(x, y, total);
+					}
 				}//end if
 			}//end y loop	
 		}//end x loop
