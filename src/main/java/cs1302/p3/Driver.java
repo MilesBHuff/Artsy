@@ -325,21 +325,38 @@ public class Driver extends Application
 		menEditRotateImg3.setOnAction(btnRotate3.getOnAction());
 
 		// SAVE-ACTIONS ---------------------------------------------------------------------------------
-		//TODO:  btnSave1
-		menFileSaveImg1.setOnAction(event -> {
+		btnSave1.setOnAction(event -> {
 			int returnVal = chooser.showSaveDialog(null);
 			if(returnVal == JFileChooser.APPROVE_OPTION)
 			{ //+if
-				File          filImg1 = new File("file:" + chooser.getSelectedFile().toString());
+				File          filImg1 = new File(chooser.getSelectedFile().toString());
 				BufferedImage bImg1   =     SwingFXUtils.fromFXImage(img1, null);
-				try {ImageIO.write(bImg1, ".png", filImg1);}
+				try {ImageIO.write(bImg1, "png", filImg1);}
 				catch (Exception e) {e.printStackTrace();}
 			} //-if
 		});
 		menFileSaveImg1.setOnAction(btnSave1.getOnAction());
-		//TODO:  btnSave2
+		btnSave1.setOnAction(event -> {
+			int returnVal = chooser.showSaveDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION)
+			{ //+if
+				File          filImg2 = new File(chooser.getSelectedFile().toString());
+				BufferedImage bImg2   =     SwingFXUtils.fromFXImage(img2, null);
+				try {ImageIO.write(bImg2, "png", filImg2);}
+				catch (Exception e) {e.printStackTrace();}
+			} //-if
+		});
 		menFileSaveImg2.setOnAction(btnSave2.getOnAction());
-		//TODO:  btnSave3
+		btnSave1.setOnAction(event -> {
+			int returnVal = chooser.showSaveDialog(null);
+			if(returnVal == JFileChooser.APPROVE_OPTION)
+			{ //+if
+				File          filImg3 = new File(chooser.getSelectedFile().toString());
+				BufferedImage bImg3   =     SwingFXUtils.fromFXImage(img3, null);
+				try {ImageIO.write(bImg3, "png", filImg3);}
+				catch (Exception e) {e.printStackTrace();}
+			} //-if
+		});
 		menFileSaveImg3.setOnAction(btnSave3.getOnAction());
 
 		// URL-ACTIONS ---------------------------------------
