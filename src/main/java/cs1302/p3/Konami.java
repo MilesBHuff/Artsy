@@ -26,7 +26,6 @@ public class Konami
 		{ //+try
 			if(que.size() == 10) que.take();  // Removes the head of the queue
 			que.put(sArg);                    // Adds sArg as soon as there's space in que
-			System.out.println(que.toString());
 			if(que.toString().equals("[1, 1, 2, 2, 3, 4, 3, 4, 5, 6]")) return true;
 		} //-try
 		catch(InterruptedException exc) {exc.printStackTrace();}
@@ -39,9 +38,7 @@ public class Konami
 	**/
 	public static void keyInput(KeyEvent key)
 	{ //+method
-		String s = key.getCode().toString();
-		System.out.println(s);
-		switch(s)
+		switch(key.getCode().toString())
 		{ //+case
 			case "UP":
 				if(analyze("1")) showKonami();  // 1: up
