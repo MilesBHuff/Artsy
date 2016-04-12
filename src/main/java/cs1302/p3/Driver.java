@@ -423,5 +423,4 @@ public class Driver extends Application
 		diaAlertDim.setContentText("Support for images of dimensions other than" + "\n" + "300x300px is currently limited.  Certain actions" + "\n" + "may not work as expected.");
 		if(img.getHeight() != 300 && img.getWidth() != 300) diaAlertDim.show() ;
 	} //-method
-	
 } //-class
