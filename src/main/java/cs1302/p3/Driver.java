@@ -2,14 +2,14 @@ package cs1302.p3                                      ;
 import  cs1302.effects.Artsy                           ;
 import  java.awt.image.BufferedImage                   ;
 import  java.io.File                                   ;
-import  java.net.URL                                   ;
 import  javax.imageio.ImageIO                          ;
 import  javax.swing.JFileChooser                       ;
 import  javax.swing.filechooser.FileNameExtensionFilter;
 import  javafx.application.Application                 ;
 import  javafx.embed.swing.SwingFXUtils                ;
 import  javafx.geometry.Insets                         ;
-import  javafx.scene.Scene                             ;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import  javafx.scene.control.Button                    ;
 import  javafx.scene.control.Label                     ;
 import  javafx.scene.control.Menu                      ;
@@ -21,6 +21,7 @@ import  javafx.scene.image.Image                       ;
 import  javafx.scene.image.ImageView                   ;
 import  javafx.scene.layout.FlowPane                   ;
 import  javafx.scene.layout.GridPane                   ;
+import  javafx.scene.Scene                             ;
 import  javafx.stage.Stage                             ;
 
 /** This is the runner for this application.
@@ -213,18 +214,25 @@ public class Driver extends Application
 		TextInputDialog diaUrl     = new TextInputDialog();
 
 		// DIALOG-TITLING ---------------------
-		diaChecker.setTitle("Checker options");
-		diaStripeH.setTitle("Stripe options" );
-		diaStripeV.setTitle("Stripe options" );
-		diaRotate .setTitle("Rotate options" );
+		diaChecker.setTitle("Checker-options");
+		diaStripeH.setTitle("Stripe-options" );
+		diaStripeV.setTitle("Stripe-options" );
+		diaRotate .setTitle("Rotate-options" );
 		diaUrl    .setTitle("Open from URL"  );
 
-		// DIALOG-HEADERS -------------------------------------------------------------------------------------------
-		diaChecker.setHeaderText("Please enter the width of each checker:"                                         );
-		diaStripeH.setHeaderText("Please enter the height of each stripe:"                                         );
-		diaStripeV.setHeaderText("Please enter the width of each stripe:"                                          );
-		diaRotate .setHeaderText("Please enter the number of degrees by which you would like to rotate this image:");
-		diaUrl    .setHeaderText("Please enter the URL from which you'd like to load an image:"                    );
+		// DIALOG-HEADERS ------------------------------
+		diaChecker.setHeaderText(diaChecker.getTitle());
+		diaStripeH.setHeaderText(diaStripeH.getTitle());
+		diaStripeV.setHeaderText(diaStripeV.getTitle());
+		diaRotate .setHeaderText(diaRotate .getTitle());
+		diaUrl    .setHeaderText(diaUrl    .getTitle());
+
+		// DIALOG-HEADERS -------------------------------------------------------------------------------------------------------
+		diaChecker.setContentText("Please enter the width of each checker:"                                                    );
+		diaStripeH.setContentText("Please enter the height of each stripe:"                                                    );
+		diaStripeV.setContentText("Please enter the width of each stripe:"                                                     );
+		diaRotate .setContentText("Please enter the number of degrees by" + "\n" + "which you would like to rotate this image:");
+		diaUrl    .setContentText("Please enter the URL from which" + "\n" + "you'd like to load an image:"                    );
 
 		// FILE-DIALOG --------------------------------------------------------------------
 		JFileChooser            chooser = new JFileChooser           (                   );
@@ -267,6 +275,7 @@ public class Driver extends Application
 			} //-if
 			img10 = img1;
 			ivImg1.setImage(img1);
+			checkDim(img1);
 		});
 		menFileOpenImg1.setOnAction(btnOpen1.getOnAction());
 		btnOpen2.setOnAction(event -> {
@@ -278,6 +287,7 @@ public class Driver extends Application
 			} //-if
 			img20 = img2;
 			ivImg2.setImage(img2);
+			checkDim(img2);
 		});
 		menFileOpenImg2.setOnAction(btnOpen2.getOnAction());
 		
@@ -360,30 +370,24 @@ public class Driver extends Application
 		menFileSaveImg3.setOnAction(btnSave3.getOnAction());
 
 		// URL-ACTIONS ---------------------------------------
-		//TODO:  Doesn't work yet.
 		btnUrl1.setOnAction(event -> {
 			diaUrl.showAndWait();
+			img1  = new Image(diaUrl.getResult());
+			img10 = img1;
 			lblImg1.setText(sLblImg1);
-			try
-			{ //+try
-				URL url = new URL(diaUrl.getResult());
-				//img1 = new Image(url);
-				ivImg1.setImage(img1);
-			} //-try
-			catch(Exception exc) {exc.printStackTrace();}
+			 ivImg1.setImage(img1);
 			lblImg1.setText(sLblImg1 + "(web)");
+			checkDim(img1);
 		});
 		menFileUrlImg1.setOnAction(btnUrl1.getOnAction());
 		btnUrl2.setOnAction(event -> {
+			diaUrl.showAndWait();
+			img2  = new Image(diaUrl.getResult());
+			img20 = img2;
 			lblImg2.setText(sLblImg2);
-			try
-			{ //+try
-				URL url = new URL(diaUrl.getResult());
-				//img2 = new Image(url);
-				ivImg2.setImage(img2);
-			} //-try
-			catch(Exception exc) {exc.printStackTrace();}
-			lblImg1.setText(sLblImg2 + "(web)");
+			 ivImg2.setImage(img2);
+			lblImg2.setText(sLblImg2 + "(web)");
+			checkDim(img2);
 		});
 		menFileUrlImg2.setOnAction(btnUrl2.getOnAction());
 
@@ -407,6 +411,17 @@ public class Driver extends Application
 	public static void main(String[] saArgs)
 	{ //+method
 		launch(saArgs);
+	} //-method
+
+	////////////////////////////////////////////////////////////////////////
+	/** Checks if the given image is 300x300px.  
+	 * @param img The image whose dimensions are to be checked
+	**/
+	private static void checkDim(Image img)
+	{ //+method
+		Alert diaAlertDim = new Alert(AlertType.WARNING);
+		diaAlertDim.setContentText("Support for images of dimensions other than" + "\n" + "300x300px is currently limited.  Certain actions" + "\n" + "may not work as expected.");
+		if(img.getHeight() != 300 && img.getWidth() != 300) diaAlertDim.show() ;
 	} //-method
 	
 } //-class
