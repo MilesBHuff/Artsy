@@ -1,16 +1,13 @@
-package main.java.cs1302.p3                       ;
-import  main.java.cs1302.effects.Artsy            ;
-
-import java.awt.Color;
-import javafx.scene.paint.*;
+package cs1302.p3                       ;
+import  cs1302.effects.Artsy            ;
 import  javafx.scene.image.Image        ;
 import  javafx.scene.image.PixelReader  ;
 import  javafx.scene.image.PixelWriter  ;
 import  javafx.scene.image.WritableImage;
-@SuppressWarnings("restriction")
+
 /** Implements effects.Artsy
- * @author Preston Sheppard (coding)
- * @author Miles B Huff (bugfixing and formatting)
+ * @author Preston Sheppard (coding and recoding)
+ * @author Miles B Huff (bugfixing and formatting (before the recoding))
 **/
 public class MyArtsy implements Artsy
 { //+class
@@ -137,18 +134,16 @@ public class MyArtsy implements Artsy
 
 	////////////////////////////////////////////////////////////////////////
 	public Image doStripesHorizontal(Image img1, Image img2, int size){
-			WritableImage temp1=(WritableImage) doCopy(img1);
-	PixelReader pr=img2.getPixelReader();
-	PixelWriter pw=temp1.getPixelWriter();
-	for (int x=0; x<img1.getWidth();x++){
-		for (int y=0;y<img1.getHeight();y=y+size+size){
-			for (int count=0; (count<size)&&(count+y<img1.getHeight()); count++){
-				pw.setArgb(x, y+count, pr.getArgb(x, y+count));
+		WritableImage temp1=(WritableImage) doCopy(img1);
+		PixelReader pr=img2.getPixelReader();
+		PixelWriter pw=temp1.getPixelWriter();
+		for (int x=0; x<img1.getWidth();x++){
+			for (int y=0;y<img1.getHeight();y=y+size+size){
+				for (int count=0; (count<size)&&(count+y<img1.getHeight()); count++){
+					pw.setArgb(x, y+count, pr.getArgb(x, y+count));
+				}
 			}
-		}
-	}	
-	return temp1;
-} //-method
-
-
+		}	
+		return temp1;
+	} //-method
 } //-class
