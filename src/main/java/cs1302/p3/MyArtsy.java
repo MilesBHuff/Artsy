@@ -1,9 +1,10 @@
-package cs1302.p3                       ;
-import  cs1302.effects.Artsy            ;
+package main.java.cs1302.p3                       ;
+import  main.java.cs1302.effects.Artsy            ;
 import  javafx.scene.image.Image        ;
 import  javafx.scene.image.PixelReader  ;
 import  javafx.scene.image.PixelWriter  ;
 import  javafx.scene.image.WritableImage;
+@SuppressWarnings("restriction")
 
 /** Implements effects.Artsy
  * @author Preston Sheppard (coding and recoding)
@@ -14,20 +15,10 @@ public class MyArtsy implements Artsy
 	////////////////////////////////////////////////////////////////////////
 	public Image doCopy(Image imgSrc)
 	{ //+method
-		int           iWidth  =     (int) imgSrc.getWidth (               );
-		int           iHeight =     (int) imgSrc.getHeight(               );
-		WritableImage wiCopy  = new WritableImage         (iWidth, iHeight);
-		PixelReader   pr      =     imgSrc.getPixelReader (               );
-		PixelWriter   pw      =     wiCopy.getPixelWriter (               );
-		for (int iX = 0     ;
-			 iX < iWidth;
-			 iX++       )
-		{ //+loop
-			for(int iY = 0      ;
-				iY < iHeight;
-				iY++        )
-			{pw.setArgb(iX, iY, pr.getArgb(iX, iY));}
-		} //-loop
+		WritableImage wiCopy  = new WritableImage ((int) imgSrc.getWidth(),(int) imgSrc.getHeight());
+		PixelReader pr = imgSrc.getPixelReader ();
+		PixelWriter pw = wiCopy.getPixelWriter ();
+		for (int iX = 0 ; iX < (int) imgSrc.getWidth(); iX++) for(int iY = 0;	iY < (int) imgSrc.getHeight();iY++) pw.setArgb(iX, iY, pr.getArgb(iX, iY));;
 		return wiCopy;
 	} //-method
 
@@ -49,12 +40,11 @@ public class MyArtsy implements Artsy
 			for (int y=0; y<imgSrc.getHeight(); y++){
 				xR= (int) (x*Math.cos(radians)-y*Math.sin(radians)+recenterX);
 				yR= (int) (x*Math.sin(radians)+y*Math.cos(radians)+recenterY);
-				if ((0<xR)&&(xR<imgSrc.getWidth())&&(0<yR)&&(yR<imgSrc.getWidth())){
+				if ((0<xR)&&(xR<imgSrc.getWidth())&&(0<=yR)&&(yR<imgSrc.getHeight())){
 					pw.setArgb(xR, yR, pr.getArgb(x, y));
 				}//end if
 			}//end y loop	
 		}//end x loop
-		
 		PixelReader prRot=rotated.getPixelReader();
 		for (int x=0; x<rotated.getWidth();x++){
 			for (int y=0; y<rotated.getHeight(); y++){
@@ -67,7 +57,7 @@ public class MyArtsy implements Artsy
 				if (prRot.getArgb(x, y)==0){
 					for(int i = -1; i < 2; i++) {
 						for(int j = -1; j < 2; j++) {
-							if(x + i >= 0 && x + i < 300 && y + j >= 0 && y + j < 300) {
+							if(x + i >= 0 && x + i < imgSrc.getWidth() && y + j >= 0 && y + j < imgSrc.getHeight()) {
 									rgb=prRot.getArgb(x+i,y+j);
 									alpha +=(rgb >> 24) & 0xff;
 								    red +=(rgb >> 16) & 0xff;
