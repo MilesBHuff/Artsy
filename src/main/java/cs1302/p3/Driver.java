@@ -1,5 +1,5 @@
-package cs1302.p3                                      ;
-import  cs1302.effects.Artsy                           ;
+package main.java.cs1302.p3                                      ;
+import  main.java.cs1302.effects.Artsy                           ;
 import  java.awt.image.BufferedImage                   ;
 import  java.io.File                                   ;
 import  javax.imageio.ImageIO                          ;
@@ -8,8 +8,8 @@ import  javax.swing.filechooser.FileNameExtensionFilter;
 import  javafx.application.Application                 ;
 import  javafx.embed.swing.SwingFXUtils                ;
 import  javafx.geometry.Insets                         ;
-import  javafx.scene.control.Alert                     ;
-import  javafx.scene.control.Alert.AlertType           ;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import  javafx.scene.control.Button                    ;
 import  javafx.scene.control.Label                     ;
 import  javafx.scene.control.Menu                      ;
@@ -23,11 +23,12 @@ import  javafx.scene.layout.FlowPane                   ;
 import  javafx.scene.layout.GridPane                   ;
 import  javafx.scene.Scene                             ;
 import  javafx.stage.Stage                             ;
-
+@SuppressWarnings("restriction")
 /** This is the runner for this application.
  * @author Miles B Huff
  * @author Preston Sheppard
 **/
+
 public class Driver extends Application
 { //+class
 	// RESOURCES -----------------------------------------
@@ -236,7 +237,7 @@ public class Driver extends Application
 
 		// FILE-DIALOG --------------------------------------------------------------------
 		JFileChooser            chooser = new JFileChooser           (                   );
-		FileNameExtensionFilter filter  = new FileNameExtensionFilter("PNG Images", "png");
+		FileNameExtensionFilter filter  = new FileNameExtensionFilter("Image Files", "png", "bmp", "jpg","jpeg");
 		chooser.setFileFilter(filter);
 
 		// EFFECTS-ACTIONS ----------------------------------
@@ -421,6 +422,6 @@ public class Driver extends Application
 	{ //+method
 		Alert diaAlertDim = new Alert(AlertType.WARNING);
 		diaAlertDim.setContentText("Support for images of dimensions other than" + "\n" + "300x300px is currently limited.  Certain actions" + "\n" + "may not work as expected.");
-		if(img.getHeight() != 300 && img.getWidth() != 300) diaAlertDim.show() ;
+		//if(img.getHeight() != 300 && img.getWidth() != 300) diaAlertDim.show() ;
 	} //-method
 } //-class
